@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.Trans_Scene">
+   <children>
+      <AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <SplitPane dividerPositions="0.24053627760252366" prefHeight="720.0" prefWidth="1270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <items>
+                  <AnchorPane maxWidth="300.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="300.0" style="-fx-background-color: #6a5acd;">
+                     <children>
+                        <Button layoutX="42.0" layoutY="17.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="65.0" style="-fx-background-color: #6a5acd;" textFill="WHITE" underline="true">
+                           <font>
+                              <Font name="Dubai Regular" size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Project%20Images/Expense%20Tracker/ImagesUsed/accimage2.jpg" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label alignment="CENTER" layoutX="50.0" layoutY="138.0" prefHeight="47.0" prefWidth="130.0" text="Transaction" textFill="#dbdbdb" underline="true">
+                           <font>
+                              <Font name="Dubai Regular" size="26.0" />
+                           </font>
+                        </Label>
+                        <Button alignment="CENTER" layoutX="13.0" layoutY="378.0" mnemonicParsing="false" onAction="#switchToSave" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Savings" textFill="WHITE">
+                           <font>
+                              <Font name="Dubai Regular" size="26.0" />
+                           </font>
+                        </Button>
+                        <MenuButton alignment="CENTER" layoutX="37.0" layoutY="250.0" mnemonicParsing="false" style="-fx-background-color: #6a5acd;" text="Statistics" textFill="WHITE">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Bar-Charts" />
+                              <MenuItem mnemonicParsing="false" text="Pie-Charts" />
+                           </items>
+                           <font>
+                              <Font name="Dubai Regular" size="26.0" />
+                           </font>
+                        </MenuButton>
+                        <Button alignment="CENTER" layoutX="34.0" layoutY="185.0" mnemonicParsing="false" onAction="#switchToBL" prefHeight="65.0" prefWidth="194.0" style="-fx-background-color: #6a5acd;" text="Borrow / Lend" textFill="WHITE">
+                           <font>
+                              <Font name="Dubai Regular" size="26.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" layoutX="28.0" layoutY="315.0" mnemonicParsing="false" onAction="#switchToBudget" prefHeight="65.0" prefWidth="130.0" style="-fx-background-color: #6a5acd;" text="Budget" textFill="WHITE">
+                           <font>
+                              <Font name="Dubai Regular" size="26.0" />
+                           </font>
+                        </Button>
+                        <Label alignment="CENTER" layoutX="28.0" layoutY="91.0" prefHeight="47.0" prefWidth="130.0" text="MENU" textFill="#dbdbdb" underline="true">
+                           <font>
+                              <Font name="Dubai Regular" size="26.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5" layoutX="180.0" layoutY="64.0" orientation="VERTICAL" prefHeight="718.0" prefWidth="958.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <items>
+                              <AnchorPane maxHeight="120.0" minHeight="120.0" minWidth="0.0" prefHeight="120.0" prefWidth="160.0">
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="399.0" layoutY="69.0" prefHeight="138.0" prefWidth="956.0" style="-fx-background-color: #6a5acd;" text="Transactions" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="Dubai Regular" size="40.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="590.0" prefWidth="958.0">
+                                 <children>
+                                    <TableView fx:id="Trans_table" layoutX="9.0" layoutY="138.0" prefHeight="443.0" prefWidth="787.0">
+                                      <columns>
+                                        <TableColumn fx:id="Trans_type" prefWidth="187.3334093093872" text="Type" />
+                                        <TableColumn fx:id="Trans_amt" prefWidth="175.99998474121094" text="Amount" />
+                                          <TableColumn fx:id="Trans_categ" prefWidth="266.6667175292969" text="Category" />
+                                          <TableColumn fx:id="Trans_date" prefWidth="154.6666259765625" text="Date" />
+                                      </columns>
+                                    </TableView>
+                                    <Label layoutX="45.0" layoutY="27.0" text="Search :" textFill="SLATEBLUE">
+                                       <font>
+                                          <Font name="Dubai Regular" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="59.0" layoutY="74.0" prefHeight="32.0" prefWidth="44.0" text="Type :" textFill="SLATEBLUE">
+                                       <font>
+                                          <Font name="Dubai Regular" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField layoutX="110.0" layoutY="28.0" prefHeight="30.0" prefWidth="169.0" promptText="Transaction" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
+                                       <font>
+                                          <Font name="Dubai Regular" size="12.0" />
+                                       </font></TextField>
+                                    <TextField layoutX="110.0" layoutY="75.0" prefHeight="30.0" prefWidth="169.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
+                                       <font>
+                                          <Font name="Dubai Regular" size="12.0" />
+                                       </font></TextField>
+                                    <Label layoutX="403.0" layoutY="27.0" text="Date :" textFill="SLATEBLUE">
+                                       <font>
+                                          <Font name="Dubai Regular" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="372.0" layoutY="74.0" prefHeight="32.0" prefWidth="82.0" text="Category :" textFill="SLATEBLUE">
+                                       <font>
+                                          <Font name="Dubai Regular" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <DatePicker layoutX="454.0" layoutY="28.0" prefHeight="30.0" prefWidth="169.0" style="-fx-background-color: #6a5acd;" />
+                                    <TextField layoutX="454.0" layoutY="75.0" prefHeight="30.0" prefWidth="169.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
+                                       <font>
+                                          <Font name="Dubai Regular" size="12.0" />
+                                       </font></TextField>
+                                    <Button alignment="CENTER" layoutX="824.0" layoutY="138.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Delete" textFill="WHITE">
+                                       <font>
+                                          <Font name="Dubai Regular" size="19.0" />
+                                       </font>
+                                    </Button>
+                                    <Button alignment="CENTER" layoutX="824.0" layoutY="202.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToEditTrans" prefHeight="47.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Edit" textFill="WHITE">
+                                       <font>
+                                          <Font name="Dubai Regular" size="19.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="845.0" layoutY="479.0" mnemonicParsing="false" onAction="#switchToAddTrans" prefHeight="64.0" prefWidth="65.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 50;" textFill="WHITE">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Button>
+                                    <Label layoutX="865.0" layoutY="467.0" prefHeight="47.0" prefWidth="35.0" text="+" textFill="WHITE">
+                                       <font>
+                                          <Font name="Dubai Bold" size="49.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

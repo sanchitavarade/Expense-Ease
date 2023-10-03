@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.scene_controller">
+   <children>
+      <SplitPane dividerPositions="0.24053627760252366" layoutX="285.0" layoutY="115.0" prefHeight="720.0" prefWidth="1270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane maxWidth="300.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="300.0">
+               <children>
+                  <AnchorPane maxWidth="300.0" prefHeight="718.0" prefWidth="300.0" snapToPixel="false" style="-fx-background-color: #6a5acd;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button layoutX="32.0" layoutY="7.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="65.0" style="-fx-background-color: #6a5acd;" textFill="WHITE" underline="true">
+                           <font>
+                              <Font name="Dubai Regular" size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Project%20Images/Expense%20Tracker/ImagesUsed/accimage2.jpg" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label alignment="CENTER" layoutX="33.0" layoutY="64.0" prefHeight="47.0" prefWidth="88.0" text="MENU" textFill="#dbdbdb" underline="true">
+                           <font>
+                              <Font name="Dubai Regular" size="26.0" />
+                           </font>
+                        </Label>
+                        <Button alignment="CENTER" layoutX="21.0" layoutY="305.0" mnemonicParsing="false" onAction="#switchToBudget" prefHeight="65.0" prefWidth="123.0" style="-fx-background-color: #6a5acd;" text="Budget" textFill="WHITE">
+                           <font>
+                              <Font name="Dubai Regular" size="26.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" layoutX="20.0" layoutY="111.0" mnemonicParsing="false" onAction="#switchToTransaction" prefHeight="64.0" prefWidth="177.0" style="-fx-background-color: #6a5acd;" text="Transactions" textFill="WHITE">
+                           <font>
+                              <Font name="Dubai Regular" size="26.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" layoutX="3.0" layoutY="368.0" mnemonicParsing="false" onAction="#switchToSave" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Savings" textFill="WHITE">
+                           <font>
+                              <Font name="Dubai Regular" size="26.0" />
+                           </font>
+                        </Button>
+                        <MenuButton alignment="CENTER" layoutX="27.0" layoutY="240.0" mnemonicParsing="false" style="-fx-background-color: #6a5acd;" text="Statistics" textFill="WHITE" AnchorPane.leftAnchor="27.0">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Bar-Charts" />
+                              <MenuItem mnemonicParsing="false" text="Pie-Charts" />
+                           </items>
+                           <font>
+                              <Font name="Dubai Regular" size="26.0" />
+                           </font>
+                        </MenuButton>
+                        <Button alignment="CENTER" layoutX="24.0" layoutY="175.0" mnemonicParsing="false" onAction="#switchToBL" prefHeight="65.0" prefWidth="194.0" style="-fx-background-color: #6a5acd;" text="Borrow / Lend" textFill="WHITE">
+                           <font>
+                              <Font name="Dubai Regular" size="26.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="718.0" prefWidth="900.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="14.0" prefHeight="75.0" prefWidth="240.0" text="Welcome, User !" textFill="SLATEBLUE">
+                     <font>
+                        <Font name="Dubai Regular" size="36.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="826.0" layoutY="587.0" mnemonicParsing="false" onAction="#switchToAddTrans" prefHeight="64.0" prefWidth="65.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 50;" />
+                  <Label layoutX="845.0" layoutY="559.0" prefHeight="111.0" prefWidth="35.0" text="+" textFill="WHITE">
+                     <font>
+                        <Font name="Dubai Bold" size="49.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
