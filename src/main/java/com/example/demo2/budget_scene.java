@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -21,6 +22,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -29,7 +31,7 @@ public class budget_scene implements Initializable{
     private Scene scene;
     private Parent root;
     public static ArrayList<Budget> Bud_values= new ArrayList<Budget>();
-    
+
     @FXML
     private TableView<Budget> Bud_table;
 
@@ -39,6 +41,12 @@ public class budget_scene implements Initializable{
     @FXML
     private TableColumn<Budget, Integer> Bud_Limit;
 
+    @FXML
+    private TextField newBudCateg;
+
+    @FXML
+    private TextField newBudLimit;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         Bud_Categ.setCellValueFactory(new PropertyValueFactory<Budget, String>("categ"));
@@ -46,36 +54,61 @@ public class budget_scene implements Initializable{
         ObservableList<Budget> Bud_list;
         try {
             giveBudget();
-            System.out.println("out of func");
-            // Bud_values.add(new Budget("Expense", 50000));
-            // Bud_values.add(new Budget("income", 2000));
             Bud_list = FXCollections.observableArrayList(Bud_values);
-            System.out.println("Runned budget");
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException | IOException e) {
             System.out.println("error occured ="+e);
             Bud_list = FXCollections.observableArrayList(
-                new Budget("Expense", 50000),
-                new Budget("income", 2000)
+                    new Budget("Error", 0)
             );
         }
         Bud_table.setItems(Bud_list);
     }
+    @FXML
+    void ApplyChanges(ActionEvent event) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException {
+        // checks the login is valid or not
+        String tfCateg =newBudCateg.getText();
+        String tfLimit = newBudLimit.getText();
+        changeData(tfCateg, tfLimit);
+        switchToBudget(event);
+    }
+    public static void changeData(String categ, String limit) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
+        try
+        {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "PHW#84#jeor");
+            Statement stmt = con.createStatement();
+
+            // Updating database
+            String q1 = "UPDATE budget set category_name = '" +categ+ "', elimit = "+ limit+" WHERE category_name = '" + categ + "' and user_id ="+AlertConnector.user+";"  ;
+            int x = stmt.executeUpdate(q1);
+
+            if (x > 0)
+                System.out.println("Expenses Updated");
+            else
+                System.out.println("ERROR OCCURRED :(");
+
+            con.close();
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+    }
     private void giveBudget() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException {
         Bud_values.clear();
-		Class.forName("com.mysql.jdbc.Driver");
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_tracker", "root", "oracle");
-		
-        PreparedStatement p = con.prepareStatement("select * from transaction_category;");
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "PHW#84#jeor");
+
+        PreparedStatement p = con.prepareStatement("select * from budget where user_id ="+AlertConnector.user+";");
         ResultSet rs = p.executeQuery();
         System.out.println("printing now");
         while(rs.next()){
-			String categ = rs.getString("categoryname");
-            int limit = rs.getInt("categLimit");
+            String categ = rs.getString("category_name");
+            int limit = rs.getInt("elimit");
             System.out.println(limit+"\t\t"+categ);
             Bud_values.add(new Budget(categ, limit));
-            System.out.println("obj added");
         }
-		con.close();
+        con.close();
     }
     @FXML
     public void switchToTransaction(ActionEvent event) throws IOException{        // to switch the scene to transaction
@@ -118,4 +151,3 @@ public class budget_scene implements Initializable{
         stage.show();
     }
 }
-

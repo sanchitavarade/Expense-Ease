@@ -15,8 +15,8 @@
 <AnchorPane maxHeight="720.0" maxWidth="1470.0" minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.Saving_scene">
    <children>
       <SplitPane dividerPositions="0.23934771173066802" layoutX="68.0" layoutY="166.0" prefHeight="720.0" prefWidth="1270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <items>
-          <AnchorPane maxWidth="300.0" minHeight="0.0" minWidth="0.0" prefHeight="718.0" prefWidth="300.0">
+         <items>
+            <AnchorPane maxWidth="300.0" minHeight="0.0" minWidth="0.0" prefHeight="718.0" prefWidth="300.0">
                <children>
                   <AnchorPane maxWidth="300.0" prefHeight="718.0" prefWidth="298.0" snapToPixel="false" style="-fx-background-color: #6a5acd;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
@@ -70,7 +70,7 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
                   <AnchorPane prefHeight="91.0" prefWidth="1094.0" style="-fx-background-color: #6a5acd;">
                      <children>
@@ -108,7 +108,7 @@
                               <Font name="Dubai Regular" size="14.0" />
                            </font>
                         </MenuButton>
-                        <Label layoutX="13.0" layoutY="144.0" prefHeight="41.0" prefWidth="194.0" text="Savings In August:" textFill="SLATEBLUE">
+                        <Label layoutX="13.0" layoutY="144.0" prefHeight="41.0" prefWidth="194.0" text="Your Savings :" textFill="SLATEBLUE">
                            <font>
                               <Font name="Dubai Regular" size="22.0" />
                            </font>
@@ -122,11 +122,11 @@
                               <Font name="Dubai Regular" size="14.0" />
                            </font>
                         </MenuButton>
-                        <TableView layoutX="23.0" layoutY="209.0" prefHeight="495.0" prefWidth="616.0">
-                          <columns>
-                            <TableColumn prefWidth="291.20002138614655" text="Category" />
-                            <TableColumn prefWidth="321.6000061035156" text="Savings" />
-                          </columns>
+                        <TableView fx:id="saving_table" layoutX="23.0" layoutY="209.0" prefHeight="495.0" prefWidth="616.0">
+                           <columns>
+                              <TableColumn fx:id="save_categ" prefWidth="291.20002138614655" text="Date" />
+                              <TableColumn fx:id="save_saving" prefWidth="321.6000061035156" text="Savings" />
+                           </columns>
                         </TableView>
                         <Button alignment="CENTER" layoutX="730.0" layoutY="619.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToAddSave" prefHeight="57.0" prefWidth="165.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Add Saving" textFill="WHITE">
                            <font>
@@ -137,7 +137,7 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-        </items>
+         </items>
       </SplitPane>
    </children>
 </AnchorPane>

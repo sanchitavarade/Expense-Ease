@@ -28,7 +28,7 @@ public class Trans_Scene implements Initializable{
     private Scene scene;
     private Parent root;
     public static ArrayList<Transactions> values= new ArrayList<Transactions>();
-    
+
     @FXML
     private TableView<Transactions> Trans_table;
 
@@ -43,7 +43,7 @@ public class Trans_Scene implements Initializable{
 
     @FXML
     private TableColumn<Transactions, String> Trans_date;
-    
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         Trans_type.setCellValueFactory(new PropertyValueFactory<Transactions, String>("type"));
@@ -53,16 +53,12 @@ public class Trans_Scene implements Initializable{
         ObservableList<Transactions> list;
         try {
             giveTrans();
-            System.out.println("out of func");
-            // values.add(new Transactions("Expense", 2000, "Transportation", "22-08-23"));
-            // values.add(new Transactions("income", 10000, "Job", "1-08-23"));
             list = FXCollections.observableArrayList(values);
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
             System.out.println("error occured ="+e);
             list = FXCollections.observableArrayList(
-                new Transactions("Expense", 2000, "Transportation", "22-08-23"),
-                new Transactions("income", 10000, "Job", "1-08-23")
-            ); 
+                    new Transactions("Error", 0, "Transportation", "22-08-23")
+            );
         }
         Trans_table.setItems(list);
     }
@@ -105,24 +101,23 @@ public class Trans_Scene implements Initializable{
         stage.show();
     }
     private static void giveTrans() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
-		// connecting database
+        // connecting database
         values.clear();
-		Class.forName("com.mysql.jdbc.Driver");
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_tracker", "root", "oracle");
-		
-        PreparedStatement p = con.prepareStatement("select * from transactions;");
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_tracker", "root", "PHW#84#jeor");
+
+        PreparedStatement p = con.prepareStatement("select * from transactions where user_id="+AlertConnector.user+";");
         ResultSet rs = p.executeQuery();
         System.out.println("printing now");
         while(rs.next()){
-            String type = rs.getString("description");
-			String date = rs.getString("transactiondate");
-			int amt = rs.getInt("amount");
-			String categ = rs.getString("Ecategory_id");
+            String type = rs.getString("transactiontype");
+            String date = rs.getString("transactiondate");
+            int amt = rs.getInt("amount");
+            String categ = rs.getString("categoryname");
             System.out.println(type+"\t\t"+date+"\t\t"+amt+"\t\t"+categ);
             values.add(new Transactions(type, amt, categ, date));
-            System.out.println("obj added");
         }
-		con.close();
+        con.close();
     }
-    
+
 }
