@@ -1,6 +1,9 @@
 package com.example.demo2;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -82,6 +85,47 @@ public class scene_controller {
         stage.setScene(scene);
         stage.show();
     }
+
+    @FXML
+    private TextField tfSignUser;
+
+    @FXML
+    private PasswordField tfSignPass;
+
+    @FXML
+    private PasswordField tfSignPass1;
+
+    @FXML
+    void createAcc(ActionEvent event) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException{
+        String signUser = tfSignUser.getText();
+        String signpass = tfSignPass.getText();
+        String signpass2 = tfSignPass1.getText();
+        int status =0;
+        if(signpass.compareTo(signpass2)==0){
+            if((signUser.length()==0)||(signpass.length()==0)){
+                AlertConnector.Handle2();
+                return;
+            }
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "PHW#84#jeor");
+            PreparedStatement ps = con.prepareStatement("insert into User (Username, Password) values('"+signUser+"', '"+signpass+"');");
+            status = ps.executeUpdate();//to execute that statement
+            switchToLoginPage(event);
+            con.close();
+
+        }
+        else if((signUser.length()==0)||(signpass.length()==0)){
+            AlertConnector.Handle2();
+        }
+        else{
+            AlertConnector.wrongSign();
+        }
+        if(status!=0){
+            System.out.println("database was connected");
+            System.out.println("record was inserted");
+        }
+    }
+
     //inputs of login page
     @FXML
     private TextField tfEmail;

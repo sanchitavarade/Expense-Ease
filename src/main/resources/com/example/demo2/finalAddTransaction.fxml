@@ -15,8 +15,8 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.AddTrans_scene">
    <children>
       <SplitPane dividerPositions="0.23186119873817035" layoutX="92.0" layoutY="98.0" maxWidth="0.0" prefHeight="720.0" prefWidth="1270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <items>
-          <AnchorPane maxWidth="300.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #6a5acd;">
+         <items>
+            <AnchorPane maxWidth="300.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #6a5acd;">
                <children>
                   <Button layoutX="42.0" layoutY="17.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="65.0" style="-fx-background-color: #6a5acd;" textFill="WHITE" underline="true">
                      <font>
@@ -66,7 +66,7 @@
                   </Button>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="718.0" prefWidth="960.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="718.0" prefWidth="960.0">
                <children>
                   <AnchorPane prefHeight="560.0" prefWidth="966.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
@@ -115,7 +115,7 @@
                               <Font name="Dubai Regular" size="18.0" />
                            </font>
                         </TextField>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="118.0" prefWidth="1108.0">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="118.0" prefWidth="1108.0">
                            <children>
                               <AnchorPane layoutX="-174.0" layoutY="-83.0" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #6a5acd;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
@@ -128,16 +128,11 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <Button layoutX="686.0" layoutY="643.0" mnemonicParsing="false" onAction="#switchToCateg" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: #6a5acd #6a5acd; -fx-background-radius: 10;" text="Add New Category" textFill="WHITE">
-                           <font>
-                              <Font name="Dubai Regular" size="19.0" />
-                           </font>
-                        </Button>
                      </children>
                   </AnchorPane>
                </children>
             </AnchorPane>
-        </items>
+         </items>
       </SplitPane>
    </children>
 </AnchorPane>

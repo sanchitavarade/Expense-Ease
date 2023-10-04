@@ -45,17 +45,17 @@
                                 <Font name="Dubai Regular" size="22.0" />
                             </font>
                         </Label>
-                        <TextField fx:id="tfEmail" layoutX="464.0" layoutY="268.0" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: white; -fx-background-radius: 70;">
+                        <TextField fx:id="tfSignUser" layoutX="464.0" layoutY="268.0" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: white; -fx-background-radius: 70;">
                             <font>
                                 <Font name="Dubai Regular" size="14.0" />
                             </font>
                         </TextField>
-                        <PasswordField fx:id="tfPass" layoutX="466.0" layoutY="356.0" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: white; -fx-background-radius: 70;">
+                        <PasswordField fx:id="tfSignPass" layoutX="466.0" layoutY="356.0" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: white; -fx-background-radius: 70;">
                             <font>
                                 <Font name="Dubai Regular" size="14.0" />
                             </font>
                         </PasswordField>
-                        <Button layoutX="407.0" layoutY="520.0" mnemonicParsing="false" onAction="#switchToLoginPage" prefHeight="41.0" prefWidth="149.0" style="-fx-background-color: white;" text="Create Account" textFill="SLATEBLUE">
+                        <Button layoutX="407.0" layoutY="520.0" mnemonicParsing="false" onAction="#createAcc" prefHeight="41.0" prefWidth="149.0" style="-fx-background-color: white;" text="Create Account" textFill="SLATEBLUE">
                             <font>
                                 <Font name="Dubai Bold" size="16.0" />
                             </font>
@@ -65,7 +65,7 @@
                                 <Font name="Dubai Regular" size="22.0" />
                             </font>
                         </Label>
-                        <PasswordField fx:id="tfPass1" layoutX="466.0" layoutY="438.0" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: white; -fx-background-radius: 70;">
+                        <PasswordField fx:id="tfSignPass1" layoutX="466.0" layoutY="438.0" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: white; -fx-background-radius: 70;">
                             <font>
                                 <Font name="Dubai Regular" size="14.0" />
                             </font>
