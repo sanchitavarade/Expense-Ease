@@ -16,7 +16,7 @@ public class DBConnector
         try
         {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "PHW#84#jeor");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
 
             if (con != null)
                 System.out.println("Connected!");

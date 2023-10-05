@@ -107,7 +107,7 @@ public class scene_controller {
                 return;
             }
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "PHW#84#jeor");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
             PreparedStatement ps = con.prepareStatement("insert into User (Username, Password) values('"+signUser+"', '"+signpass+"');");
             status = ps.executeUpdate();//to execute that statement
             switchToLoginPage(event);

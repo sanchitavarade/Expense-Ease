@@ -54,5 +54,14 @@ public class editTrans_scene {
         stage.setScene(scene);
         stage.show();
     }
+
+    @FXML
+    public void switchToLoginPage(ActionEvent event) throws IOException{         // to switch the scene to dashboard
+        root = FXMLLoader.load(getClass().getResource("finalLoginPage.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
 }
 

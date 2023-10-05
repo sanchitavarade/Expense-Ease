@@ -60,7 +60,7 @@ public class Saving_scene implements Initializable{
     private void giveSave() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException{
         save_values.clear();
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "PHW#84#jeor");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
 
         PreparedStatement p = con.prepareStatement("select * from savings where user_id="+AlertConnector.user+";");
         ResultSet rs = p.executeQuery();
@@ -109,6 +109,15 @@ public class Saving_scene implements Initializable{
     @FXML
     public void switchToAddSave(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("finalAddSaving.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void switchToLoginPage(ActionEvent event) throws IOException{         // to switch the scene to dashboard
+        root = FXMLLoader.load(getClass().getResource("finalLoginPage.fxml"));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);

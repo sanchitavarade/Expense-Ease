@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.scene_controller">
+<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.scene_controller">
    <children>
       <SplitPane dividerPositions="0.24053627760252366" layoutX="285.0" layoutY="115.0" prefHeight="720.0" prefWidth="1270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -60,6 +60,11 @@
                            </font>
                         </MenuButton>
                         <Button alignment="CENTER" layoutX="24.0" layoutY="175.0" mnemonicParsing="false" onAction="#switchToBL" prefHeight="65.0" prefWidth="194.0" style="-fx-background-color: #6a5acd;" text="Borrow / Lend" textFill="WHITE">
+                           <font>
+                              <Font name="Dubai Regular" size="26.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" layoutX="3.0" layoutY="638.0" mnemonicParsing="false" onAction="#switchToLoginPage" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Logout" textFill="WHITE">
                            <font>
                               <Font name="Dubai Regular" size="26.0" />
                            </font>

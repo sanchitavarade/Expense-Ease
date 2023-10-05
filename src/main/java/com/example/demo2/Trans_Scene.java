@@ -100,11 +100,22 @@ public class Trans_Scene implements Initializable{
         stage.setScene(scene);
         stage.show();
     }
+
+    @FXML
+    public void switchToLoginPage(ActionEvent event) throws IOException{         // to switch the scene to dashboard
+        root = FXMLLoader.load(getClass().getResource("finalLoginPage.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
     private static void giveTrans() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
         // connecting database
         values.clear();
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_tracker", "root", "PHW#84#jeor");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
 
         PreparedStatement p = con.prepareStatement("select * from transactions where user_id="+AlertConnector.user+";");
         ResultSet rs = p.executeQuery();

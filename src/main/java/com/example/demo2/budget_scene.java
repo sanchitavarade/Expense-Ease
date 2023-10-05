@@ -75,7 +75,7 @@ public class budget_scene implements Initializable{
         try
         {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "PHW#84#jeor");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
             Statement stmt = con.createStatement();
 
             // Updating database
@@ -97,7 +97,7 @@ public class budget_scene implements Initializable{
     private void giveBudget() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException {
         Bud_values.clear();
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "PHW#84#jeor");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
 
         PreparedStatement p = con.prepareStatement("select * from budget where user_id ="+AlertConnector.user+";");
         ResultSet rs = p.executeQuery();
@@ -145,6 +145,15 @@ public class budget_scene implements Initializable{
     @FXML
     public void switchToCateg(ActionEvent event) throws IOException{        // to switch the scene to transaction
         root = FXMLLoader.load(getClass().getResource("finalAddCategory.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void switchToLoginPage(ActionEvent event) throws IOException{         // to switch the scene to dashboard
+        root = FXMLLoader.load(getClass().getResource("finalLoginPage.fxml"));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
