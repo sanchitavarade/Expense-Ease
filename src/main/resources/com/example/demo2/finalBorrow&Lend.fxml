@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.BL_scene">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.BL_scene">
    <children>
       <SplitPane dividerPositions="0.20110410094637224" prefHeight="720.0" prefWidth="1270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -53,19 +44,21 @@
                         </AnchorPane>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <SplitPane dividerPositions="0.4570273003033367" prefHeight="556.0" prefWidth="991.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <SplitPane dividerPositions="0.5991379310344829" prefHeight="556.0" prefWidth="991.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                 <items>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                        <children>
                                           <AnchorPane maxHeight="720.0" maxWidth="600.0" minHeight="0.0" minWidth="550.0" prefHeight="554.0" prefWidth="503.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <children>
-                                                <TableView layoutX="21.0" layoutY="100.0" prefHeight="308.0" prefWidth="414.0">
+                                                <TableView fx:id="bl_Table" layoutX="8.0" layoutY="100.0" prefHeight="477.0" prefWidth="582.0">
                                                    <columns>
-                                                      <TableColumn minWidth="0.0" prefWidth="196.0" text="DUE DATE" />
-                                                      <TableColumn minWidth="0.0" prefWidth="217.0" text="AMOUNT" />
+                                                      <TableColumn fx:id="bl_ddate" minWidth="0.0" prefWidth="132.66669845581055" text="DUE DATE" />
+                                                      <TableColumn fx:id="bl_type" minWidth="0.0" prefWidth="129.99996948242188" text="TYPE" />
+                                                      <TableColumn fx:id="bl_desc" prefWidth="230.00006103515625" text="DESCRIPTION" />
+                                                      <TableColumn fx:id="bl_amt" prefWidth="87.3333740234375" text="AMOUNT" />
                                                    </columns>
                                                 </TableView>
-                                                <Label layoutX="21.0" layoutY="14.0" style="-fx-background-color: #6a5acd #6a5acd;" text="Previous Records :" textFill="WHITE" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="14.0">
+                                                <Label layoutX="1.0" layoutY="-5.0" prefHeight="73.0" prefWidth="599.0" style="-fx-background-color: #6a5acd #6a5acd;" text="                       Previous Records :" textFill="WHITE" AnchorPane.leftAnchor="1.0" AnchorPane.topAnchor="-5.0">
                                                    <font>
                                                       <Font name="Dubai Regular" size="30.0" />
                                                    </font>
@@ -76,33 +69,33 @@
                                     </AnchorPane>
                                     <AnchorPane prefHeight="498.0" prefWidth="617.0">
                                        <children>
-                                          <Label layoutX="98.0" layoutY="99.0" text="Date :" textFill="SLATEBLUE">
+                                          <Label layoutX="55.0" layoutY="99.0" text="Date :" textFill="SLATEBLUE">
                                              <font>
                                                 <Font name="Dubai Regular" size="17.0" />
                                              </font>
                                           </Label>
-                                          <Label layoutX="98.0" layoutY="223.0" text="Type :" textFill="SLATEBLUE">
+                                          <Label layoutX="55.0" layoutY="223.0" text="Type :" textFill="SLATEBLUE">
                                              <font>
                                                 <Font name="Dubai Regular" size="17.0" />
                                              </font>
                                           </Label>
-                                          <Label layoutX="63.0" layoutY="302.0" text="Description:" textFill="SLATEBLUE">
+                                          <Label layoutX="14.0" layoutY="302.0" text="Description:" textFill="SLATEBLUE">
                                              <font>
                                                 <Font name="Dubai Regular" size="17.0" />
                                              </font>
                                           </Label>
-                                          <Label layoutX="87.0" layoutY="405.0" text="Amount :" textFill="SLATEBLUE">
+                                          <Label layoutX="31.0" layoutY="405.0" text="Amount :" textFill="SLATEBLUE">
                                              <font>
                                                 <Font name="Dubai Regular" size="17.0" />
                                              </font>
                                           </Label>
-                                          <Button layoutX="160.0" layoutY="487.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: #6a5acd #6a5acd; -fx-background-radius: 10;" text="Add" textFill="WHITE">
+                                          <Button layoutX="95.0" layoutY="487.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: #6a5acd #6a5acd; -fx-background-radius: 10;" text="Add" textFill="WHITE">
                                              <font>
                                                 <Font name="Dubai Regular" size="19.0" />
                                              </font>
                                           </Button>
-                                          <DatePicker layoutX="176.0" layoutY="96.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="169.0" promptText="DD/MM/YYYY" style="-fx-background-color: #6a5acd;" />
-                                          <MenuButton layoutX="176.0" layoutY="220.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="111.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Select" textFill="WHITE">
+                                          <DatePicker layoutX="110.0" layoutY="96.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="169.0" promptText="DD/MM/YYYY" style="-fx-background-color: #6a5acd;" />
+                                          <MenuButton layoutX="110.0" layoutY="220.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="111.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Select" textFill="WHITE">
                                              <items>
                                                 <MenuItem mnemonicParsing="false" text="Borrowed" />
                                                 <MenuItem mnemonicParsing="false" text="Lent" />
@@ -111,22 +104,22 @@
                                                 <Font name="Dubai Regular" size="15.0" />
                                              </font>
                                           </MenuButton>
-                                          <TextField alignment="TOP_LEFT" layoutX="176.0" layoutY="294.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 10;">
+                                          <TextField alignment="TOP_LEFT" layoutX="111.0" layoutY="293.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="240.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 10;">
                                              <font>
                                                 <Font size="20.0" />
                                              </font>
                                           </TextField>
-                                          <TextField layoutX="176.0" layoutY="402.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="169.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
+                                          <TextField layoutX="110.0" layoutY="402.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="169.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
                                              <font>
                                                 <Font name="Dubai Regular" size="19.0" />
                                              </font></TextField>
-                                          <Label layoutX="70.0" layoutY="154.0" text="Due Date:" textFill="SLATEBLUE">
+                                          <Label layoutX="29.0" layoutY="154.0" text="Due Date:" textFill="SLATEBLUE">
                                              <font>
                                                 <Font name="Dubai Regular" size="17.0" />
                                              </font>
                                           </Label>
-                                          <DatePicker layoutX="176.0" layoutY="151.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="169.0" promptText="DD/MM/YYYY" style="-fx-background-color: #6a5acd;" />
-                                          <Label layoutX="26.0" layoutY="14.0" style="-fx-background-color: #6a5acd #6a5acd;" text="Add new record :" textFill="WHITE" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="14.0">
+                                          <DatePicker layoutX="110.0" layoutY="151.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="169.0" promptText="DD/MM/YYYY" style="-fx-background-color: #6a5acd;" />
+                                          <Label layoutY="-5.0" prefHeight="73.0" prefWidth="400.0" style="-fx-background-color: #6a5acd #6a5acd;" text="              Add new record :" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-5.0">
                                              <font>
                                                 <Font name="Dubai Regular" size="30.0" />
                                              </font>
