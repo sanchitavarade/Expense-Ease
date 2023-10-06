@@ -20,6 +20,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import org.w3c.dom.events.MouseEvent;
+
 import java.util.ArrayList;
 
 public class Trans_Scene implements Initializable{
@@ -47,6 +49,9 @@ public class Trans_Scene implements Initializable{
     private TableColumn<Transactions, Integer> Trans_date;
 
     @FXML
+    private TextField newTransId;
+
+    @FXML
     private TextField newTransType;
 
     @FXML
@@ -58,8 +63,20 @@ public class Trans_Scene implements Initializable{
     @FXML
     private DatePicker newTransDate;
 
+    int index = -1;
+
     @FXML
-    private TextField newTransId;
+    void getSelected(javafx.scene.input.MouseEvent event){
+        index = Trans_table.getSelectionModel().getSelectedIndex();
+        if(index<=-1){
+            return;
+        }
+        newTransId.setText(Trans_id.getCellData(index).toString());
+        newTransType.setText(Trans_type.getCellData(index).toString());
+        newTransAmt.setText(Trans_amt.getCellData(index).toString());
+        newTransCateg.setText(Trans_categ.getCellData(index).toString());
+        //newTransDate.setValue(Trans_date.getCellData(Date).);
+    }
 
 
     @Override
