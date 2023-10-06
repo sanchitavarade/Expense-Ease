@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -50,55 +52,104 @@
                   </AnchorPane>
                   <AnchorPane layoutY="91.0" prefHeight="718.0" prefWidth="960.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Label layoutX="49.0" layoutY="84.0" prefHeight="65.0" prefWidth="111.0" text="Select Month:" textFill="SLATEBLUE">
-                           <font>
-                              <Font name="Dubai Regular" size="18.0" />
-                           </font>
-                        </Label>
-                        <MenuButton layoutX="160.0" layoutY="99.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" style="-fx-background-radius: 10; -fx-background-color: #6a5acd;" text="--Month--" textFill="WHITE">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="January" />
-                              <MenuItem mnemonicParsing="false" text="February" />
-                              <MenuItem mnemonicParsing="false" text="March" />
-                              <MenuItem mnemonicParsing="false" text="April" />
-                              <MenuItem mnemonicParsing="false" text="May" />
-                              <MenuItem mnemonicParsing="false" text="June" />
-                              <MenuItem mnemonicParsing="false" text="July" />
-                              <MenuItem mnemonicParsing="false" text="August" />
-                              <MenuItem mnemonicParsing="false" text="September" />
-                              <MenuItem mnemonicParsing="false" text="October" />
-                              <MenuItem mnemonicParsing="false" text="November" />
-                              <MenuItem mnemonicParsing="false" text="December" />
-                           </items>
-                           <font>
-                              <Font name="Dubai Regular" size="14.0" />
-                           </font>
-                        </MenuButton>
-                        <Label layoutX="13.0" layoutY="144.0" prefHeight="41.0" prefWidth="194.0" text="Your Savings :" textFill="SLATEBLUE">
-                           <font>
-                              <Font name="Dubai Regular" size="22.0" />
-                           </font>
-                        </Label>
-                        <MenuButton layoutX="302.0" layoutY="99.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" style="-fx-background-radius: 10; -fx-background-color: #6a5acd;" text="--Year--" textFill="WHITE">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="2022" />
-                              <MenuItem mnemonicParsing="false" text="2023" />
-                           </items>
-                           <font>
-                              <Font name="Dubai Regular" size="14.0" />
-                           </font>
-                        </MenuButton>
-                        <TableView fx:id="saving_table" layoutX="23.0" layoutY="209.0" prefHeight="495.0" prefWidth="616.0">
-                           <columns>
-                              <TableColumn fx:id="save_categ" prefWidth="291.20002138614655" text="Date" />
-                              <TableColumn fx:id="save_saving" prefWidth="321.6000061035156" text="Savings" />
-                           </columns>
-                        </TableView>
-                        <Button alignment="CENTER" layoutX="730.0" layoutY="619.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToAddSave" prefHeight="57.0" prefWidth="165.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Add Saving" textFill="WHITE">
-                           <font>
-                              <Font name="Dubai Regular" size="19.0" />
-                           </font>
-                        </Button>
+                        <SplitPane dividerPositions="0.6663187195546278" layoutX="135.0" layoutY="90.0" prefHeight="627.0" prefWidth="961.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="90.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <Label layoutX="36.0" prefHeight="65.0" prefWidth="111.0" text="Select Month:" textFill="SLATEBLUE">
+                                       <font>
+                                          <Font name="Dubai Regular" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <MenuButton layoutX="147.0" layoutY="15.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" style="-fx-background-radius: 10; -fx-background-color: #6a5acd;" text="--Month--" textFill="WHITE">
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" text="January" />
+                                          <MenuItem mnemonicParsing="false" text="February" />
+                                          <MenuItem mnemonicParsing="false" text="March" />
+                                          <MenuItem mnemonicParsing="false" text="April" />
+                                          <MenuItem mnemonicParsing="false" text="May" />
+                                          <MenuItem mnemonicParsing="false" text="June" />
+                                          <MenuItem mnemonicParsing="false" text="July" />
+                                          <MenuItem mnemonicParsing="false" text="August" />
+                                          <MenuItem mnemonicParsing="false" text="September" />
+                                          <MenuItem mnemonicParsing="false" text="October" />
+                                          <MenuItem mnemonicParsing="false" text="November" />
+                                          <MenuItem mnemonicParsing="false" text="December" />
+                                       </items>
+                                       <font>
+                                          <Font name="Dubai Regular" size="14.0" />
+                                       </font>
+                                    </MenuButton>
+                                    <Label layoutX="36.0" layoutY="65.0" prefHeight="41.0" prefWidth="135.0" text="Your Savings :" textFill="SLATEBLUE">
+                                       <font>
+                                          <Font name="Dubai Regular" size="22.0" />
+                                       </font>
+                                    </Label>
+                                    <MenuButton layoutX="289.0" layoutY="15.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" style="-fx-background-radius: 10; -fx-background-color: #6a5acd;" text="--Year--" textFill="WHITE">
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" text="2022" />
+                                          <MenuItem mnemonicParsing="false" text="2023" />
+                                       </items>
+                                       <font>
+                                          <Font name="Dubai Regular" size="14.0" />
+                                       </font>
+                                    </MenuButton>
+                                    <TableView fx:id="saving_table" layoutX="10.0" layoutY="125.0" onMouseClicked="#getSelectedSave" prefHeight="419.0" prefWidth="616.0">
+                                       <columns>
+                                          <TableColumn fx:id="save_id" minWidth="0.0" prefWidth="0.0" text="ID" />
+                                          <TableColumn fx:id="save_date" prefWidth="290.66664600372314" text="Date" />
+                                          <TableColumn fx:id="save_saving" prefWidth="323.9999694824219" text="Savings" />
+                                       </columns>
+                                    </TableView>
+                                    <Button alignment="CENTER" layoutX="460.0" layoutY="554.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToAddSave" prefHeight="57.0" prefWidth="165.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Add Saving" textFill="WHITE">
+                                       <font>
+                                          <Font name="Dubai Regular" size="19.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <Label layoutX="71.0" text="Edit Savings :" textFill="SLATEBLUE">
+                                       <font>
+                                          <Font name="Dubai Regular" size="32.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="54.0" layoutY="129.0" prefHeight="35.0" prefWidth="58.0" text="Date :" textFill="SLATEBLUE">
+                                       <font>
+                                          <Font name="Dubai Regular" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="30.0" layoutY="210.0" prefHeight="35.0" prefWidth="81.0" text="Savings :" textFill="SLATEBLUE">
+                                       <font>
+                                          <Font name="Dubai Regular" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="newSaveAmount" layoutX="111.0" layoutY="209.0" prefHeight="37.0" prefWidth="135.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
+                                       <font>
+                                          <Font name="Dubai Regular" size="12.0" />
+                                       </font>
+                                    </TextField>
+                                    <Button alignment="CENTER" layoutX="95.0" layoutY="312.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ApplySaveChanges" prefHeight="57.0" prefWidth="126.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Edit" textFill="WHITE">
+                                       <font>
+                                          <Font name="Dubai Regular" size="19.0" />
+                                       </font>
+                                    </Button>
+                                    <DatePicker fx:id="newSaveDate" layoutX="111.0" layoutY="129.0" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #6a5acd;" />
+                                    <Label layoutX="76.0" layoutY="68.0" prefHeight="35.0" prefWidth="35.0" text="ID :" textFill="SLATEBLUE">
+                                       <font>
+                                          <Font name="Dubai Regular" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="newId" editable="false" layoutX="111.0" layoutY="67.0" prefHeight="37.0" prefWidth="135.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
+                                       <font>
+                                          <Font name="Dubai Regular" size="12.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
                      </children>
                   </AnchorPane>
                </children>

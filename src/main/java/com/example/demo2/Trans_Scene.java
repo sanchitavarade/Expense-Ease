@@ -79,6 +79,7 @@ public class Trans_Scene implements Initializable{
     }
 
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         Trans_id.setCellValueFactory(new PropertyValueFactory<Transactions, Integer>("id"));
@@ -211,6 +212,21 @@ public class Trans_Scene implements Initializable{
         {
             System.out.println(e);
         }
+    }
+
+    public void deleteTrans(ActionEvent event) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
+        Statement stmt = con.createStatement();
+        String q4 = "delete from transactions where transaction_id = ?" ;
+        try{
+            PreparedStatement pst = con.prepareStatement(q4);
+            pst.setString(1, newTransId.getText());
+            pst.execute();
+            switchToTransaction(event);
+
+        }catch(Exception e){}
+
     }
 
 }

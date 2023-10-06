@@ -1,15 +1,19 @@
 package com.example.demo2;
 
 public class saving {
-    private String categ;
+    private int id;
+    private String date;
     private int saving;
 
-    public saving(String categ, int saving){
-        this.categ=categ;
+    public saving(int id,String date, int saving){
+        this.id=id;
+        this.date=date;
         this.saving=saving;
     }
-    public String getCateg(){
-        return categ;
+
+    public int getId() { return id; }
+    public String getDate(){
+        return date;
     }
     public int getSaving(){
         return saving;

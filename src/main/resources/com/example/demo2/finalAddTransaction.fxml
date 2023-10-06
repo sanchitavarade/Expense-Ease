@@ -62,15 +62,6 @@
                            </font>
                         </Button>
                         <DatePicker layoutX="466.0" layoutY="172.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="41.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" />
-                        <MenuButton layoutX="466.0" layoutY="249.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="159.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Select" textFill="WHITE">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="Income" />
-                              <MenuItem mnemonicParsing="false" text="Expense" />
-                           </items>
-                           <font>
-                              <Font name="Dubai Regular" size="18.0" />
-                           </font>
-                        </MenuButton>
                         <TextField layoutX="466.0" layoutY="346.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="159.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
                            <font>
                               <Font name="Dubai Regular" size="18.0" />
@@ -94,6 +85,11 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
+                        <TextField layoutX="466.0" layoutY="249.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="159.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
+                           <font>
+                              <Font name="Dubai Regular" size="18.0" />
+                           </font>
+                        </TextField>
                      </children>
                   </AnchorPane>
                </children>
