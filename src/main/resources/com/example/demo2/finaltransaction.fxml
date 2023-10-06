@@ -51,67 +51,134 @@
                               </AnchorPane>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="590.0" prefWidth="958.0">
                                  <children>
-                                    <TableView fx:id="Trans_table" layoutX="9.0" layoutY="138.0" prefHeight="443.0" prefWidth="787.0">
-                                      <columns>
-                                        <TableColumn fx:id="Trans_type" prefWidth="187.3334093093872" text="Type" />
-                                        <TableColumn fx:id="Trans_amt" prefWidth="175.99998474121094" text="Amount" />
-                                          <TableColumn fx:id="Trans_categ" prefWidth="266.6667175292969" text="Category" />
-                                          <TableColumn fx:id="Trans_date" prefWidth="154.6666259765625" text="Date" />
-                                      </columns>
-                                    </TableView>
-                                    <Label layoutX="45.0" layoutY="27.0" text="Search :" textFill="SLATEBLUE">
-                                       <font>
-                                          <Font name="Dubai Regular" size="18.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="59.0" layoutY="74.0" prefHeight="32.0" prefWidth="44.0" text="Type :" textFill="SLATEBLUE">
-                                       <font>
-                                          <Font name="Dubai Regular" size="18.0" />
-                                       </font>
-                                    </Label>
-                                    <TextField layoutX="110.0" layoutY="28.0" prefHeight="30.0" prefWidth="169.0" promptText="Transaction" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
-                                       <font>
-                                          <Font name="Dubai Regular" size="12.0" />
-                                       </font></TextField>
-                                    <TextField layoutX="110.0" layoutY="75.0" prefHeight="30.0" prefWidth="169.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
-                                       <font>
-                                          <Font name="Dubai Regular" size="12.0" />
-                                       </font></TextField>
-                                    <Label layoutX="403.0" layoutY="27.0" text="Date :" textFill="SLATEBLUE">
-                                       <font>
-                                          <Font name="Dubai Regular" size="18.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="372.0" layoutY="74.0" prefHeight="32.0" prefWidth="82.0" text="Category :" textFill="SLATEBLUE">
-                                       <font>
-                                          <Font name="Dubai Regular" size="18.0" />
-                                       </font>
-                                    </Label>
-                                    <DatePicker layoutX="454.0" layoutY="28.0" prefHeight="30.0" prefWidth="169.0" style="-fx-background-color: #6a5acd;" />
-                                    <TextField layoutX="454.0" layoutY="75.0" prefHeight="30.0" prefWidth="169.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
-                                       <font>
-                                          <Font name="Dubai Regular" size="12.0" />
-                                       </font></TextField>
-                                    <Button alignment="CENTER" layoutX="824.0" layoutY="138.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Delete" textFill="WHITE">
-                                       <font>
-                                          <Font name="Dubai Regular" size="19.0" />
-                                       </font>
-                                    </Button>
-                                    <Button alignment="CENTER" layoutX="824.0" layoutY="202.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToEditTrans" prefHeight="47.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Edit" textFill="WHITE">
-                                       <font>
-                                          <Font name="Dubai Regular" size="19.0" />
-                                       </font>
-                                    </Button>
-                                    <Button layoutX="845.0" layoutY="479.0" mnemonicParsing="false" onAction="#switchToAddTrans" prefHeight="64.0" prefWidth="65.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 50;" textFill="WHITE">
-                                       <font>
-                                          <Font size="24.0" />
-                                       </font>
-                                    </Button>
-                                    <Label layoutX="865.0" layoutY="467.0" prefHeight="47.0" prefWidth="35.0" text="+" textFill="WHITE">
-                                       <font>
-                                          <Font name="Dubai Bold" size="49.0" />
-                                       </font>
-                                    </Label>
+                                    <SplitPane dividerPositions="0.6775994417306351" layoutX="736.0" layoutY="169.0" prefHeight="588.0" prefWidth="958.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                             <children>
+                                                <TableView fx:id="Trans_table" layoutX="14.0" layoutY="126.0" prefHeight="443.0" prefWidth="486.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="Trans_id" prefWidth="54.66671276092529" text="ID" />
+                                                      <TableColumn fx:id="Trans_type" prefWidth="112.00007629394531" text="Type" />
+                                                      <TableColumn fx:id="Trans_amt" prefWidth="87.333251953125" text="Amount" />
+                                                      <TableColumn fx:id="Trans_categ" prefWidth="106.0" text="Category" />
+                                                      <TableColumn fx:id="Trans_date" prefWidth="123.3333740234375" text="Date" />
+                                                   </columns>
+                                                </TableView>
+                                                <Label layoutX="50.0" layoutY="15.0" text="Search :" textFill="SLATEBLUE">
+                                                   <font>
+                                                      <Font name="Dubai Regular" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="64.0" layoutY="62.0" prefHeight="32.0" prefWidth="44.0" text="Type :" textFill="SLATEBLUE">
+                                                   <font>
+                                                      <Font name="Dubai Regular" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField layoutX="115.0" layoutY="16.0" prefHeight="30.0" prefWidth="106.0" promptText="Transaction" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
+                                                   <font>
+                                                      <Font name="Dubai Regular" size="12.0" />
+                                                   </font>
+                                                </TextField>
+                                                <TextField layoutX="115.0" layoutY="63.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
+                                                   <font>
+                                                      <Font name="Dubai Regular" size="12.0" />
+                                                   </font>
+                                                </TextField>
+                                                <Label layoutX="277.0" layoutY="15.0" text="Date :" textFill="SLATEBLUE">
+                                                   <font>
+                                                      <Font name="Dubai Regular" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="236.0" layoutY="62.0" prefHeight="32.0" prefWidth="82.0" text="Category :" textFill="SLATEBLUE">
+                                                   <font>
+                                                      <Font name="Dubai Regular" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <DatePicker layoutX="330.0" layoutY="16.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #6a5acd;" />
+                                                <TextField layoutX="330.0" layoutY="63.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
+                                                   <font>
+                                                      <Font name="Dubai Regular" size="12.0" />
+                                                   </font>
+                                                </TextField>
+                                                <Button alignment="CENTER" layoutX="524.0" layoutY="133.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="47.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Delete" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Dubai Regular" size="19.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button layoutX="544.0" layoutY="486.0" mnemonicParsing="false" onAction="#switchToAddTrans" prefHeight="64.0" prefWidth="65.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 50;" textFill="WHITE">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Button>
+                                                <Label layoutX="563.0" layoutY="464.0" prefHeight="98.0" prefWidth="36.0" text="+" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Dubai Bold" size="49.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                             <children>
+                                                <Label layoutX="50.0" layoutY="14.0" prefHeight="51.0" prefWidth="203.0" text="Edit Transaction" textFill="SLATEBLUE">
+                                                   <font>
+                                                      <Font name="Dubai Regular" size="29.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="84.0" layoutY="130.0" text="Type :" textFill="SLATEBLUE">
+                                                   <font>
+                                                      <Font name="Dubai Regular" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="newTransType" layoutX="145.0" layoutY="131.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
+                                                   <font>
+                                                      <Font name="Dubai Regular" size="12.0" />
+                                                   </font>
+                                                </TextField>
+                                                <Label layoutX="59.0" layoutY="188.0" text="Amount :" textFill="SLATEBLUE">
+                                                   <font>
+                                                      <Font name="Dubai Regular" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="newTransAmt" layoutX="145.0" layoutY="189.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
+                                                   <font>
+                                                      <Font name="Dubai Regular" size="12.0" />
+                                                   </font>
+                                                </TextField>
+                                                <Label layoutX="84.0" layoutY="317.0" text="Date :" textFill="SLATEBLUE">
+                                                   <font>
+                                                      <Font name="Dubai Regular" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="52.0" layoutY="253.0" prefHeight="32.0" prefWidth="82.0" text="Category :" textFill="SLATEBLUE">
+                                                   <font>
+                                                      <Font name="Dubai Regular" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="newTransCateg" layoutX="145.0" layoutY="254.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
+                                                   <font>
+                                                      <Font name="Dubai Regular" size="12.0" />
+                                                   </font>
+                                                </TextField>
+                                                <DatePicker fx:id="newTransDate" layoutX="145.0" layoutY="318.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #6a5acd;" />
+                                                <Button alignment="CENTER" layoutX="99.0" layoutY="396.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ApplyTransChanges" prefHeight="47.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Edit" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Dubai Regular" size="19.0" />
+                                                   </font>
+                                                </Button>
+                                                <Label layoutX="102.0" layoutY="76.0" prefHeight="32.0" prefWidth="29.0" text="ID :" textFill="SLATEBLUE">
+                                                   <font>
+                                                      <Font name="Dubai Regular" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="newTransId" layoutX="145.0" layoutY="77.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
+                                                   <font>
+                                                      <Font name="Dubai Regular" size="12.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </AnchorPane>
+                                      </items>
+                                    </SplitPane>
                                  </children>
                               </AnchorPane>
                            </items>

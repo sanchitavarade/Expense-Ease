@@ -18,7 +18,7 @@ public class App extends Application{
         stage.setResizable(false);
         Scene scene = new Scene(root);
         //title of the app
-        primaryStage.setTitle("Expense Tracker");
+        primaryStage.setTitle("ExpenseEase");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
