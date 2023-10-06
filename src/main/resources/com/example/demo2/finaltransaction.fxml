@@ -105,16 +105,11 @@
                                                       <Font name="Dubai Regular" size="19.0" />
                                                    </font>
                                                 </Button>
-                                                <Button layoutX="544.0" layoutY="486.0" mnemonicParsing="false" onAction="#switchToAddTrans" prefHeight="64.0" prefWidth="65.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 50;" textFill="WHITE">
+                                                <Button layoutX="544.0" layoutY="486.0" mnemonicParsing="false" onAction="#switchToAddTrans" prefHeight="64.0" prefWidth="65.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 50;" text="+" textFill="WHITE">
                                                    <font>
-                                                      <Font size="24.0" />
+                                                      <Font size="27.0" />
                                                    </font>
                                                 </Button>
-                                                <Label layoutX="563.0" layoutY="464.0" prefHeight="98.0" prefWidth="36.0" text="+" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="Dubai Bold" size="49.0" />
-                                                   </font>
-                                                </Label>
                                              </children>
                                           </AnchorPane>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">

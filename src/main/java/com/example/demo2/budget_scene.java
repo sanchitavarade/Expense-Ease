@@ -111,6 +111,20 @@ public class budget_scene implements Initializable{
         con.close();
     }
     @FXML
+    void addCateg(ActionEvent event)throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException{
+        String categ = newBudCateg.getText();
+        String limit = newBudLimit.getText();
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
+        PreparedStatement ps = con.prepareStatement("INSERT INTO budget (elimit, category_id, category_name, user_id) ( "+limit+", 501, '"+categ+"' ,"+AlertConnector.user+");");
+        int status = ps.executeUpdate();//to execute that statement
+        if (status==0){
+            System.out.println("wrong");
+        }
+        switchToTransaction(event);
+        con.close();
+    }
+    @FXML
     public void switchToTransaction(ActionEvent event) throws IOException{        // to switch the scene to transaction
         root = FXMLLoader.load(getClass().getResource("finalTransaction.fxml"));
         scene = new Scene(root);

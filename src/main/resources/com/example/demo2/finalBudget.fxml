@@ -58,11 +58,6 @@
                                                                 <TableColumn fx:id="Bud_Limit" minWidth="0.0" prefWidth="251.3333740234375" text="EXPENSE LIMIT" />
                                                             </columns>
                                                         </TableView>
-                                                        <Button alignment="CENTER" layoutX="349.0" layoutY="522.0" mnemonicParsing="false" onAction="#switchToCateg" style="-fx-background-color: #6a5acd #6a5acd;" text="Add Category" textFill="WHITE">
-                                                            <font>
-                                                                <Font size="24.0" />
-                                                            </font>
-                                                        </Button>
                                                     </children>
                                                 </AnchorPane>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1270.0">
@@ -95,6 +90,11 @@
                                                                 <Font name="Dubai Regular" size="24.0" />
                                                             </font>
                                                         </Label>
+                                                        <Button alignment="CENTER" layoutX="201.0" layoutY="441.0" mnemonicParsing="false" onAction="#addCateg" style="-fx-background-color: #6a5acd #6a5acd;" text="Add Category" textFill="WHITE">
+                                                            <font>
+                                                                <Font size="24.0" />
+                                                            </font>
+                                                        </Button>
                                                     </children>
                                                 </AnchorPane>
                                             </items>
