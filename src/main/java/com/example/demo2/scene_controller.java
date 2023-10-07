@@ -118,7 +118,7 @@ public class scene_controller {
             AlertConnector.Handle2();
         }
         else{
-            AlertConnector.wrongSign();
+            AlertConnector.wrongPass();
         }
         if(status!=0){
             System.out.println("database was connected");
@@ -138,7 +138,7 @@ public class scene_controller {
         // checks the login is valid or not
         String email = tfEmail.getText();
         String pass = tfPass.getText();
-        System.out.println(AlertConnector.checkLogin1(email, pass));
+//        System.out.println(AlertConnector.checkLogin1(email, pass));
         if(AlertConnector.checkLogin1(email, pass)){
             switchToDashBoard(event);
             System.out.println("true");

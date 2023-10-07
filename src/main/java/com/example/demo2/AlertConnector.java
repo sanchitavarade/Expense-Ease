@@ -3,21 +3,29 @@ import java.sql.*;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 
-public class AlertConnector {
+public class  AlertConnector {
 	public static int user;
-	static Alert a = new Alert(AlertType.NONE);
+	static Alert a = new Alert(AlertType.ERROR);
 	// alert function for invalid login
-	public static void handle()
+	public static void Handle1()
 	{
 		// set alert type
-		a.setAlertType(AlertType.ERROR);
-		// content to show
-		a.setContentText("Invalid Login");
+		a = new Alert(AlertType.ERROR, "Invalid password", ButtonType.CANCEL);
+
+		// show the dialog
+		a.show();
+	}public static void Handle3()
+	{
+		// set alert type
+		a = new Alert(AlertType.ERROR,
+				"No such user found", ButtonType.CANCEL);
+
 		// show the dialog
 		a.show();
 	}
-	public static void wrongSign()
+	public static void wrongPass()
 	{
 		// set alert type
 		a.setAlertType(AlertType.ERROR);
@@ -31,7 +39,7 @@ public class AlertConnector {
 		// set alert type
 		a.setAlertType(AlertType.ERROR);
 		// content to show
-		a.setContentText("Invalid Username or Password !");
+		a.setContentText("Invalid Username or Password Length !");
 		// show the dialog
 		a.show();
 	}
@@ -53,15 +61,16 @@ public class AlertConnector {
 			}
 			else{
 				System.out.println("Invalid login");
-				handle();
+				Handle1();
+				con.close();
+				return false;
 			}
 		}
-		else
-		{
+		else {
 			System.out.println("No such Valid User");
-			handle();
+			Handle3();
+			con.close();
+			return false;
 		}
-		con.close();
-		return false;
 	}
 }
