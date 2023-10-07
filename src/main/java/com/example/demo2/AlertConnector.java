@@ -6,6 +6,11 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 
 public class  AlertConnector {
+
+	public static String tfTransid="";
+	public static String tfTranscateg="";
+	public static String tfTranstype="";
+	public static String tfTransdate="";
 	public static int user;
 	static Alert a = new Alert(AlertType.ERROR);
 	// alert function for invalid login

@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.Trans_Scene">
+<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.Trans_Scene">
    <children>
       <AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -74,12 +74,12 @@
                                                       <Font name="Dubai Regular" size="18.0" />
                                                    </font>
                                                 </Label>
-                                                <TextField layoutX="115.0" layoutY="16.0" prefHeight="30.0" prefWidth="106.0" promptText="Transaction" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
+                                                <TextField fx:id="search_id" layoutX="115.0" layoutY="16.0" prefHeight="30.0" prefWidth="106.0" promptText="Transaction" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
                                                    <font>
                                                       <Font name="Dubai Regular" size="12.0" />
                                                    </font>
                                                 </TextField>
-                                                <TextField layoutX="115.0" layoutY="63.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
+                                                <TextField fx:id="search_type" layoutX="115.0" layoutY="63.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
                                                    <font>
                                                       <Font name="Dubai Regular" size="12.0" />
                                                    </font>
@@ -94,8 +94,8 @@
                                                       <Font name="Dubai Regular" size="18.0" />
                                                    </font>
                                                 </Label>
-                                                <DatePicker fx:id="searchTransDate" layoutX="330.0" layoutY="16.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #6a5acd;" />
-                                                <TextField layoutX="330.0" layoutY="63.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
+                                                <DatePicker fx:id="search_date" layoutX="330.0" layoutY="16.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #6a5acd;" />
+                                                <TextField fx:id="search_categ" layoutX="330.0" layoutY="63.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
                                                    <font>
                                                       <Font name="Dubai Regular" size="12.0" />
                                                    </font>
@@ -108,6 +108,11 @@
                                                 <Button layoutX="544.0" layoutY="486.0" mnemonicParsing="false" onAction="#switchToAddTrans" prefHeight="64.0" prefWidth="65.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 50;" text="+" textFill="WHITE">
                                                    <font>
                                                       <Font size="27.0" />
+                                                   </font>
+                                                </Button>
+                                                <Button layoutX="500.0" layoutY="43.0" mnemonicParsing="false" onAction="#searchTrans" prefHeight="38.0" prefWidth="65.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 20;" text="search" textFill="WHITE">
+                                                   <font>
+                                                      <Font size="14.0" />
                                                    </font>
                                                 </Button>
                                              </children>

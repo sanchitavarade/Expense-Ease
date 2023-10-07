@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Iterator;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -61,7 +63,16 @@ public class Trans_Scene implements Initializable{
     private DatePicker newTransDate;
 
     @FXML
-    private DatePicker searchTransDate;
+    private TextField search_id;
+
+    @FXML
+    private TextField search_type;
+
+    @FXML
+    private DatePicker search_date;
+
+    @FXML
+    private TextField search_categ;
 
     int index = -1;
 
@@ -90,6 +101,49 @@ public class Trans_Scene implements Initializable{
         ObservableList<Transactions> list;
         try {
             giveTrans();
+            if(AlertConnector.tfTransid.compareTo("")!=0){
+                Iterator itr = values.iterator();
+                while(itr.hasNext()){
+                    Transactions value = (Transactions)itr.next();
+                    if(Integer.toString(value.getId()).compareTo(AlertConnector.tfTransid)!=0){
+                        itr.remove();
+                    }
+                }
+                AlertConnector.tfTransid="";
+            }
+            else {
+                if (AlertConnector.tfTranscateg.compareTo("") != 0) {
+                    Iterator itr = values.iterator();
+                    while (itr.hasNext()) {
+                        Transactions value = (Transactions) itr.next();
+                        if (value.getCateg().compareTo(AlertConnector.tfTranscateg) != 0) {
+                            itr.remove();
+                        }
+                    }
+                    AlertConnector.tfTranscateg = "";
+                }
+                if (AlertConnector.tfTranstype.compareTo("") != 0) {
+                    Iterator itr = values.iterator();
+                    while (itr.hasNext()) {
+                        Transactions value = (Transactions) itr.next();
+                        if (value.getType().compareTo(AlertConnector.tfTranstype) != 0) {
+                            itr.remove();
+                        }
+                    }
+                    AlertConnector.tfTranstype = "";
+                }
+                if (AlertConnector.tfTransdate.compareTo("") != 0) {
+                    Iterator itr = values.iterator();
+                    while (itr.hasNext()) {
+                        Transactions value = (Transactions) itr.next();
+                        if (value.getDate().compareTo(AlertConnector.tfTransdate) != 0) {
+                            itr.remove();
+                        }
+                    }
+                    AlertConnector.tfTransdate = "";
+                }
+            }
+
             list = FXCollections.observableArrayList(values);
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
             System.out.println("error occured ="+e);
@@ -112,7 +166,7 @@ public class Trans_Scene implements Initializable{
             }
         });
 
-        searchTransDate.setDayCellFactory(picker -> new DateCell() {
+        search_date.setDayCellFactory(picker -> new DateCell() {
             @Override
             public void updateItem(LocalDate date, boolean empty) {
                 super.updateItem(date, empty);
@@ -124,6 +178,21 @@ public class Trans_Scene implements Initializable{
                 }
             }
         });
+    }
+
+    @FXML
+    public void searchTrans(ActionEvent event) throws IOException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
+        AlertConnector.tfTransid=AlertConnector.tfTransid.concat(search_id.getText());
+        AlertConnector.tfTranscateg=AlertConnector.tfTranscateg.concat(search_categ.getText());
+        AlertConnector.tfTranstype=AlertConnector.tfTranstype.concat(search_type.getText());
+        final DateTimeFormatter dft= DateTimeFormatter.ISO_LOCAL_DATE;
+        try {
+            AlertConnector.tfTransdate = AlertConnector.tfTransdate.concat(dft.format(search_date.getValue()));
+        }
+        catch(Exception e) {
+            System.out.println("No date entered"+ e);
+        }
+        switchToTransaction(event);
     }
     public void switchToAddTrans(ActionEvent event) throws IOException{        // to switch the scene to add transaction
         root = FXMLLoader.load(getClass().getResource("finalAddTransaction.fxml"));
