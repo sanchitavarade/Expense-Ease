@@ -14,10 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import org.w3c.dom.events.MouseEvent;
@@ -63,6 +60,9 @@ public class Trans_Scene implements Initializable{
     @FXML
     private DatePicker newTransDate;
 
+    @FXML
+    private DatePicker searchTransDate;
+
     int index = -1;
 
     @FXML
@@ -98,6 +98,32 @@ public class Trans_Scene implements Initializable{
             );
         }
         Trans_table.setItems(list);
+
+        newTransDate.setDayCellFactory(picker -> new DateCell() {
+            @Override
+            public void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+
+                if (date.isAfter(LocalDate.now())) {
+                    // Disable dates after today
+                    setDisable(true);
+                    setStyle("-fx-background-color: #808080;"); // Optional: Apply a different style to disabled dates
+                }
+            }
+        });
+
+        searchTransDate.setDayCellFactory(picker -> new DateCell() {
+            @Override
+            public void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+
+                if (date.isAfter(LocalDate.now())) {
+                    // Disable dates after today
+                    setDisable(true);
+                    setStyle("-fx-background-color: #808080;"); // Optional: Apply a different style to disabled dates
+                }
+            }
+        });
     }
     public void switchToAddTrans(ActionEvent event) throws IOException{        // to switch the scene to add transaction
         root = FXMLLoader.load(getClass().getResource("finalAddTransaction.fxml"));

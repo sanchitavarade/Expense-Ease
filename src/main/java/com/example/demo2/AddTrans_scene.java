@@ -1,23 +1,27 @@
 package com.example.demo2;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class AddTrans_scene {
+public class AddTrans_scene implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -32,6 +36,23 @@ public class AddTrans_scene {
 
     @FXML
     private TextField Trans_addAmt;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        // Set a DateCell factory to restrict date selection to on or before today
+        Trans_addDate.setDayCellFactory(picker -> new DateCell() {
+            @Override
+            public void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+
+                if (date.isAfter(LocalDate.now())) {
+                    // Disable dates after today
+                    setDisable(true);
+                    setStyle("-fx-background-color: #808080;"); // Optional: Apply a different style to disabled dates
+                }
+            }
+        });
+    }
 
     @FXML
     void Add_Trans(ActionEvent event) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException{

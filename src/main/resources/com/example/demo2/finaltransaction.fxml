@@ -94,7 +94,7 @@
                                                       <Font name="Dubai Regular" size="18.0" />
                                                    </font>
                                                 </Label>
-                                                <DatePicker layoutX="330.0" layoutY="16.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #6a5acd;" />
+                                                <DatePicker fx:id="searchTransDate" layoutX="330.0" layoutY="16.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #6a5acd;" />
                                                 <TextField layoutX="330.0" layoutY="63.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
                                                    <font>
                                                       <Font name="Dubai Regular" size="12.0" />

@@ -16,10 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -110,6 +107,19 @@ public class BL_scene implements Initializable {
             );
         }
         bl_Table.setItems(list);
+
+        BLdate.setDayCellFactory(picker -> new DateCell() {
+            @Override
+            public void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+
+                if (date.isAfter(LocalDate.now())) {
+                    // Disable dates after today
+                    setDisable(true);
+                    setStyle("-fx-background-color: #808080;"); // Optional: Apply a different style to disabled dates
+                }
+            }
+        });
     }
 
     @FXML
