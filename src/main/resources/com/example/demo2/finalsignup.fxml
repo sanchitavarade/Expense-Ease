@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.scene_controller">
+<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.scene_controller">
     <children>
         <SplitPane dividerPositions="0.239041311888994" prefHeight="720.0" prefWidth="1270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <items>
@@ -25,7 +25,7 @@
                 </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #6a5acd;">
                     <children>
-                        <Label layoutX="466.0" layoutY="163.0" text="Signup" textFill="WHITE" underline="true">
+                        <Label layoutX="466.0" layoutY="163.0" text="Sign Up" textFill="WHITE" underline="true">
                             <font>
                                 <Font name="Dubai Regular" size="36.0" />
                             </font>
@@ -50,7 +50,7 @@
                                 <Font name="Dubai Regular" size="14.0" />
                             </font>
                         </PasswordField>
-                        <Button layoutX="407.0" layoutY="520.0" mnemonicParsing="false" onAction="#createAcc" prefHeight="41.0" prefWidth="149.0" style="-fx-background-color: white;" text="Create Account" textFill="SLATEBLUE">
+                        <Button layoutX="474.0" layoutY="519.0" mnemonicParsing="false" onAction="#createAcc" prefHeight="41.0" prefWidth="149.0" style="-fx-background-color: white;" text="Create Account" textFill="SLATEBLUE">
                             <font>
                                 <Font name="Dubai Bold" size="16.0" />
                             </font>
@@ -65,6 +65,11 @@
                                 <Font name="Dubai Regular" size="14.0" />
                             </font>
                         </PasswordField>
+                  <Button layoutX="299.0" layoutY="519.0" mnemonicParsing="false" onAction="#switchToLoginPage" prefHeight="41.0" prefWidth="149.0" style="-fx-background-color: white;" text="Cancel" textFill="SLATEBLUE">
+                     <font>
+                        <Font name="Dubai Bold" size="16.0" />
+                     </font>
+                  </Button>
                     </children>
                 </AnchorPane>
             </items>

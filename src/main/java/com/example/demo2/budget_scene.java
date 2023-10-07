@@ -47,6 +47,33 @@ public class budget_scene implements Initializable{
     @FXML
     private TextField newBudLimit;
 
+    int index = -1;
+
+    @FXML
+    void getSelected(javafx.scene.input.MouseEvent event){
+        index = Bud_table.getSelectionModel().getSelectedIndex();
+        if(index<=-1){
+            return;
+        }
+        newBudCateg.setText(Bud_Categ.getCellData(index).toString());
+        newBudLimit.setText(Bud_Limit.getCellData(index).toString());
+    }
+
+    public void deleteBud(ActionEvent event) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
+        Statement stmt = con.createStatement();
+        String q4 = "delete from budget where category_name = ?" ;
+        try{
+            PreparedStatement pst = con.prepareStatement(q4);
+            pst.setString(1, newBudCateg.getText());
+            pst.execute();
+            switchToBudget(event);
+
+        }catch(Exception e){}
+
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         Bud_Categ.setCellValueFactory(new PropertyValueFactory<Budget, String>("categ"));

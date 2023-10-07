@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.budget_scene">
+<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.budget_scene">
     <children>
         <SplitPane dividerPositions="0.5" layoutX="431.0" layoutY="201.0" prefHeight="847.0" prefWidth="641.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <items>
@@ -52,12 +52,17 @@
                                             <items>
                                                 <AnchorPane maxHeight="720.0" maxWidth="600.0" minHeight="0.0" minWidth="550.0" prefHeight="160.0" prefWidth="550.0" style="-fx-background-color: #ffffff;">
                                                     <children>
-                                                        <TableView fx:id="Bud_table" layoutX="21.0" layoutY="100.0" prefHeight="308.0" prefWidth="503.0">
+                                                        <TableView fx:id="Bud_table" layoutX="21.0" layoutY="100.0" onMouseClicked="#getSelected" prefHeight="308.0" prefWidth="503.0">
                                                             <columns>
                                                                 <TableColumn fx:id="Bud_Categ" minWidth="0.0" prefWidth="250.66666793823242" text="CATEGORY" />
                                                                 <TableColumn fx:id="Bud_Limit" minWidth="0.0" prefWidth="251.3333740234375" text="EXPENSE LIMIT" />
                                                             </columns>
                                                         </TableView>
+                                                        <Button alignment="CENTER" layoutX="345.0" layoutY="523.0" mnemonicParsing="false" onAction="#switchToCateg" style="-fx-background-color: #6a5acd #6a5acd;" text="Add Category" textFill="WHITE">
+                                                            <font>
+                                                                <Font size="24.0" />
+                                                            </font>
+                                                        </Button>
                                                     </children>
                                                 </AnchorPane>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1270.0">
@@ -90,11 +95,11 @@
                                                                 <Font name="Dubai Regular" size="24.0" />
                                                             </font>
                                                         </Label>
-                                                        <Button alignment="CENTER" layoutX="201.0" layoutY="441.0" mnemonicParsing="false" onAction="#addCateg" style="-fx-background-color: #6a5acd #6a5acd;" text="Add Category" textFill="WHITE">
-                                                            <font>
-                                                                <Font size="24.0" />
-                                                            </font>
-                                                        </Button>
+                                          <Button alignment="CENTER" layoutX="202.0" layoutY="452.0" mnemonicParsing="false" onAction="#deleteBud" prefHeight="60.0" prefWidth="177.0" style="-fx-background-color: #6a5acd #6a5acd;" text="Delete" textFill="WHITE">
+                                             <font>
+                                                <Font name="Dubai Regular" size="24.0" />
+                                             </font>
+                                          </Button>
                                                     </children>
                                                 </AnchorPane>
                                             </items>

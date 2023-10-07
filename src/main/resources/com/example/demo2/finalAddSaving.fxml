@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.AddSave_scene">
+<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.AddSave_scene">
    <children>
       <SplitPane dividerPositions="0.24053627760252366" prefHeight="720.0" prefWidth="1270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <items>
@@ -57,13 +57,13 @@
                                     <Font name="Dubai Regular" size="22.0" />
                                  </font>
                               </Label>
-                              <Button layoutX="350.0" layoutY="246.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: #6a5acd #6a5acd; -fx-background-radius: 10;" text="Add Saving" textFill="WHITE">
+                              <Button layoutX="350.0" layoutY="246.0" mnemonicParsing="false" onAction="#addSave" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: #6a5acd #6a5acd; -fx-background-radius: 10;" text="Add Saving" textFill="WHITE">
                                  <font>
                                     <Font name="Dubai Regular" size="19.0" />
                                  </font>
                               </Button>
-                              <DatePicker layoutX="452.0" layoutY="53.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" />
-                              <TextField layoutX="452.0" layoutY="127.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="159.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
+                              <DatePicker fx:id="addSaveDate" layoutX="452.0" layoutY="53.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" />
+                              <TextField fx:id="addSaveAmt" layoutX="452.0" layoutY="127.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="159.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
                                  <font>
                                     <Font size="22.0" />
                                  </font>

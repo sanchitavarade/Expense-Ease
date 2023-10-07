@@ -3,6 +3,7 @@ package com.example.demo2;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -15,8 +16,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -42,6 +45,54 @@ public class BL_scene implements Initializable {
     @FXML
     private TableColumn<BorrowLend, Integer> bl_amt;
 
+    @FXML
+    private DatePicker BLdate;
+
+    @FXML
+    private TextField BLType;
+
+    @FXML
+    private TextField BLdesc;
+
+    @FXML
+    private TextField BLamt;
+
+    @FXML
+    private DatePicker BLdueDate;
+
+    @FXML
+    void addBL(ActionEvent event) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException{
+        LocalDate date = BLdate.getValue();
+        LocalDate duedate = BLdueDate.getValue();
+        String type = BLType.getText();
+        String desc = BLdesc.getText();
+        String amt = BLamt.getText();
+
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
+        PreparedStatement ps = con.prepareStatement("INSERT INTO borrow_lend (bor_len_date, bor_len_due_date, bor_len_type, bor_len_description, bor_len_amount, user_id) VALUES ('"+date+"', '"+duedate+"', '"+type+"','"+desc+"',"+amt+", "+AlertConnector.user+");");
+        int status = ps.executeUpdate();//to execute that statement
+        if (status==0){
+            System.out.println("wrong");
+        }
+        switchToBL(event);
+        con.close();
+
+    }
+
+    int index = -1;
+
+//    @FXML
+//    void getSelected(javafx.scene.input.MouseEvent event){
+//        index = bl_Table.getSelectionModel().getSelectedIndex();
+//        if(index<=-1){
+//            return;
+//        }
+//        BLType.setText(bl_type.getCellData(index).toString());
+//        BLamt.setText(bl_amt.getCellData(index).toString());
+//        BLdesc.setText(bl_desc.getCellData(index).toString());
+//    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         bl_ddate.setCellValueFactory(new PropertyValueFactory<BorrowLend, String>("ddate"));
@@ -60,12 +111,6 @@ public class BL_scene implements Initializable {
         }
         bl_Table.setItems(list);
     }
-
-
-
-
-
-
 
     @FXML
     public void switchToTransaction(ActionEvent event) throws IOException{        // to switch the scene to transaction

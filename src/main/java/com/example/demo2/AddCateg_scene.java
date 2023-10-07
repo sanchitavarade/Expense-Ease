@@ -1,10 +1,7 @@
 package com.example.demo2;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.time.LocalDate;
 
 import javafx.event.ActionEvent;
@@ -29,17 +26,17 @@ public class AddCateg_scene {
 
     @FXML
     void addCateg(ActionEvent event)throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException{
-//        String categ = add_categ_limit.getText();
-//        String limit = add_categ_limit.getText();
-//        Class.forName("com.mysql.jdbc.Driver");
-//        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
-//        PreparedStatement ps = con.prepareStatement("insert into Transaction_category (transactiondate, amount, transactiontype, categoryname, category_id, user_id) values ('"+date+"', "+amt+", '"+type+"','"+categ+"', 501,"+AlertConnector.user+");");
-//        int status = ps.executeUpdate();//to execute that statement
-//        if (status==0){
-//            System.out.println("wrong");
-//        }
-//        switchToTransaction(event);
-//        con.close();
+        String categ = add_categ_name.getText();
+        String limit = add_categ_limit.getText();
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
+        PreparedStatement ps = con.prepareStatement("INSERT INTO budget (elimit, category_id, category_name, user_id) VALUES ("+limit+", 501,'"+categ+"',"+AlertConnector.user+");");
+        int status = ps.executeUpdate();//to execute that statement
+        if (status==0){
+            System.out.println("wrong");
+        }
+        switchToBudget(event);
+        con.close();
     }
     @FXML
     public void switchToTransaction(ActionEvent event) throws IOException{        // to switch the scene to transaction
