@@ -27,6 +27,7 @@ public class BL_scene implements Initializable {
 
 
     public static ArrayList<BorrowLend> values= new ArrayList<BorrowLend>();
+    private static ArrayList<String> typeValues= new ArrayList<String>();
     @FXML
     private TableView<BorrowLend> bl_Table;
 
@@ -38,15 +39,13 @@ public class BL_scene implements Initializable {
 
     @FXML
     private TableColumn<BorrowLend, String> bl_desc;
-
+    @FXML
+    private ComboBox<String> Combo_type;
     @FXML
     private TableColumn<BorrowLend, Integer> bl_amt;
 
     @FXML
     private DatePicker BLdate;
-
-    @FXML
-    private TextField BLType;
 
     @FXML
     private TextField BLdesc;
@@ -61,7 +60,7 @@ public class BL_scene implements Initializable {
     void addBL(ActionEvent event) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException{
         LocalDate date = BLdate.getValue();
         LocalDate duedate = BLdueDate.getValue();
-        String type = BLType.getText();
+        String type = Combo_type.getValue();
         String desc = BLdesc.getText();
         String amt = BLamt.getText();
 
@@ -79,23 +78,19 @@ public class BL_scene implements Initializable {
 
     int index = -1;
 
-//    @FXML
-//    void getSelected(javafx.scene.input.MouseEvent event){
-//        index = bl_Table.getSelectionModel().getSelectedIndex();
-//        if(index<=-1){
-//            return;
-//        }
-//        BLType.setText(bl_type.getCellData(index).toString());
-//        BLamt.setText(bl_amt.getCellData(index).toString());
-//        BLdesc.setText(bl_desc.getCellData(index).toString());
-//    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         bl_ddate.setCellValueFactory(new PropertyValueFactory<BorrowLend, String>("ddate"));
         bl_type.setCellValueFactory(new PropertyValueFactory<BorrowLend, String>("type"));
         bl_desc.setCellValueFactory(new PropertyValueFactory<BorrowLend, String>("desc"));
         bl_amt.setCellValueFactory(new PropertyValueFactory<BorrowLend, Integer>("amt"));
+
+        ObservableList<String> TypeList;
+        typeValues.add("Borrowed");
+        typeValues.add("Lent");
+        TypeList = FXCollections.observableArrayList(typeValues);
+        Combo_type.setItems(TypeList);
+
         ObservableList<BorrowLend> list;
         try {
             giveBl();

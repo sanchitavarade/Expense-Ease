@@ -11,6 +11,9 @@ public class  AlertConnector {
 	public static String tfTranscateg="";
 	public static String tfTranstype="";
 	public static String tfTransdate="";
+
+	public static String username="user";
+
 	public static int user;
 	static Alert a = new Alert(AlertType.ERROR);
 	// alert function for invalid login
@@ -62,6 +65,7 @@ public class  AlertConnector {
 			if(pass.compareTo(rs.getString("password"))==0){
 				System.out.println("Valid login");
 				user= rs.getInt("user_id");
+				username= "".concat(name);
 				return true;
 			}
 			else{

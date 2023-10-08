@@ -75,7 +75,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="718.0" prefWidth="900.0">
                <children>
-                  <Label layoutX="61.0" layoutY="14.0" prefHeight="75.0" prefWidth="240.0" text="Welcome, User !" textFill="SLATEBLUE">
+                  <Label fx:id="Welcome" layoutX="61.0" layoutY="14.0" prefHeight="75.0" prefWidth="528.0" text="Welcome, User !" textFill="SLATEBLUE">
                      <font>
                         <Font name="Dubai Regular" size="36.0" />
                      </font>
