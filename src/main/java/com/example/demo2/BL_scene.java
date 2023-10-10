@@ -84,6 +84,7 @@ public class BL_scene implements Initializable {
         bl_type.setCellValueFactory(new PropertyValueFactory<BorrowLend, String>("type"));
         bl_desc.setCellValueFactory(new PropertyValueFactory<BorrowLend, String>("desc"));
         bl_amt.setCellValueFactory(new PropertyValueFactory<BorrowLend, Integer>("amt"));
+        typeValues.clear();
 
         ObservableList<String> TypeList;
         typeValues.add("Borrowed");

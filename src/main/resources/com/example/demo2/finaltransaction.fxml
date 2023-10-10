@@ -101,7 +101,12 @@
                                                       <Font size="27.0" />
                                                    </font>
                                                 </Button>
-                                                <Button layoutX="500.0" layoutY="43.0" mnemonicParsing="false" onAction="#searchTrans" prefHeight="38.0" prefWidth="65.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 20;" text="search" textFill="WHITE">
+                                                <ImageView fitHeight="47.0" fitWidth="44.0" layoutX="504.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@search.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Button layoutX="493.0" layoutY="29.0" mnemonicParsing="false" onAction="#searchTrans" opacity="0.0" prefHeight="51.0" prefWidth="65.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 20;" textFill="WHITE">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -59,8 +60,8 @@ public class Saving_scene implements Initializable{
             return;
         }
         newSaveAmount.setText(save_saving.getCellData(index2).toString());
-//        id1 = save_id.getCellData(index2);
         newId.setText(save_id.getCellData(index2).toString());
+        newSaveDate.setValue(LocalDate.parse(save_date.getCellData(index2), DateTimeFormatter.ISO_LOCAL_DATE));
     }
 
     @Override

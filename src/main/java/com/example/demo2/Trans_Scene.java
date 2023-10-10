@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.time.LocalDate;
+import java.time.chrono.ChronoLocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
 import java.util.ResourceBundle;
@@ -47,7 +48,7 @@ public class Trans_Scene implements Initializable{
     private TableColumn<Transactions, String> Trans_categ;
 
     @FXML
-    private TableColumn<Transactions, Integer> Trans_date;
+    private TableColumn<Transactions, String> Trans_date;
 
     @FXML
     private ComboBox<String> Combo_Searchtype;
@@ -88,7 +89,7 @@ public class Trans_Scene implements Initializable{
         Combo_type.setValue(Trans_type.getCellData(index).toString());
         newTransAmt.setText(Trans_amt.getCellData(index).toString());
         Combo_categ.setValue(Trans_categ.getCellData(index).toString());
-        //newTransDate.setValue(Trans_date.getCellData(Date).);
+        newTransDate.setValue(LocalDate.parse(Trans_date.getCellData(index), DateTimeFormatter.ISO_LOCAL_DATE));
     }
 
 
@@ -99,7 +100,7 @@ public class Trans_Scene implements Initializable{
         Trans_type.setCellValueFactory(new PropertyValueFactory<Transactions, String>("type"));
         Trans_amt.setCellValueFactory(new PropertyValueFactory<Transactions, Integer>("amt"));
         Trans_categ.setCellValueFactory(new PropertyValueFactory<Transactions, String>("categ"));
-        Trans_date.setCellValueFactory(new PropertyValueFactory<Transactions, Integer>("date"));
+        Trans_date.setCellValueFactory(new PropertyValueFactory<Transactions, String>("date"));
 
         typeValues.clear();
         ObservableList<String> categList;
