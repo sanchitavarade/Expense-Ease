@@ -61,13 +61,6 @@ public class scene_controller implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-    public void switchToEditTrans(ActionEvent event) throws IOException{        // to switch the scene to edit transaction
-        root = FXMLLoader.load(getClass().getResource("finalEditTrans.fxml"));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
     @FXML
     public void switchToBL(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("finalBorrow&Lend.fxml"));

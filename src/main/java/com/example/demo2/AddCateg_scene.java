@@ -30,7 +30,7 @@ public class AddCateg_scene {
         String limit = add_categ_limit.getText();
         Class.forName("com.mysql.jdbc.Driver");
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
-        PreparedStatement ps = con.prepareStatement("INSERT INTO budget (elimit, category_id, category_name, user_id) VALUES ("+limit+", 501,'"+categ+"',"+AlertConnector.user+");");
+        PreparedStatement ps = con.prepareStatement("INSERT INTO budget (elimit, category_name, user_id) VALUES ("+limit+", '"+categ+"',"+AlertConnector.user+");");
         int status = ps.executeUpdate();//to execute that statement
         if (status==0){
             System.out.println("wrong");

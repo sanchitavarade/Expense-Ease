@@ -95,7 +95,7 @@ public class AddTrans_scene implements Initializable {
         String amt = Trans_addAmt.getText();
         Class.forName("com.mysql.jdbc.Driver");
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
-        PreparedStatement ps = con.prepareStatement("insert into transactions (transactiondate, amount, transactiontype, categoryname, category_id, user_id) values ('"+date+"', "+amt+", '"+type+"','"+categ+"', 501,"+AlertConnector.user+");");
+        PreparedStatement ps = con.prepareStatement("insert into transactions (transactiondate, amount, transactiontype, category_name, user_id) values ('"+date+"', "+amt+", '"+type+"','"+categ+"',"+AlertConnector.user+");");
         int status = ps.executeUpdate();//to execute that statement
         if (status==0){
             System.out.println("wrong");

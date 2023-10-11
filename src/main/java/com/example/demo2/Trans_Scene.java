@@ -239,13 +239,7 @@ public class Trans_Scene implements Initializable{
         stage.setScene(scene);
         stage.show();
     }
-    public void switchToEditTrans(ActionEvent event) throws IOException{        // to switch the scene to edit transaction
-        root = FXMLLoader.load(getClass().getResource("finalEditTrans.fxml"));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
+
     @FXML
     public void switchToBL(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("finalBorrow&Lend.fxml"));
@@ -304,7 +298,7 @@ public class Trans_Scene implements Initializable{
             String type = rs.getString("transactiontype");
             String date = rs.getString("transactiondate");
             int amt = rs.getInt("amount");
-            String categ = rs.getString("categoryname");
+            String categ = rs.getString("category_name");
             System.out.println(id+"\t\t"+type+"\t\t"+date+"\t\t"+amt+"\t\t"+categ);
             values.add(new Transactions(id, type, amt, categ, date));
         }
@@ -331,7 +325,7 @@ public class Trans_Scene implements Initializable{
             Statement stmt = con.createStatement();
 
             // Updating database
-            String q2 = "UPDATE transactions set transactiontype = '" +type+ "', amount = "+ amt +", categoryname = '" +categ+ "', transactiondate = '" +date+ "' WHERE transaction_id = " +id+ " and user_id ="+AlertConnector.user+";"  ;
+            String q2 = "UPDATE transactions set transactiontype = '" +type+ "', amount = "+ amt +", category_name = '" +categ+ "', transactiondate = '" +date+ "' WHERE transaction_id = " +id+ " and user_id ="+AlertConnector.user+";"  ;
             int z = stmt.executeUpdate(q2);
 
             if (z > 0)
