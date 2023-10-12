@@ -6,8 +6,6 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -17,22 +15,7 @@
          <items>
             <AnchorPane maxWidth="300.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <AnchorPane maxWidth="300.0" prefHeight="718.0" prefWidth="289.0" snapToPixel="false" style="-fx-background-color: #6a5acd;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Button layoutX="32.0" layoutY="7.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="65.0" style="-fx-background-color: #6a5acd;" textFill="WHITE" underline="true">
-                           <font>
-                              <Font name="Dubai Regular" size="14.0" />
-                           </font>
-                           <graphic>
-                              <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../Project%20Images/Expense%20Tracker/ImagesUsed/accimage2.jpg" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                     </children>
-                  </AnchorPane>
+                  <AnchorPane maxWidth="300.0" prefHeight="718.0" prefWidth="289.0" snapToPixel="false" style="-fx-background-color: #6a5acd;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="718.0" prefWidth="960.0">
@@ -44,7 +27,7 @@
                               <Font name="Dubai Regular" size="22.0" />
                            </font>
                         </Label>
-                        <Button layoutX="344.0" layoutY="419.0" mnemonicParsing="false" onAction="#addCateg" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: #6a5acd #6a5acd; -fx-background-radius: 10;" text=" ADD Category" textFill="WHITE">
+                        <Button layoutX="344.0" layoutY="419.0" mnemonicParsing="false" onAction="#addCateg" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: #6a5acd #6a5acd; -fx-background-radius: 10;" text=" Add Category" textFill="WHITE">
                            <font>
                               <Font name="Dubai Regular" size="24.0" />
                            </font>
