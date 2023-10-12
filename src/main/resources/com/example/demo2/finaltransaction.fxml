@@ -118,12 +118,12 @@
                                                    </font>
                                                 </Label>
                                                 <DatePicker fx:id="search_date" layoutX="330.0" layoutY="16.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #6a5acd;" />
-                                                <ImageView fitHeight="44.0" fitWidth="44.0" layoutX="544.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="47.0" fitWidth="43.0" layoutX="555.0" layoutY="423.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@Trash_Can-removebg-preview.png" />
                                                    </image>
                                                 </ImageView>
-                                                <Button alignment="CENTER" layoutX="513.0" layoutY="123.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteTrans" opacity="0.0" prefHeight="47.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" textFill="WHITE">
+                                                <Button alignment="CENTER" layoutX="541.0" layoutY="421.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteTrans" opacity="0.0" prefHeight="47.0" prefWidth="67.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" textFill="WHITE">
                                                    <font>
                                                       <Font name="Dubai Regular" size="19.0" />
                                                    </font>
