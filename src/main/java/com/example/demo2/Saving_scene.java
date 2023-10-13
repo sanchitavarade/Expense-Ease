@@ -66,7 +66,6 @@ public class Saving_scene implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
-//        newSaveAmount.setStyle("-fx-text-fill: white;");
         save_id.setCellValueFactory(new PropertyValueFactory<saving, Integer>("id"));
         save_date.setCellValueFactory(new PropertyValueFactory<saving, String>("date"));
         save_saving.setCellValueFactory(new PropertyValueFactory<saving, Integer>("saving"));

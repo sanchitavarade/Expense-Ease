@@ -1,33 +1,69 @@
 package com.example.demo2;
 
-import java.io.IOException;
-import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.ResourceBundle;
-
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.XYChart;
 import javafx.stage.Stage;
 
-public class scene_controller implements Initializable {
-    @FXML
-    private Label Welcome=new Label("Welcome user");
+import java.io.IOException;
+import java.sql.*;
+
+public class ExpenseStatsBar {
+
     private Stage stage;
     private Scene scene;
     private Parent root;
-    public void switchToLoginPage(ActionEvent event) throws IOException{         // to switch the scene to dashboard
+    @FXML
+    private BarChart<String, Number> barChart;
+
+    @FXML
+    private void addDataToChart() {
+        String dbUrl = "jdbc:mysql://localhost:3306/Exp_Tracker";
+        String dbUser = "root";
+        String dbPassword = "oracle";
+
+        try {
+
+            Connection con = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
+            Statement statement = con.createStatement();
+
+            String barChartQuery = "SELECT tc.user_id,tc.category_name, SUM(tc.amount) AS total_expense " +
+                    "FROM Transactions tc " +
+                    "GROUP BY tc.category_name, tc.user_id";
+
+            ResultSet barChartResult = statement.executeQuery(barChartQuery);
+
+            XYChart.Series<String, Number> barChartSeries = new XYChart.Series<>();
+
+            while (barChartResult.next()) {
+                if(barChartResult.getInt("user_id")==101) {
+                    String category = barChartResult.getString("category_name");
+                    double totalExpense = barChartResult.getDouble("total_expense");
+                    barChartSeries.getData().add(new XYChart.Data<>(category, totalExpense));
+                }
+            }
+
+            Platform.runLater(() -> {
+                barChart.getData().clear();
+                barChart.getData().add(barChartSeries);
+                        barChart.setAnimated(false);
+            }
+
+            );
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+    public void switchToLoginPage(ActionEvent event) throws IOException {         // to switch the scene to dashboard
         root = FXMLLoader.load(getClass().getResource("finalLoginPage.fxml"));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -47,20 +83,6 @@ public class scene_controller implements Initializable {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
-    }
-    @FXML
-    private MenuItem Barbt;
-
-    @FXML
-    private MenuItem Piebt;
-    public void handleCharts(ActionEvent event) throws Exception {         // to switch the scene to dashboard
-        if(event.getSource()==Barbt){
-            switchToBar(event);
-
-        }
-        if(event.getSource()==Piebt){
-            switchToPie(event);
-        }
     }
     public void switchToPie(ActionEvent event) throws Exception {
         root = FXMLLoader.load(getClass().getResource("finalPieChart.fxml"));
@@ -113,69 +135,5 @@ public class scene_controller implements Initializable {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
-    }
-
-    @FXML
-    private TextField tfSignUser;
-
-    @FXML
-    private PasswordField tfSignPass;
-
-    @FXML
-    private PasswordField tfSignPass1;
-
-    @FXML
-    void createAcc(ActionEvent event) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException{
-        String signUser = tfSignUser.getText();
-        String signpass = tfSignPass.getText();
-        String signpass2 = tfSignPass1.getText();
-        int status =0;
-        if(signpass.compareTo(signpass2)==0){
-            if((signUser.length()==0)||(signpass.length()==0)){
-                AlertConnector.Handle2();
-                return;
-            }
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
-            PreparedStatement ps = con.prepareStatement("insert into User (Username, Password) values('"+signUser+"', '"+signpass+"');");
-            status = ps.executeUpdate();//to execute that statement
-            switchToLoginPage(event);
-            con.close();
-
-        }
-        else if((signUser.length()==0)||(signpass.length()==0)){
-            AlertConnector.Handle2();
-        }
-        else{
-            AlertConnector.wrongPass();
-        }
-        if(status!=0){
-            System.out.println("database was connected");
-            System.out.println("record was inserted");
-        }
-    }
-
-    //inputs of login page
-    @FXML
-    private TextField tfEmail;
-
-    @FXML
-    private PasswordField tfPass;
-
-    @FXML
-    void btnClicked(ActionEvent event) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException {
-        // checks the login is valid or not
-        String email = tfEmail.getText();
-        String pass = tfPass.getText();
-//        System.out.println(AlertConnector.checkLogin1(email, pass));
-        if(AlertConnector.checkLogin1(email, pass)){
-            switchToDashBoard(event);
-            System.out.println("true");
-        }
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        Welcome.setText("Welcome, "+ AlertConnector.username+" !");
     }
 }
