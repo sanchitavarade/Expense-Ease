@@ -5,8 +5,6 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -24,12 +22,7 @@
                               <Font name="Dubai Regular" size="14.0" />
                            </font>
                         </Button>
-                        <Label alignment="CENTER" layoutX="33.0" layoutY="64.0" prefHeight="47.0" prefWidth="88.0" text="MENU" textFill="#dbdbdb" underline="true">
-                           <font>
-                              <Font name="Dubai Regular" size="26.0" />
-                           </font>
-                        </Label>
-                        <Button alignment="CENTER" layoutX="21.0" layoutY="305.0" mnemonicParsing="false" onAction="#switchToBudget" prefHeight="65.0" prefWidth="123.0" style="-fx-background-color: #6a5acd;" text="Budget" textFill="WHITE">
+                        <Button alignment="CENTER" layoutX="21.0" layoutY="241.0" mnemonicParsing="false" onAction="#switchToBudget" prefHeight="65.0" prefWidth="123.0" style="-fx-background-color: #6a5acd;" text="Budget" textFill="WHITE">
                            <font>
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
@@ -39,20 +32,11 @@
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
                         </Button>
-                        <Button alignment="CENTER" layoutX="3.0" layoutY="368.0" mnemonicParsing="false" onAction="#switchToSave" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Savings" textFill="WHITE">
+                        <Button alignment="CENTER" layoutX="3.0" layoutY="304.0" mnemonicParsing="false" onAction="#switchToSave" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Savings" textFill="WHITE">
                            <font>
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
                         </Button>
-                        <MenuButton alignment="CENTER" layoutX="27.0" layoutY="240.0" mnemonicParsing="false" style="-fx-background-color: #6a5acd;" text="Statistics" textFill="WHITE" AnchorPane.leftAnchor="27.0">
-                           <items>
-                              <MenuItem mnemonicParsing="false" onAction="#switchToBar" text="Bar-Charts" />
-                              <MenuItem mnemonicParsing="false" onAction="#switchToPie" text="Pie-Charts" />
-                           </items>
-                           <font>
-                              <Font name="Dubai Regular" size="26.0" />
-                           </font>
-                        </MenuButton>
                         <Button alignment="CENTER" layoutX="24.0" layoutY="175.0" mnemonicParsing="false" onAction="#switchToBL" prefHeight="65.0" prefWidth="194.0" style="-fx-background-color: #6a5acd;" text="Borrow / Lend" textFill="WHITE">
                            <font>
                               <Font name="Dubai Regular" size="26.0" />
@@ -63,14 +47,9 @@
                               <Font name="Dubai Regular" size="26.0" />
                            </font>
                         </Button>
-                        <Button alignment="CENTER" layoutX="3.0" layoutY="441.0" mnemonicParsing="false" onAction="#switchToPie" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Pie" textFill="WHITE">
+                        <Button alignment="CENTER" layoutX="41.0" layoutY="48.0" mnemonicParsing="false" onAction="#switchToDashBoard" prefHeight="66.0" prefWidth="177.0" style="-fx-background-color: #6a5acd;" text="Menu" textFill="#dbdbdb" underline="true">
                            <font>
-                              <Font name="Dubai Regular" size="26.0" />
-                           </font>
-                        </Button>
-                        <Button alignment="CENTER" layoutX="18.0" layoutY="506.0" mnemonicParsing="false" onAction="#switchToBar" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Bar" textFill="WHITE">
-                           <font>
-                              <Font name="Dubai Regular" size="26.0" />
+                              <Font name="Dubai Regular" size="30.0" />
                            </font>
                         </Button>
                      </children>
@@ -79,7 +58,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="718.0" prefWidth="900.0">
                <children>
-                  <BarChart fx:id="barChart" layoutX="78.0" layoutY="55.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="449.0" prefWidth="756.0">
+                  <BarChart fx:id="barChart" layoutX="85.0" layoutY="113.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="449.0" prefWidth="756.0">
                      <xAxis>
                         <CategoryAxis side="BOTTOM" />
                      </xAxis>
@@ -87,7 +66,17 @@
                         <NumberAxis side="LEFT" />
                      </yAxis>
                   </BarChart>
-                  <Button layoutX="122.0" layoutY="588.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addDataToChart" text="Load Data" />
+                  <Button layoutX="39.0" layoutY="579.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addDataToChart" text="Reload Data" />
+                  <Button alignment="CENTER" layoutX="743.0" layoutY="607.0" mnemonicParsing="false" onAction="#switchToPie" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Pie Chart" textFill="WHITE">
+                     <font>
+                        <Font name="Dubai Regular" size="26.0" />
+                     </font>
+                  </Button>
+                  <Label alignment="CENTER" layoutX="374.0" layoutY="31.0" prefHeight="66.0" prefWidth="211.0" text="Bar Chart" textFill="SLATEBLUE">
+                     <font>
+                        <Font size="45.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
         </items>

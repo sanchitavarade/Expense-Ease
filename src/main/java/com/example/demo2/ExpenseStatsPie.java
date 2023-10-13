@@ -22,8 +22,6 @@ public class ExpenseStatsPie implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
-    @FXML
-    private BarChart<String, Number> barChart;
 
     @FXML
     private PieChart pieChart;
@@ -70,7 +68,6 @@ public class ExpenseStatsPie implements Initializable {
                 if(pieChartResult.getInt("user_id")==101) {
                     String transactionType = pieChartResult.getString("category_name");
                     double totalAmount = pieChartResult.getDouble("total_amount");
-
 
                     // Add data to the Pie Chart
                     PieChart.Data pieChartData = new PieChart.Data(transactionType, totalAmount);

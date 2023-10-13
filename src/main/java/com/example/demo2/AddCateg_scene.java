@@ -38,6 +38,13 @@ public class AddCateg_scene {
         switchToBudget(event);
         con.close();
     }
+    public void switchToDashBoard(ActionEvent event) throws IOException{         // to switch the scene to dashboard
+        root = FXMLLoader.load(getClass().getResource("finalDashboard.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
     @FXML
     public void switchToTransaction(ActionEvent event) throws IOException{        // to switch the scene to transaction
         root = FXMLLoader.load(getClass().getResource("finalTransaction.fxml"));

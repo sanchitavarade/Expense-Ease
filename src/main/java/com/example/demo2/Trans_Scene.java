@@ -232,6 +232,13 @@ public class Trans_Scene implements Initializable{
         }
         switchToTransaction(event);
     }
+    public void switchToDashBoard(ActionEvent event) throws IOException{         // to switch the scene to dashboard
+        root = FXMLLoader.load(getClass().getResource("finalDashboard.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
     public void switchToAddTrans(ActionEvent event) throws IOException{        // to switch the scene to add transaction
         root = FXMLLoader.load(getClass().getResource("finalAddTransaction.fxml"));
         scene = new Scene(root);

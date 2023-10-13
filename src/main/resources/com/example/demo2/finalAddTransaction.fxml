@@ -4,12 +4,8 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -23,13 +19,11 @@
                      <font>
                         <Font name="Dubai Regular" size="14.0" />
                      </font>
-                     <graphic>
-                        <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../Project%20Images/Expense%20Tracker/ImagesUsed/accimage2.jpg" />
-                           </image>
-                        </ImageView>
-                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" layoutX="37.0" layoutY="55.0" mnemonicParsing="false" onAction="#switchToDashBoard" prefHeight="66.0" prefWidth="177.0" style="-fx-background-color: #6a5acd;" text="Menu" textFill="#dbdbdb" underline="true">
+                     <font>
+                        <Font name="Dubai Regular" size="30.0" />
+                     </font>
                   </Button>
                </children>
             </AnchorPane>
@@ -89,12 +83,7 @@
             </AnchorPane>
          </items>
       </SplitPane>
-      <Label alignment="CENTER" layoutX="43.0" layoutY="74.0" prefHeight="47.0" prefWidth="88.0" text="MENU" textFill="#dbdbdb" underline="true">
-         <font>
-            <Font name="Dubai Regular" size="26.0" />
-         </font>
-      </Label>
-      <Button alignment="CENTER" layoutX="31.0" layoutY="315.0" mnemonicParsing="false" onAction="#switchToBudget" prefHeight="65.0" prefWidth="123.0" style="-fx-background-color: #6a5acd;" text="Budget" textFill="WHITE">
+      <Button alignment="CENTER" layoutX="31.0" layoutY="262.0" mnemonicParsing="false" onAction="#switchToBudget" prefHeight="65.0" prefWidth="123.0" style="-fx-background-color: #6a5acd;" text="Budget" textFill="WHITE">
          <font>
             <Font name="Dubai Regular" size="26.0" />
          </font>
@@ -104,20 +93,11 @@
             <Font name="Dubai Regular" size="26.0" />
          </font>
       </Button>
-      <Button alignment="CENTER" layoutX="13.0" layoutY="378.0" mnemonicParsing="false" onAction="#switchToSave" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Savings" textFill="WHITE">
+      <Button alignment="CENTER" layoutX="13.0" layoutY="331.0" mnemonicParsing="false" onAction="#switchToSave" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Savings" textFill="WHITE">
          <font>
             <Font name="Dubai Regular" size="26.0" />
          </font>
       </Button>
-      <MenuButton alignment="CENTER" layoutX="37.0" layoutY="250.0" mnemonicParsing="false" style="-fx-background-color: #6a5acd;" text="Statistics" textFill="WHITE">
-         <items>
-            <MenuItem mnemonicParsing="false" text="Bar-Charts" />
-            <MenuItem mnemonicParsing="false" text="Pie-Charts" />
-         </items>
-         <font>
-            <Font name="Dubai Regular" size="26.0" />
-         </font>
-      </MenuButton>
       <Button alignment="CENTER" layoutX="34.0" layoutY="185.0" mnemonicParsing="false" onAction="#switchToBL" prefHeight="65.0" prefWidth="194.0" style="-fx-background-color: #6a5acd;" text="Borrow / Lend" textFill="WHITE">
          <font>
             <Font name="Dubai Regular" size="26.0" />

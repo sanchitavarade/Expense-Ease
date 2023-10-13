@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class App extends Application{
@@ -15,6 +16,8 @@ public class App extends Application{
         Stage stage = new Stage();
         stage.setWidth(1270);
         stage.setHeight(720);
+        // Image logo = new Image("file:/projectLogo.jpg");
+        // stage.getIcons().add(logo);
         stage.setResizable(false);
         Scene scene = new Scene(root);
         //title of the app
