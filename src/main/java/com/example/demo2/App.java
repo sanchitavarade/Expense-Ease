@@ -16,8 +16,8 @@ public class App extends Application{
         Stage stage = new Stage();
         stage.setWidth(1270);
         stage.setHeight(720);
-        // Image logo = new Image("file:/projectLogo.jpg");
-        // stage.getIcons().add(logo);
+        Image logo = new Image("file:/projectLogo.jpg");
+        stage.getIcons().add(logo);
         stage.setResizable(false);
         Scene scene = new Scene(root);
         //title of the app

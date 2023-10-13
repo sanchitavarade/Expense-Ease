@@ -59,9 +59,9 @@ public class ExpenseStatsBar implements Initializable {
             Connection con = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
             Statement statement = con.createStatement();
 
-            String barChartQuery = "SELECT tc.user_id,tc.category_name, SUM(tc.amount) AS total_expense " +
-                    "FROM Transactions tc " +
-                    "GROUP BY tc.category_name, tc.user_id";
+            String barChartQuery = "SELECT user_id,category_name, SUM(amount) AS total_expense " +
+                    "FROM Transactions " +
+                    "GROUP BY category_name, user_id";
 
             ResultSet barChartResult = statement.executeQuery(barChartQuery);
 
@@ -69,7 +69,7 @@ public class ExpenseStatsBar implements Initializable {
             barChart.getData().clear();
 
             while (barChartResult.next()) {
-                if(barChartResult.getInt("user_id")==101) {
+                if(barChartResult.getInt("user_id")==AlertConnector.user) {
                     String category = barChartResult.getString("category_name");
                     int totalExpense = barChartResult.getInt("total_expense");
                     barChartSeries.getData().add(new XYChart.Data<>(category, totalExpense));

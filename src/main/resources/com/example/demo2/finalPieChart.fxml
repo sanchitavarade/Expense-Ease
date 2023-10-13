@@ -58,7 +58,7 @@
                <children>
                   <PieChart fx:id="pieChart" layoutX="140.0" layoutY="148.0" prefHeight="404.0" prefWidth="655.0" />
                   <Button layoutX="32.0" layoutY="570.0" mnemonicParsing="false" onAction="#loadData" text="Reload Data" />
-                  <Button alignment="CENTER" layoutX="753.0" layoutY="608.0" mnemonicParsing="false" onAction="#switchToBar" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Bar" textFill="WHITE">
+                  <Button alignment="CENTER" layoutX="753.0" layoutY="608.0" mnemonicParsing="false" onAction="#switchToBar" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Bar Chart" textFill="WHITE">
                      <font>
                         <Font name="Dubai Regular" size="26.0" />
                      </font>

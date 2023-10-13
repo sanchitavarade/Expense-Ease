@@ -65,7 +65,7 @@ public class ExpenseStatsPie implements Initializable {
             pieChart.getData().clear();
 
             while ((pieChartResult.next())){
-                if(pieChartResult.getInt("user_id")==101) {
+                if(pieChartResult.getInt("user_id")==AlertConnector.user) {
                     String transactionType = pieChartResult.getString("category_name");
                     double totalAmount = pieChartResult.getDouble("total_amount");
 

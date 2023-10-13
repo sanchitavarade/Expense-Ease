@@ -43,6 +43,7 @@ public class AddTrans_scene implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         ObservableList<String> categList;
         ObservableList<String> TypeList;
+        typeValues.clear();
         typeValues.add("Expense");
         typeValues.add("Income");
         TypeList = FXCollections.observableArrayList(typeValues);
