@@ -136,7 +136,7 @@
                                                    </font>
                                                 </Label>
                                                 <DatePicker fx:id="newTransDate" layoutX="145.0" layoutY="303.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #6a5acd;" />
-                                                <Button alignment="CENTER" layoutX="99.0" layoutY="375.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ApplyTransChanges" prefHeight="47.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Edit" textFill="#a094ef">
+                                                <Button alignment="CENTER" layoutX="99.0" layoutY="375.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ApplyTransChanges" prefHeight="47.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Edit" textFill="WHITE">
                                                    <font>
                                                       <Font name="Dubai Regular" size="19.0" />
                                                    </font>
