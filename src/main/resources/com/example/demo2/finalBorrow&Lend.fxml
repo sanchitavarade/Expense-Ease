@@ -11,41 +11,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.BL_scene">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.BL_scene">
    <children>
       <SplitPane dividerPositions="0.239041311888994" prefHeight="720.0" prefWidth="1270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane maxWidth="300.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="300.0">
                <children>
-                  <AnchorPane maxWidth="300.0" minWidth="0.0" prefHeight="718.0" prefWidth="300.0" snapToPixel="false" style="-fx-background-color: #6a5acd;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Button alignment="CENTER" layoutX="19.0" layoutY="240.0" mnemonicParsing="false" onAction="#switchToBudget" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Budget" textFill="WHITE">
-                           <font>
-                              <Font name="Dubai Regular" size="26.0" />
-                           </font>
-                        </Button>
-                        <Button alignment="CENTER" layoutX="35.0" layoutY="122.0" mnemonicParsing="false" onAction="#switchToTransaction" prefHeight="66.0" prefWidth="177.0" style="-fx-background-color: #6a5acd;" text="Transactions" textFill="WHITE">
-                           <font>
-                              <Font name="Dubai Regular" size="26.0" />
-                           </font>
-                        </Button>
-                        <Button alignment="CENTER" layoutX="21.0" layoutY="300.0" mnemonicParsing="false" onAction="#switchToSave" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Savings" textFill="WHITE">
-                           <font>
-                              <Font name="Dubai Regular" size="26.0" />
-                           </font>
-                        </Button>
-                        <Button alignment="CENTER" layoutX="41.0" layoutY="177.0" mnemonicParsing="false" onAction="#switchToBL" prefHeight="66.0" prefWidth="191.0" style="-fx-background-color: #6a5acd;" text="Borrow / Lend" textFill="#dbdbdb" underline="true">
-                           <font>
-                              <Font name="Dubai Regular" size="26.0" />
-                           </font>
-                        </Button>
-                        <Button alignment="CENTER" layoutX="21.0" layoutY="639.0" mnemonicParsing="false" onAction="#switchToLoginPage" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Logout" textFill="WHITE">
-                           <font>
-                              <Font name="Dubai Regular" size="26.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </AnchorPane>
+                  <AnchorPane maxWidth="300.0" minWidth="0.0" prefHeight="718.0" prefWidth="300.0" snapToPixel="false" style="-fx-background-color: #6a5acd;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
@@ -67,14 +39,14 @@
                                 <items>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                        <children>
-                                          <AnchorPane maxHeight="720.0" maxWidth="600.0" minHeight="0.0" minWidth="0.0" prefHeight="554.0" prefWidth="503.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <AnchorPane maxHeight="720.0" maxWidth="600.0" minHeight="0.0" minWidth="0.0" prefHeight="554.0" prefWidth="503.0" style="-fx-background-color: #ffffff;" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <children>
                                                 <TableView fx:id="bl_Table" layoutX="21.0" layoutY="84.0" prefHeight="478.0" prefWidth="504.0">
                                                    <columns>
-                                                      <TableColumn fx:id="bl_ddate" minWidth="0.0" prefWidth="112.79997634887695" text="DUE DATE" />
-                                                      <TableColumn fx:id="bl_type" minWidth="0.0" prefWidth="100.79998779296875" text="TYPE" />
-                                                      <TableColumn fx:id="bl_desc" prefWidth="178.4000701904297" text="DESCRIPTION" />
-                                                      <TableColumn fx:id="bl_amt" prefWidth="108.800048828125" text="AMOUNT" />
+                                                      <TableColumn fx:id="bl_ddate" minWidth="0.0" prefWidth="112.79997634887695" style="-fx-alignment: CENTER; -fx-font-family: Dubai; -fx-font-size: 13;" text="Due Date" />
+                                                      <TableColumn fx:id="bl_type" minWidth="0.0" prefWidth="100.79998779296875" style="-fx-alignment: CENTER; -fx-font-family: Dubai; -fx-font-size: 13;" text="Type" />
+                                                      <TableColumn fx:id="bl_desc" prefWidth="178.4000701904297" style="-fx-alignment: CENTER; -fx-font-family: Dubai; -fx-font-size: 13;" text="Description" />
+                                                      <TableColumn fx:id="bl_amt" prefWidth="108.800048828125" style="-fx-alignment: CENTER; -fx-font-family: Dubai; -fx-font-size: 13;" text="Amount" />
                                                    </columns>
                                                 </TableView>
                                                 <Label layoutX="-3.0" prefHeight="74.0" prefWidth="546.0" style="-fx-background-color: #6a5acd #6a5acd;" text="                       Previous Records :" textFill="WHITE" AnchorPane.leftAnchor="-3.0" AnchorPane.topAnchor="0.0">
@@ -119,7 +91,7 @@
                                                 <Font size="20.0" />
                                              </font>
                                           </TextField>
-                                          <TextField fx:id="BLamt" layoutX="110.0" layoutY="402.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="169.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
+                                          <TextField fx:id="BLamt" layoutX="110.0" layoutY="402.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="169.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10; -fx-text-fill: #FFFFFF;">
                                              <font>
                                                 <Font name="Dubai Regular" size="19.0" />
                                              </font></TextField>
@@ -147,7 +119,32 @@
             </AnchorPane>
         </items>
       </SplitPane>
-      <Button alignment="CENTER" layoutX="54.0" layoutY="58.0" mnemonicParsing="false" onAction="#switchToDashBoard" prefHeight="66.0" prefWidth="177.0" style="-fx-background-color: #6a5acd;" text="Menu" textFill="#dbdbdb" underline="true">
+      <Button alignment="CENTER" layoutX="31.0" layoutY="271.0" mnemonicParsing="false" onAction="#switchToBudget" prefHeight="65.0" prefWidth="123.0" style="-fx-background-color: #6a5acd;" text="Budget" textFill="WHITE">
+         <font>
+            <Font name="Dubai Regular" size="26.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="31.0" layoutY="141.0" mnemonicParsing="false" onAction="#switchToTransaction" prefHeight="64.0" prefWidth="184.0" style="-fx-background-color: #6a5acd;" text="Transactions" textFill="WHITE">
+         <font>
+            <Font name="Dubai Regular" size="26.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="13.0" layoutY="336.0" mnemonicParsing="false" onAction="#switchToSave" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Savings" textFill="WHITE">
+         <font>
+            <Font name="Dubai Regular" size="26.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="28.0" layoutY="206.0" mnemonicParsing="false" onAction="#switchToBL" prefHeight="65.0" prefWidth="208.0" style="-fx-background-color: #6a5acd;" text="Borrow / Lend" textFill="#dbdbdb" underline="true">
+         <font>
+            <Font name="Dubai Regular" size="26.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="13.0" layoutY="648.0" mnemonicParsing="false" onAction="#switchToLoginPage" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Logout" textFill="WHITE">
+         <font>
+            <Font name="Dubai Regular" size="26.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="61.0" layoutY="59.0" mnemonicParsing="false" onAction="#switchToDashBoard" prefHeight="66.0" prefWidth="177.0" style="-fx-background-color: #6a5acd;" text="MENU" textFill="#dbdbdb" underline="true">
          <font>
             <Font name="Dubai Regular" size="30.0" />
          </font>

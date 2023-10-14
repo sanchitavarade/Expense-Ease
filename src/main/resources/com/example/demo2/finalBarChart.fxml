@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.ExpenseStatsBar">
+<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.ExpenseStatsBar">
    <children>
       <SplitPane dividerPositions="0.24053627760252366" layoutX="285.0" layoutY="115.0" prefHeight="720.0" prefWidth="1270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -20,36 +20,6 @@
                         <Button layoutX="32.0" layoutY="7.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="65.0" style="-fx-background-color: #6a5acd;" textFill="WHITE" underline="true">
                            <font>
                               <Font name="Dubai Regular" size="14.0" />
-                           </font>
-                        </Button>
-                        <Button alignment="CENTER" layoutX="21.0" layoutY="241.0" mnemonicParsing="false" onAction="#switchToBudget" prefHeight="65.0" prefWidth="123.0" style="-fx-background-color: #6a5acd;" text="Budget" textFill="WHITE">
-                           <font>
-                              <Font name="Dubai Regular" size="26.0" />
-                           </font>
-                        </Button>
-                        <Button alignment="CENTER" layoutX="20.0" layoutY="111.0" mnemonicParsing="false" onAction="#switchToTransaction" prefHeight="64.0" prefWidth="177.0" style="-fx-background-color: #6a5acd;" text="Transactions" textFill="WHITE">
-                           <font>
-                              <Font name="Dubai Regular" size="26.0" />
-                           </font>
-                        </Button>
-                        <Button alignment="CENTER" layoutX="3.0" layoutY="304.0" mnemonicParsing="false" onAction="#switchToSave" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Savings" textFill="WHITE">
-                           <font>
-                              <Font name="Dubai Regular" size="26.0" />
-                           </font>
-                        </Button>
-                        <Button alignment="CENTER" layoutX="24.0" layoutY="175.0" mnemonicParsing="false" onAction="#switchToBL" prefHeight="65.0" prefWidth="194.0" style="-fx-background-color: #6a5acd;" text="Borrow / Lend" textFill="WHITE">
-                           <font>
-                              <Font name="Dubai Regular" size="26.0" />
-                           </font>
-                        </Button>
-                        <Button alignment="CENTER" layoutX="3.0" layoutY="638.0" mnemonicParsing="false" onAction="#switchToLoginPage" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Logout" textFill="WHITE">
-                           <font>
-                              <Font name="Dubai Regular" size="26.0" />
-                           </font>
-                        </Button>
-                        <Button alignment="CENTER" layoutX="41.0" layoutY="48.0" mnemonicParsing="false" onAction="#switchToDashBoard" prefHeight="66.0" prefWidth="177.0" style="-fx-background-color: #6a5acd;" text="Menu" textFill="#dbdbdb" underline="true">
-                           <font>
-                              <Font name="Dubai Regular" size="30.0" />
                            </font>
                         </Button>
                      </children>
@@ -81,5 +51,35 @@
             </AnchorPane>
         </items>
       </SplitPane>
+      <Button alignment="CENTER" layoutX="31.0" layoutY="271.0" mnemonicParsing="false" onAction="#switchToBudget" prefHeight="65.0" prefWidth="123.0" style="-fx-background-color: #6a5acd;" text="Budget" textFill="WHITE">
+         <font>
+            <Font name="Dubai Regular" size="26.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="31.0" layoutY="141.0" mnemonicParsing="false" onAction="#switchToTransaction" prefHeight="64.0" prefWidth="184.0" style="-fx-background-color: #6a5acd;" text="Transactions" textFill="WHITE">
+         <font>
+            <Font name="Dubai Regular" size="26.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="13.0" layoutY="336.0" mnemonicParsing="false" onAction="#switchToSave" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Savings" textFill="WHITE">
+         <font>
+            <Font name="Dubai Regular" size="26.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="28.0" layoutY="206.0" mnemonicParsing="false" onAction="#switchToBL" prefHeight="65.0" prefWidth="208.0" style="-fx-background-color: #6a5acd;" text="Borrow / Lend" textFill="WHITE">
+         <font>
+            <Font name="Dubai Regular" size="26.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="13.0" layoutY="648.0" mnemonicParsing="false" onAction="#switchToLoginPage" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Logout" textFill="WHITE">
+         <font>
+            <Font name="Dubai Regular" size="26.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="61.0" layoutY="59.0" mnemonicParsing="false" onAction="#switchToDashBoard" prefHeight="66.0" prefWidth="177.0" style="-fx-background-color: #6a5acd;" text="MENU" textFill="#dbdbdb" underline="true">
+         <font>
+            <Font name="Dubai Regular" size="30.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -10,53 +10,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="720.0" maxWidth="1470.0" minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.Saving_scene">
+<AnchorPane maxHeight="720.0" maxWidth="1470.0" minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.Saving_scene">
    <children>
       <SplitPane dividerPositions="0.5" layoutX="68.0" layoutY="166.0" prefHeight="720.0" prefWidth="1270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <items>
             <AnchorPane maxWidth="300.0" minHeight="0.0" minWidth="0.0" prefHeight="718.0" prefWidth="300.0">
                <children>
-                  <AnchorPane maxWidth="300.0" prefHeight="160.0" prefWidth="300.0" snapToPixel="false" style="-fx-background-color: #6a5acd;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Button alignment="CENTER" layoutX="19.0" layoutY="240.0" mnemonicParsing="false" onAction="#switchToBudget" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Budget" textFill="WHITE">
-                           <font>
-                              <Font name="Dubai Regular" size="26.0" />
-                           </font>
-                        </Button>
-                        <Button alignment="CENTER" layoutX="35.0" layoutY="122.0" mnemonicParsing="false" onAction="#switchToTransaction" prefHeight="66.0" prefWidth="177.0" style="-fx-background-color: #6a5acd;" text="Transactions" textFill="WHITE">
-                           <font>
-                              <Font name="Dubai Regular" size="26.0" />
-                           </font>
-                        </Button>
-                        <Button alignment="CENTER" layoutX="21.0" layoutY="300.0" mnemonicParsing="false" onAction="#switchToSave" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Savings" textFill="#dbdbdb" underline="true">
-                           <font>
-                              <Font name="Dubai Regular" size="26.0" />
-                           </font>
-                        </Button>
-                        <Button alignment="CENTER" layoutX="41.0" layoutY="177.0" mnemonicParsing="false" onAction="#switchToBL" prefHeight="66.0" prefWidth="191.0" style="-fx-background-color: #6a5acd;" text="Borrow / Lend" textFill="WHITE">
-                           <font>
-                              <Font name="Dubai Regular" size="26.0" />
-                           </font>
-                        </Button>
-                        <Button alignment="CENTER" layoutX="21.0" layoutY="639.0" mnemonicParsing="false" onAction="#switchToLoginPage" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Logout" textFill="WHITE">
-                           <font>
-                              <Font name="Dubai Regular" size="26.0" />
-                           </font>
-                        </Button>
-                        <Button alignment="CENTER" layoutX="29.0" layoutY="42.0" mnemonicParsing="false" onAction="#switchToDashBoard" prefHeight="66.0" prefWidth="177.0" style="-fx-background-color: #6a5acd;" text="Menu" textFill="#dbdbdb" underline="true">
-                           <font>
-                              <Font name="Dubai Regular" size="30.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </AnchorPane>
+                  <AnchorPane maxWidth="300.0" prefHeight="160.0" prefWidth="300.0" snapToPixel="false" style="-fx-background-color: #6a5acd;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
                   <AnchorPane prefHeight="91.0" prefWidth="1094.0" style="-fx-background-color: #6a5acd;">
                      <children>
-                        <Label alignment="CENTER" layoutX="150.0" layoutY="16.0" maxHeight="120.0" minHeight="120.0" prefHeight="91.2" prefWidth="1094.4" text="Savings" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <Label alignment="CENTER" layoutX="150.0" layoutY="16.0" maxHeight="120.0" minHeight="120.0" prefHeight="91.2" prefWidth="1094.4" text="Savings               " textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <font>
                               <Font name="Dubai Regular" size="34.0" />
                            </font>
@@ -67,13 +34,13 @@
                      <children>
                         <SplitPane dividerPositions="0.6663187195546278" layoutX="135.0" prefHeight="598.0" prefWidth="963.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <items>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="607.0" prefWidth="642.0">
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="607.0" prefWidth="642.0" stylesheets="@style.css">
                                  <children>
                                     <TableView fx:id="saving_table" layoutX="11.0" layoutY="90.0" onMouseClicked="#getSelectedSave" prefHeight="419.0" prefWidth="616.0">
                                        <columns>
                                           <TableColumn fx:id="save_id" minWidth="0.0" prefWidth="0.0" text="ID" />
-                                          <TableColumn fx:id="save_date" prefWidth="290.66664600372314" text="Date" />
-                                          <TableColumn fx:id="save_saving" prefWidth="323.9999694824219" text="Savings" />
+                                          <TableColumn fx:id="save_date" prefWidth="308.0" style="-fx-alignment: CENTER; -fx-font-family: Dubai; -fx-font-size: 13;" text="Date" />
+                                          <TableColumn fx:id="save_saving" prefWidth="308.0" style="-fx-alignment: CENTER; -fx-font-family: Dubai; -fx-font-size: 13;" text="Savings" />
                                        </columns>
                                     </TableView>
                                     <Button alignment="CENTER" layoutX="450.0" layoutY="527.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToAddSave" prefHeight="57.0" prefWidth="165.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Add Saving" textFill="WHITE">
@@ -85,38 +52,38 @@
                               </AnchorPane>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                  <children>
-                                    <Label layoutX="71.0" text="Edit Savings :" textFill="SLATEBLUE">
+                                    <Label layoutX="72.0" layoutY="21.0" text="Edit Savings :" textFill="SLATEBLUE">
                                        <font>
                                           <Font name="Dubai Regular" size="32.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="54.0" layoutY="129.0" prefHeight="35.0" prefWidth="58.0" text="Date :" textFill="SLATEBLUE">
+                                    <Label layoutX="53.0" layoutY="104.0" prefHeight="35.0" prefWidth="58.0" text="Date :" textFill="SLATEBLUE">
                                        <font>
                                           <Font name="Dubai Regular" size="20.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="30.0" layoutY="210.0" prefHeight="35.0" prefWidth="81.0" text="Savings :" textFill="SLATEBLUE">
+                                    <Label layoutX="31.0" layoutY="192.0" prefHeight="35.0" prefWidth="81.0" text="Savings :" textFill="SLATEBLUE">
                                        <font>
                                           <Font name="Dubai Regular" size="20.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="newSaveAmount" layoutX="111.0" layoutY="209.0" prefHeight="37.0" prefWidth="135.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
+                                    <TextField fx:id="newSaveAmount" layoutX="111.0" layoutY="191.0" prefHeight="37.0" prefWidth="135.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10; -fx-text-fill: #FFFFFF;">
                                        <font>
                                           <Font name="Dubai Regular" size="12.0" />
                                        </font>
                                     </TextField>
-                                    <Button alignment="CENTER" layoutX="95.0" layoutY="312.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ApplySaveChanges" prefHeight="57.0" prefWidth="126.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Edit" textFill="WHITE">
+                                    <Button alignment="CENTER" layoutX="96.0" layoutY="289.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ApplySaveChanges" prefHeight="57.0" prefWidth="126.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Edit" textFill="WHITE">
                                        <font>
                                           <Font name="Dubai Regular" size="19.0" />
                                        </font>
                                     </Button>
-                                    <DatePicker fx:id="newSaveDate" layoutX="111.0" layoutY="129.0" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #6a5acd;" />
-                                    <Label layoutX="76.0" layoutY="68.0" prefHeight="35.0" prefWidth="35.0" text="ID :" textFill="SLATEBLUE">
+                                    <DatePicker fx:id="newSaveDate" layoutX="111.0" layoutY="104.0" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #6a5acd;" />
+                                    <Label layoutX="76.0" layoutY="68.0" prefHeight="35.0" prefWidth="35.0" text="ID :" textFill="#695acc00">
                                        <font>
                                           <Font name="Dubai Regular" size="20.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="newId" editable="false" layoutX="111.0" layoutY="67.0" prefHeight="37.0" prefWidth="135.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;">
+                                    <TextField fx:id="newId" editable="false" layoutX="111.0" layoutY="67.0" prefHeight="37.0" prefWidth="135.0" style="-fx-background-color: transparent; -fx-opacity: 0;">
                                        <font>
                                           <Font name="Dubai Regular" size="12.0" />
                                        </font>
@@ -131,5 +98,35 @@
             </AnchorPane>
          </items>
       </SplitPane>
+      <Button alignment="CENTER" layoutX="31.0" layoutY="271.0" mnemonicParsing="false" onAction="#switchToBudget" prefHeight="65.0" prefWidth="123.0" style="-fx-background-color: #6a5acd;" text="Budget" textFill="WHITE">
+         <font>
+            <Font name="Dubai Regular" size="26.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="31.0" layoutY="141.0" mnemonicParsing="false" onAction="#switchToTransaction" prefHeight="64.0" prefWidth="184.0" style="-fx-background-color: #6a5acd;" text="Transactions" textFill="WHITE">
+         <font>
+            <Font name="Dubai Regular" size="26.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="13.0" layoutY="336.0" mnemonicParsing="false" onAction="#switchToSave" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Savings" textFill="#dbdbdb" underline="true">
+         <font>
+            <Font name="Dubai Regular" size="26.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="28.0" layoutY="206.0" mnemonicParsing="false" onAction="#switchToBL" prefHeight="65.0" prefWidth="208.0" style="-fx-background-color: #6a5acd;" text="Borrow / Lend" textFill="WHITE">
+         <font>
+            <Font name="Dubai Regular" size="26.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="13.0" layoutY="648.0" mnemonicParsing="false" onAction="#switchToLoginPage" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" text="Logout" textFill="WHITE">
+         <font>
+            <Font name="Dubai Regular" size="26.0" />
+         </font>
+      </Button>
+      <Button alignment="CENTER" layoutX="61.0" layoutY="59.0" mnemonicParsing="false" onAction="#switchToDashBoard" prefHeight="66.0" prefWidth="177.0" style="-fx-background-color: #6a5acd;" text="MENU" textFill="#dbdbdb" underline="true">
+         <font>
+            <Font name="Dubai Regular" size="30.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
