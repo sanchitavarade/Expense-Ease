@@ -21,6 +21,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.stage.Stage;
 
+
 public class scene_controller implements Initializable {
     @FXML
     private Label Welcome=new Label("Welcome user");
@@ -34,6 +35,14 @@ public class scene_controller implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
+
+    @FXML
+    private Label passLabel1;
+
+    @FXML
+    private Label passLabel2;
+
     public void switchToSign(ActionEvent event) throws IOException{         // to switch the scene to dashboard
         root = FXMLLoader.load(getClass().getResource("finalsignup.fxml"));
         scene = new Scene(root);
@@ -48,20 +57,7 @@ public class scene_controller implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-    @FXML
-    private MenuItem Barbt;
 
-    @FXML
-    private MenuItem Piebt;
-    public void handleCharts(ActionEvent event) throws Exception {         // to switch the scene to dashboard
-        if(event.getSource()==Barbt){
-            switchToBar(event);
-
-        }
-        if(event.getSource()==Piebt){
-            switchToPie(event);
-        }
-    }
     public void switchToPie(ActionEvent event) throws Exception {
         root = FXMLLoader.load(getClass().getResource("finalPieChart.fxml"));
         scene = new Scene(root);
@@ -130,9 +126,25 @@ public class scene_controller implements Initializable {
         String signpass = tfSignPass.getText();
         String signpass2 = tfSignPass1.getText();
         int status =0;
-        if(signpass.compareTo(signpass2)==0){
-            if((signUser.length()==0)||(signpass.length()==0)){
+
+        if(signpass.compareTo(signpass2)==0) {
+            if ((signUser.length() == 0) || (signpass.length() == 0)) {
                 AlertConnector.Handle2();
+                return;
+            }
+            if (signpass.length() < 8){
+                AlertConnector.Handle4();
+                return;
+            }
+            int flag =0;
+            for (char chr: signpass.toCharArray()){
+                if ((chr>32 && chr<48)||(chr>57 && chr<65)){
+                    flag=1;
+                    break;
+                }
+            }
+            if (flag==0){
+                AlertConnector.Handle4();
                 return;
             }
             Class.forName("com.mysql.jdbc.Driver");
@@ -141,7 +153,7 @@ public class scene_controller implements Initializable {
             status = ps.executeUpdate();//to execute that statement
             switchToLoginPage(event);
             con.close();
-
+            return;
         }
         else if((signUser.length()==0)||(signpass.length()==0)){
             AlertConnector.Handle2();
@@ -168,7 +180,7 @@ public class scene_controller implements Initializable {
         String email = tfEmail.getText();
         String pass = tfPass.getText();
 //        System.out.println(AlertConnector.checkLogin1(email, pass));
-        if(AlertConnector.checkLogin1(email, pass)){
+        if(AlertConnector.checkLogin(email, pass)){
             switchToDashBoard(event);
             System.out.println("true");
         }

@@ -20,15 +20,7 @@ public class  AlertConnector {
 	public static void Handle1()
 	{
 		// set alert type
-		a = new Alert(AlertType.ERROR, "Invalid password", ButtonType.CANCEL);
-
-		// show the dialog
-		a.show();
-	}public static void Handle3()
-	{
-		// set alert type
-		a = new Alert(AlertType.ERROR,
-				"No such user found", ButtonType.CANCEL);
+		a = new Alert(AlertType.ERROR, "Invalid Password", ButtonType.CANCEL);
 
 		// show the dialog
 		a.show();
@@ -38,7 +30,7 @@ public class  AlertConnector {
 		// set alert type
 		a.setAlertType(AlertType.ERROR);
 		// content to show
-		a.setContentText("Confirm with same password ?");
+		a.setContentText("Confirm with same password");
 		// show the dialog
 		a.show();
 	}
@@ -47,11 +39,29 @@ public class  AlertConnector {
 		// set alert type
 		a.setAlertType(AlertType.ERROR);
 		// content to show
-		a.setContentText("Invalid Username or Password Length !");
+		a.setContentText("Invalid Username or Password Length!");
 		// show the dialog
 		a.show();
 	}
-	public static boolean checkLogin1(String name, String pass) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
+	public static void Handle3()
+	{
+		// set alert type
+		a = new Alert(AlertType.ERROR,
+				"No such user found", ButtonType.CANCEL);
+
+		// show the dialog
+		a.show();
+	}
+	public static void Handle4()
+	{
+		// set alert type
+		a = new Alert(AlertType.ERROR,
+				"Set stronger password", ButtonType.CANCEL);
+
+		// show the dialog
+		a.show();
+	}
+	public static boolean checkLogin(String name, String pass) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
 		// connecting database
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
@@ -69,7 +79,7 @@ public class  AlertConnector {
 				return true;
 			}
 			else{
-				System.out.println("Invalid login");
+				System.out.println("Invalid Login");
 				Handle1();
 				con.close();
 				return false;

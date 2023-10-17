@@ -39,6 +39,9 @@ public class AddTrans_scene implements Initializable {
     @FXML
     private TextField Trans_addAmt;
 
+    @FXML
+    private Label amtLabel;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         ObservableList<String> categList;
@@ -94,15 +97,31 @@ public class AddTrans_scene implements Initializable {
         String type = Combo_type.getValue();
         String categ = Combo_categ.getValue();
         String amt = Trans_addAmt.getText();
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
-        PreparedStatement ps = con.prepareStatement("insert into transactions (transactiondate, amount, transactiontype, category_name, user_id) values ('"+date+"', "+amt+", '"+type+"','"+categ+"',"+AlertConnector.user+");");
-        int status = ps.executeUpdate();//to execute that statement
-        if (status==0){
-            System.out.println("wrong");
+        try{
+            if(Integer.parseInt(amt)<0){
+                amtLabel.setText("Invalid Amount");
+                return;
+            }
+        }
+        catch(Exception e){
+            amtLabel.setText("Invalid Amount");
+        }
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
+            PreparedStatement ps = con.prepareStatement("insert into transactions (transactiondate, amount, transactiontype, category_name, user_id) values ('"+date+"', "+amt+", '"+type+"','"+categ+"',"+AlertConnector.user+");");
+            int status = ps.executeUpdate();//to execute that statement
+            if (status==0){
+                System.out.println("wrong");
+            }
+            con.close();
+        }
+        catch(Exception e)
+        {
+            amtLabel.setText("Invalid Entry");
+            return;
         }
         switchToTransaction(event);
-        con.close();
     }
     public void switchToDashBoard(ActionEvent event) throws IOException{         // to switch the scene to dashboard
         root = FXMLLoader.load(getClass().getResource("finalDashboard.fxml"));

@@ -77,6 +77,9 @@ public class Trans_Scene implements Initializable{
     @FXML
     private DatePicker search_date;
 
+    @FXML
+    private Label amtLabel;
+
     int index = -1;
 
     @FXML
@@ -320,13 +323,28 @@ public class Trans_Scene implements Initializable{
         String tfamt = newTransAmt.getText();
         String tfcateg = Combo_categ.getValue();
         LocalDate tfdate = newTransDate.getValue();
-        changeTransData(tfid,tftype,tfamt,tfcateg,tfdate);
+        try{
+            if(Integer.parseInt(tfamt)<0){
+                amtLabel.setText("Invalid Amount");
+                return;
+            }
+        }
+        catch(Exception e){
+            amtLabel.setText("Invalid Amount");
+        }
+        try {
+            changeTransData(tfid, tftype, tfamt, tfcateg, tfdate);
+        }
+        catch(Exception e)
+        {
+            amtLabel.setText("Invalid Entry");
+            return;
+        }
         switchToTransaction(event);
     }
 
-    public static void changeTransData(String id, String type, String amt, String categ, LocalDate date) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
-        try
-        {
+    public void changeTransData(String id, String type, String amt, String categ, LocalDate date) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
+
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
             Statement stmt = con.createStatement();
@@ -341,11 +359,6 @@ public class Trans_Scene implements Initializable{
                 System.out.println("ERROR OCCURRED :(");
 
             con.close();
-        }
-        catch(Exception e)
-        {
-            System.out.println(e);
-        }
     }
 
     public void deleteTrans(ActionEvent event) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
