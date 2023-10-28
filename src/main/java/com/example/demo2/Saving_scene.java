@@ -48,10 +48,14 @@ public class Saving_scene implements Initializable{
     @FXML
     private TextField newId;
 
+    @FXML
+    private Label TotalSaves;
+
 
 
     int index2 = -1;
-    //static int id1;
+
+    int totalSave =0;
 
     @FXML
     public void getSelectedSave(javafx.scene.input.MouseEvent event){
@@ -80,6 +84,7 @@ public class Saving_scene implements Initializable{
                     new saving(0,"0", 0)
             );
         }
+        TotalSaves.setText(String.valueOf(totalSave));
         saving_table.setItems(save_list);
 
         newSaveDate.setDayCellFactory(picker -> new DateCell() {
@@ -109,6 +114,7 @@ public class Saving_scene implements Initializable{
             String date = rs.getString("savingsdate");
             int saving = rs.getInt("amount");
             System.out.println(saving+"\t\t"+date);
+            totalSave+=saving;
             save_values.add(new saving(id, date, saving));
         }
         con.close();
