@@ -15,22 +15,22 @@
                         <Font name="Dubai Regular" size="14.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" layoutX="57.0" layoutY="444.0" mnemonicParsing="false" onAction="#switchToSave" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: white;" text="Savings" textFill="SLATEBLUE" underline="true" AnchorPane.bottomAnchor="284.6" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="370.0">
+                  <Button alignment="CENTER" layoutX="57.0" layoutY="444.0" mnemonicParsing="false" onAction="#switchToSave" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: 9340db;" text="Savings" textFill="SLATEBLUE" underline="true" AnchorPane.bottomAnchor="284.6" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="370.0">
                      <font>
                         <Font name="Dubai Bold" size="26.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" layoutX="58.0" layoutY="332.0" mnemonicParsing="false" onAction="#switchToBudget" prefHeight="65.0" prefWidth="123.0" style="-fx-background-color: white;" text="Budget" textFill="SLATEBLUE" AnchorPane.bottomAnchor="359.5" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="295.0">
+                  <Button alignment="CENTER" layoutX="58.0" layoutY="332.0" mnemonicParsing="false" onAction="#switchToBudget" prefHeight="65.0" prefWidth="123.0" style="-fx-background-color: 9340db;" text="Budget" textFill="SLATEBLUE" AnchorPane.bottomAnchor="359.5" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="295.0">
                      <font>
                         <Font name="Dubai Bold" size="26.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" layoutX="-3.0" layoutY="252.0" mnemonicParsing="false" onAction="#switchToBL" prefHeight="65.0" prefWidth="208.0" style="-fx-background-color: white;" text="Borrow / Lend" textFill="SLATEBLUE" AnchorPane.bottomAnchor="434.2" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="220.0">
+                  <Button alignment="CENTER" layoutX="-3.0" layoutY="252.0" mnemonicParsing="false" onAction="#switchToBL" prefHeight="65.0" prefWidth="208.0" style="-fx-background-color: 9340db;" text="Borrow / Lend" textFill="SLATEBLUE" AnchorPane.bottomAnchor="434.2" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="220.0">
                      <font>
                         <Font name="Dubai Bold" size="26.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" layoutX="8.0" layoutY="172.0" mnemonicParsing="false" onAction="#switchToTransaction" prefHeight="64.0" prefWidth="184.0" style="-fx-background-color: WHite;" text="Transactions" textFill="SLATEBLUE" AnchorPane.bottomAnchor="510.0" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="149.0">
+                  <Button alignment="CENTER" layoutX="8.0" layoutY="172.0" mnemonicParsing="false" onAction="#switchToTransaction" prefHeight="64.0" prefWidth="184.0" style="-fx-background-color: 9340db;" text="Transactions" textFill="SLATEBLUE" AnchorPane.bottomAnchor="510.0" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="149.0">
                      <font>
                         <Font name="Dubai Bold" size="26.0" />
                      </font>
@@ -80,12 +80,12 @@
             </AnchorPane>
          </items>
       </SplitPane>
-      <Button alignment="CENTER" layoutX="13.0" layoutY="648.0" mnemonicParsing="false" onAction="#switchToLoginPage" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: white;" text="Logout" textFill="SLATEBLUE" AnchorPane.bottomAnchor="24.4" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="1018.0" AnchorPane.topAnchor="630.0">
+      <Button alignment="CENTER" layoutX="13.0" layoutY="648.0" mnemonicParsing="false" onAction="#switchToLoginPage" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: 9340db;" text="Logout" textFill="SLATEBLUE" AnchorPane.bottomAnchor="24.4" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="1018.0" AnchorPane.topAnchor="630.0">
          <font>
             <Font name="Dubai Bold" size="30.0" />
          </font>
       </Button>
-      <Button alignment="CENTER" layoutX="61.0" layoutY="59.0" mnemonicParsing="false" onAction="#switchToDashBoard" prefHeight="61.0" prefWidth="208.0" style="-fx-background-color: white;" text="HOME" textFill="SLATEBLUE" underline="true" AnchorPane.bottomAnchor="581.0" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="1018.0" AnchorPane.topAnchor="78.0">
+      <Button alignment="CENTER" layoutX="61.0" layoutY="59.0" mnemonicParsing="false" onAction="#switchToDashBoard" prefHeight="61.0" prefWidth="208.0" style="-fx-background-color: 9340db;" text="HOME" textFill="SLATEBLUE" underline="true" AnchorPane.bottomAnchor="581.0" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="1018.0" AnchorPane.topAnchor="78.0">
          <font>
             <Font name="Dubai Bold" size="30.0" />
          </font>
