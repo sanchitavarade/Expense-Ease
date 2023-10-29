@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -18,6 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class BL_scene implements Initializable {
@@ -43,6 +45,8 @@ public class BL_scene implements Initializable {
     private ComboBox<String> Combo_type;
     @FXML
     private TableColumn<BorrowLend, Integer> bl_amt;
+    @FXML
+    private TableColumn<BorrowLend, Integer> bl_id;
 
     @FXML
     private DatePicker BLdate;
@@ -54,7 +58,13 @@ public class BL_scene implements Initializable {
     private TextField BLamt;
 
     @FXML
+    private TextField BLid;
+
+    @FXML
     private DatePicker BLdueDate;
+
+    @FXML
+    private Label AlertLabel;
 
     @FXML
     void addBL(ActionEvent event) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException{
@@ -64,15 +74,53 @@ public class BL_scene implements Initializable {
         String desc = BLdesc.getText();
         String amt = BLamt.getText();
 
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
-        PreparedStatement ps = con.prepareStatement("INSERT INTO borrow_lend (bor_len_date, bor_len_due_date, bor_len_type, bor_len_description, bor_len_amount, user_id) VALUES ('"+date+"', '"+duedate+"', '"+type+"','"+desc+"',"+amt+", "+AlertConnector.user+");");
-        int status = ps.executeUpdate();//to execute that statement
-        if (status==0){
-            System.out.println("wrong");
+        if(BLid.getText().compareTo("")!=0){
+            AlertLabel.setText("Record Already Exists");
+            return;
+        }
+
+        try{
+            if(Integer.parseInt(amt)<0){
+                AlertLabel.setText("Invalid Amount");
+                return;
+            }
+        }
+        catch(Exception e){
+            AlertLabel.setText("Invalid Amount");
+        }
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
+            PreparedStatement ps = con.prepareStatement("INSERT INTO borrow_lend (bor_len_date, bor_len_due_date, bor_len_type, bor_len_description, bor_len_amount, user_id) VALUES ('"+date+"', '"+duedate+"', '"+type+"','"+desc+"',"+amt+", "+AlertConnector.user+");");
+            int status = ps.executeUpdate();//to execute that statement
+            if (status==0){
+                AlertLabel.setText("Invalid Entry");
+            }
+            con.close();
+        }
+        catch(Exception e)
+        {
+            AlertLabel.setText("Invalid Entry");
+            return;
         }
         switchToBL(event);
-        con.close();
+    }
+
+    @FXML
+    void deleteBL(ActionEvent event) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
+        Statement stmt = con.createStatement();
+        String q4 = "delete from borrow_lend where bor_len_id = ? ;" ;
+        try{
+            PreparedStatement pst = con.prepareStatement(q4);
+            pst.setString(1, BLid.getText());
+            pst.execute();
+            switchToBL(event);
+
+        }catch(Exception e){
+            System.out.println("error");
+        }
 
     }
 
@@ -82,6 +130,7 @@ public class BL_scene implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle){
         bl_ddate.setCellValueFactory(new PropertyValueFactory<BorrowLend, String>("ddate"));
         bl_type.setCellValueFactory(new PropertyValueFactory<BorrowLend, String>("type"));
+        bl_id.setCellValueFactory(new PropertyValueFactory<BorrowLend, Integer>("id"));
         bl_desc.setCellValueFactory(new PropertyValueFactory<BorrowLend, String>("desc"));
         bl_amt.setCellValueFactory(new PropertyValueFactory<BorrowLend, Integer>("amt"));
         typeValues.clear();
@@ -99,7 +148,7 @@ public class BL_scene implements Initializable {
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
             System.out.println("error occured ="+e);
             list = FXCollections.observableArrayList(
-                    new BorrowLend("22-08-2023", "Borrowed", "Error", 0)
+                    new BorrowLend(101, "22-08-2023", "Borrowed", "Error", 0)
             );
         }
         bl_Table.setItems(list);
@@ -116,6 +165,71 @@ public class BL_scene implements Initializable {
                 }
             }
         });
+    }
+
+    @FXML
+    void editBL(ActionEvent event) throws IOException, InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{
+        String tftype =Combo_type.getValue();
+        String tfamt = BLamt.getText();
+        String tfDesc = BLdesc.getText();
+        LocalDate tfDdate = BLdueDate.getValue();
+        LocalDate tfdate = BLdate.getValue();
+        String tfid = BLid.getText();
+
+        if(BLid.getText().compareTo("")==0){
+            AlertLabel.setText("Record comparison cannot be done\nPlease select from table alongside");
+            return;
+        }
+
+        try{
+            if(Integer.parseInt(tfamt)<0){
+                AlertLabel.setText("Invalid Amount");
+                return;
+            }
+        }
+        catch(Exception e){
+            AlertLabel.setText("Invalid Amount");
+        }
+        try {
+            changeBLData(tfid, tftype, tfamt, tfDesc, tfDdate, tfdate);
+        }
+        catch(Exception e)
+        {
+            AlertLabel.setText("Invalid Entry");
+            return;
+        }
+        switchToBL(event);
+    }
+
+    private void changeBLData(String tfid, String tftype, String tfamt, String tfDesc, LocalDate tfDdate, LocalDate tfdate) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
+        Statement stmt = con.createStatement();
+
+        // Updating database
+        String q2 = "UPDATE borrow_Lend set bor_len_date = '" +tfdate+ "', bor_len_due_date = '"+ tfDdate +"', bor_len_amount = "+tfamt+", bor_len_type = '" +tftype+ "', bor_len_description = '" +tfDesc+ "' WHERE bor_len_id = " +tfid+ " and user_id ="+AlertConnector.user+";"  ;
+        int z = stmt.executeUpdate(q2);
+
+        if (z > 0)
+            System.out.println("Expenses Updated");
+        else
+            System.out.println("ERROR OCCURRED :(");
+
+        con.close();
+    }
+
+    @FXML
+    void getSelected(MouseEvent event) {
+        index = bl_Table.getSelectionModel().getSelectedIndex();
+        if(index<=-1){
+            return;
+        }
+        BLid.setText(bl_id.getCellData(index).toString());
+        BLdesc.setText(bl_desc.getCellData(index).toString());
+        Combo_type.setValue(bl_type.getCellData(index).toString());
+        BLamt.setText(bl_amt.getCellData(index).toString());
+        BLdueDate.setValue(LocalDate.parse(bl_ddate.getCellData(index), DateTimeFormatter.ISO_LOCAL_DATE));
+        BLdate.setValue(LocalDate.now());
     }
 
     public void switchToDashBoard(ActionEvent event) throws IOException{         // to switch the scene to dashboard
@@ -177,12 +291,13 @@ public class BL_scene implements Initializable {
         ResultSet rs1 = p1.executeQuery();
         System.out.println("printing now");
         while (rs1.next()) {
+            int id = rs1.getInt("bor_len_id");
             String ddate = rs1.getString("bor_len_due_date");
             String type = rs1.getString("bor_len_type");
             String desc = rs1.getString("bor_len_description");
             int amt = rs1.getInt("bor_len_amount");
             //System.out.println(type+"\t\t"+date+"\t\t"+amt+"\t\t"+categ);
-            values.add(new BorrowLend(ddate, type, desc, amt));
+            values.add(new BorrowLend(id, ddate, type, desc, amt));
         }
         con.close();
     }

@@ -100,7 +100,21 @@ public class Saving_scene implements Initializable{
             }
         });
     }
+    @FXML
+    void deleteSave(ActionEvent event)  throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
+        Statement stmt = con.createStatement();
+        String q4 = "delete from savings where saving_id = ?" ;
+        try{
+            PreparedStatement pst = con.prepareStatement(q4);
+            pst.setString(1, newId.getText());
+            pst.execute();
+            switchToTransaction(event);
 
+        }catch(Exception e){}
+
+    }
     private void giveSave() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException{
         save_values.clear();
         Class.forName("com.mysql.jdbc.Driver");

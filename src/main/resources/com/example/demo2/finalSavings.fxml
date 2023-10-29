@@ -7,6 +7,8 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -36,7 +38,7 @@
                           <items>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="607.0" prefWidth="642.0" stylesheets="@style.css">
                                  <children>
-                                    <TableView fx:id="saving_table" layoutX="11.0" layoutY="90.0" onMouseClicked="#getSelectedSave" prefHeight="419.0" prefWidth="616.0">
+                                    <TableView fx:id="saving_table" layoutX="11.0" layoutY="40.0" onMouseClicked="#getSelectedSave" prefHeight="419.0" prefWidth="616.0">
                                        <columns>
                                           <TableColumn fx:id="save_id" minWidth="0.0" prefWidth="0.0" text="ID" />
                                           <TableColumn fx:id="save_date" prefWidth="308.0" style="-fx-alignment: CENTER; -fx-font-family: Dubai; -fx-font-size: 13;" text="Date" />
@@ -52,7 +54,7 @@
                                     <Label fx:id="TotalSaves" layoutX="192.0" layoutY="530.0" prefHeight="26.0" prefWidth="64.0" />
                                  </children>
                               </AnchorPane>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                            <AnchorPane maxWidth="315.0" minHeight="0.0" minWidth="315.0" prefHeight="160.0" prefWidth="100.0">
                                  <children>
                                     <Label layoutX="72.0" layoutY="21.0" text="Edit Savings :" textFill="SLATEBLUE">
                                        <font>
@@ -90,6 +92,16 @@
                                           <Font name="Dubai Regular" size="12.0" />
                                        </font>
                                     </TextField>
+                                    <ImageView fitHeight="47.0" fitWidth="43.0" layoutX="233.0" layoutY="413.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@Trash_Can-removebg-preview.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button alignment="CENTER" layoutX="233.0" layoutY="413.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteSave" opacity="0.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" textFill="WHITE">
+                                       <font>
+                                          <Font name="Dubai Regular" size="19.0" />
+                                       </font>
+                                    </Button>
                                  </children>
                               </AnchorPane>
                           </items>
