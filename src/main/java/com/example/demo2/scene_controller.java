@@ -2,10 +2,10 @@ package com.example.demo2;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -22,12 +22,12 @@ import javafx.scene.Parent;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
-
 public class scene_controller implements Initializable {
+    public static ArrayList<String> quotesList=new ArrayList<String>();
     @FXML
     private Label Welcome=new Label("Welcome user");
     @FXML
-    private Label Quotes;
+    private Label Quotes=new Label("Error");
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -192,5 +192,17 @@ public class scene_controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Welcome.setText("Welcome, "+ AlertConnector.username+" !");
+        quotesList.addAll(Arrays.asList("Savings, remember, is the prerequisite of investment.",
+        "Money is a terrible master but an excellent servant.",
+        "It's not your salary that makes you rich; it's your spending habits.",
+        "Money, like emotions, is something you must control to keep your life on the right track.",
+        "Do not save what is left after spending, but spend what is left after saving.",
+        "The art is not in making money, but in keeping it.",
+        "A budget is telling your money where to go instead of wondering where it went."));
+
+
+        Random random = new Random();
+        String finalQuote = quotesList.get(random.nextInt(quotesList.size()));
+        Quotes.setText(finalQuote);
     }
 }
