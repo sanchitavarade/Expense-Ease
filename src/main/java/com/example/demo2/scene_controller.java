@@ -26,6 +26,8 @@ import javafx.stage.Stage;
 public class scene_controller implements Initializable {
     @FXML
     private Label Welcome=new Label("Welcome user");
+    @FXML
+    private Label Quotes;
     private Stage stage;
     private Scene scene;
     private Parent root;
