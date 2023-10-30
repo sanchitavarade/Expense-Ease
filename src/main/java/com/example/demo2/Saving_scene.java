@@ -59,17 +59,6 @@ public class Saving_scene implements Initializable{
 
     int totalSave =0;
 
-    @FXML
-    public void getSelectedSave(javafx.scene.input.MouseEvent event){
-        index2 = saving_table.getSelectionModel().getSelectedIndex();
-        if(index2<=-1){
-            return;
-        }
-        newSaveAmount.setText(save_saving.getCellData(index2).toString());
-        newId.setText(save_id.getCellData(index2).toString());
-        newSaveDate.setValue(LocalDate.parse(save_date.getCellData(index2), DateTimeFormatter.ISO_LOCAL_DATE));
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         save_id.setCellValueFactory(new PropertyValueFactory<saving, Integer>("id"));
@@ -102,6 +91,19 @@ public class Saving_scene implements Initializable{
             }
         });
     }
+
+
+    @FXML
+    public void getSelectedSave(javafx.scene.input.MouseEvent event){
+        index2 = saving_table.getSelectionModel().getSelectedIndex();
+        if(index2<=-1){
+            return;
+        }
+        newSaveAmount.setText(save_saving.getCellData(index2).toString());
+        newId.setText(save_id.getCellData(index2).toString());
+        newSaveDate.setValue(LocalDate.parse(save_date.getCellData(index2), DateTimeFormatter.ISO_LOCAL_DATE));
+    }
+
     @FXML
     void deleteSave(ActionEvent event)  throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
         Class.forName("com.mysql.jdbc.Driver");
@@ -236,6 +238,20 @@ public class Saving_scene implements Initializable{
     @FXML
     public void switchToLoginPage(ActionEvent event) throws IOException{         // to switch the scene to dashboard
         root = FXMLLoader.load(getClass().getResource("finalLoginPage.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToPie(ActionEvent event) throws Exception {
+        root = FXMLLoader.load(getClass().getResource("finalPieChart.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToBar(ActionEvent event) throws Exception {
+        root = FXMLLoader.load(getClass().getResource("finalBarChart.fxml"));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);

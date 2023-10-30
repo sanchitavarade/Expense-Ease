@@ -8,18 +8,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.scene_controller">
+<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.scene_controller">
    <children>
-      <Label fx:id="Welcome" layoutX="32.0" layoutY="25.0" prefHeight="75.0" prefWidth="528.0" text="Welcome, User !" textFill="SLATEBLUE">
+      <Label fx:id="Welcome" layoutX="24.0" layoutY="14.0" prefHeight="75.0" prefWidth="528.0" text="Welcome, User !" textFill="SLATEBLUE">
          <font>
-            <Font name="Dubai Regular" size="36.0" />
+            <Font name="Dubai Bold" size="36.0" />
          </font>
       </Label>
       <Label fx:id="Quotes" alignment="CENTER" layoutX="165.0" layoutY="100.0" prefHeight="61.0" prefWidth="947.0" text="Quote" textFill="SLATEBLUE">
          <font>
             <Font name="System Bold" size="21.0" />
          </font></Label>
-      <Button layoutX="163.0" layoutY="180.0" mnemonicParsing="false" onAction="#switchToTransaction" prefHeight="160.0" prefWidth="191.0" style="-fx-background-color: transparent; -fx-border-color: #6a5acd; -fx-border-radius: 10; -fx-border-width: 3;" text="Transactions" textFill="SLATEBLUE">
+      <Button layoutX="167.0" layoutY="213.0" mnemonicParsing="false" onAction="#switchToTransaction" prefHeight="160.0" prefWidth="191.0" style="-fx-background-color: white; -fx-border-color: #6a5acd; -fx-border-width: 3;" styleClass="dbutton" stylesheets="@style.css" text="Transactions" textFill="SLATEBLUE">
          <padding>
             <Insets top="120.0" />
          </padding>
@@ -27,12 +27,12 @@
             <Font name="Dubai Regular" size="18.0" />
          </font>
       </Button>
-      <ImageView disable="true" fitHeight="93.0" fitWidth="103.0" layoutX="212.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView disable="true" fitHeight="93.0" fitWidth="103.0" layoutX="216.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Transaction.jpg" />
+            <Image url="@rupee.png" />
          </image>
       </ImageView>
-      <Button layoutX="539.0" layoutY="180.0" mnemonicParsing="false" onAction="#switchToBL" prefHeight="160.0" prefWidth="191.0" style="-fx-background-color: transparent; -fx-border-color: #6a5acd; -fx-border-radius: 10; -fx-border-width: 3;" text="Borrow/Lend" textFill="SLATEBLUE">
+      <Button layoutX="543.0" layoutY="213.0" mnemonicParsing="false" onAction="#switchToBL" prefHeight="160.0" prefWidth="191.0" style="-fx-background-color: white; -fx-border-color: #6a5acd; -fx-border-width: 3;" styleClass="dbutton" stylesheets="@style.css" text="Borrow/Lend" textFill="SLATEBLUE">
          <padding>
             <Insets top="120.0" />
          </padding>
@@ -40,12 +40,12 @@
             <Font name="Dubai Regular" size="18.0" />
          </font>
       </Button>
-      <ImageView disable="true" fitHeight="93.0" fitWidth="103.0" layoutX="588.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView disable="true" fitHeight="93.0" fitWidth="103.0" layoutX="592.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@BL.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="915.0" layoutY="180.0" mnemonicParsing="false" onAction="#switchToBudget" prefHeight="160.0" prefWidth="191.0" style="-fx-background-color: transparent; -fx-border-color: #6a5acd; -fx-border-radius: 10; -fx-border-width: 3;" text="Budget" textFill="SLATEBLUE">
+      <Button layoutX="919.0" layoutY="213.0" mnemonicParsing="false" onAction="#switchToBudget" prefHeight="160.0" prefWidth="191.0" style="-fx-background-color: white; -fx-border-color: #6a5acd; -fx-border-width: 3;" styleClass="dbutton" stylesheets="@style.css" text="Budget" textFill="SLATEBLUE">
          <padding>
             <Insets top="120.0" />
          </padding>
@@ -53,12 +53,12 @@
             <Font name="Dubai Regular" size="18.0" />
          </font>
       </Button>
-      <ImageView disable="true" fitHeight="93.0" fitWidth="103.0" layoutX="985.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView disable="true" fitHeight="93.0" fitWidth="103.0" layoutX="989.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Budget.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="163.0" layoutY="406.0" mnemonicParsing="false" onAction="#switchToSave" prefHeight="160.0" prefWidth="191.0" style="-fx-background-color: transparent; -fx-border-color: #6a5acd; -fx-border-radius: 10; -fx-border-width: 3;" text="Savings" textFill="SLATEBLUE">
+      <Button layoutX="167.0" layoutY="439.0" mnemonicParsing="false" onAction="#switchToSave" prefHeight="160.0" prefWidth="191.0" style="-fx-background-color: white; -fx-border-color: #6a5acd; -fx-border-width: 3;" styleClass="dbutton" stylesheets="@style.css" text="Savings" textFill="SLATEBLUE">
          <padding>
             <Insets top="120.0" />
          </padding>
@@ -66,36 +66,49 @@
             <Font name="Dubai Regular" size="18.0" />
          </font>
       </Button>
-      <ImageView disable="true" fitHeight="93.0" fitWidth="103.0" layoutX="212.0" layoutY="426.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView disable="true" fitHeight="93.0" fitWidth="103.0" layoutX="216.0" layoutY="459.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Save.jpg" />
          </image>
       </ImageView>
-      <ImageView disable="true" fitHeight="93.0" fitWidth="103.0" layoutX="588.0" layoutY="436.0" pickOnBounds="true" preserveRatio="true">
+      <Button layoutX="543.0" layoutY="439.0" mnemonicParsing="false" onAction="#switchToPie" prefHeight="160.0" prefWidth="191.0" style="-fx-background-color: white; -fx-border-color: #6a5acd; -fx-border-width: 3;" styleClass="dbutton" stylesheets="@style.css" text="Pie-Chart" textFill="SLATEBLUE">
+         <padding>
+            <Insets top="120.0" />
+         </padding>
+         <font>
+            <Font name="Dubai Regular" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="919.0" layoutY="439.0" mnemonicParsing="false" onAction="#switchToBar" prefHeight="160.0" prefWidth="191.0" style="-fx-background-color: white; -fx-border-color: #6a5acd; -fx-border-width: 3;" styleClass="dbutton" stylesheets="@style.css" text="Bar-Chart" textFill="SLATEBLUE">
+         <padding>
+            <Insets top="120.0" />
+         </padding>
+         <font>
+            <Font name="Dubai Regular" size="18.0" />
+         </font>
+      </Button>
+      <ImageView disable="true" fitHeight="93.0" fitWidth="103.0" layoutX="592.0" layoutY="459.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pie_chart.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="539.0" layoutY="406.0" mnemonicParsing="false" onAction="#switchToPie" prefHeight="160.0" prefWidth="191.0" style="-fx-background-color: transparent; -fx-border-color: #6a5acd; -fx-border-radius: 10; -fx-border-width: 3;" text="Pie-Chart" textFill="SLATEBLUE">
-         <padding>
-            <Insets top="120.0" />
-         </padding>
-         <font>
-            <Font name="Dubai Regular" size="18.0" />
-         </font>
-      </Button>
-      <ImageView disable="true" fitHeight="93.0" fitWidth="103.0" layoutX="964.0" layoutY="436.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView disable="true" fitHeight="93.0" fitWidth="103.0" layoutX="968.0" layoutY="459.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@bar_chart.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="915.0" layoutY="406.0" mnemonicParsing="false" onAction="#switchToBar" prefHeight="160.0" prefWidth="191.0" style="-fx-background-color: transparent; -fx-border-color: #6a5acd; -fx-border-radius: 10; -fx-border-width: 3;" text="Bar-Chart" textFill="SLATEBLUE">
-         <padding>
-            <Insets top="120.0" />
-         </padding>
+      <Button layoutX="1170.0" layoutY="28.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToLoginPage" prefHeight="75.0" prefWidth="63.0" style="-fx-background-color: white; -fx-border-color: #6a5acd; -fx-border-width: 2;" styleClass="dbutton" stylesheets="@style.css" text="Logout" textAlignment="CENTER" textFill="SLATEBLUE">
          <font>
             <Font name="Dubai Regular" size="18.0" />
          </font>
+         <padding>
+            <Insets left="-5.0" right="-5.0" top="42.0" />
+         </padding>
       </Button>
+      <ImageView disable="true" fitHeight="46.0" fitWidth="53.0" layoutX="1179.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logout.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

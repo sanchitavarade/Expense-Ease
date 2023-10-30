@@ -106,10 +106,12 @@ public class AddTrans_scene implements Initializable {
         catch(Exception e){
             amtLabel.setText("Invalid Amount");
         }
+        if(type.compareTo("Expense")==0)
+            check_limit(categ, Integer.parseInt(amt));
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
-            PreparedStatement ps = con.prepareStatement("insert into transactions (transactiondate, amount, transactiontype, category_name, user_id) values ('"+date+"', "+amt+", '"+type+"','"+categ+"',"+AlertConnector.user+");");
+            PreparedStatement ps = con.prepareStatement("insert into transactions (transactiondate, amount, transactiontype, category_name, user_id, Budget_id) values ('"+date+"', "+amt+", '"+type+"','"+categ+"',"+AlertConnector.user+",'"+categ.concat(Integer.toString(AlertConnector.user))+"');");
             int status = ps.executeUpdate();//to execute that statement
             if (status==0){
                 System.out.println("wrong");
@@ -122,6 +124,27 @@ public class AddTrans_scene implements Initializable {
             return;
         }
         switchToTransaction(event);
+    }
+    public static boolean check_limit(String categ, int amt) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException {
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
+
+        PreparedStatement p1 = con.prepareStatement("select elimit from budget where Budget_id ='"+categ.concat(Integer.toString(AlertConnector.user))+"';");
+        ResultSet rs1 = p1.executeQuery();
+        int limit = 7500;
+        if(rs1.next())
+            limit = rs1.getInt("elimit");
+        PreparedStatement p2 = con.prepareStatement("select sum(amount) as Total from transactions group by Budget_id, transactiontype having transactiontype='Expense' and Budget_id ='"+categ.concat(Integer.toString(AlertConnector.user))+"';");
+        ResultSet rs2 = p2.executeQuery();
+        int total=0;
+        if(rs2.next())
+            total = rs2.getInt("Total");
+        total +=amt;
+        if(total>limit) {
+            AlertConnector.BudgetBeyond();
+            return false;
+        }
+        return true;
     }
     public void switchToDashBoard(ActionEvent event) throws IOException{         // to switch the scene to dashboard
         root = FXMLLoader.load(getClass().getResource("finalDashboard.fxml"));
@@ -173,6 +196,20 @@ public class AddTrans_scene implements Initializable {
     @FXML
     public void switchToCateg(ActionEvent event) throws IOException{        // to switch the scene to transaction
         root = FXMLLoader.load(getClass().getResource("finalAddCategory.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToPie(ActionEvent event) throws Exception {
+        root = FXMLLoader.load(getClass().getResource("finalPieChart.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToBar(ActionEvent event) throws Exception {
+        root = FXMLLoader.load(getClass().getResource("finalBarChart.fxml"));
         scene = new Scene(root);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);

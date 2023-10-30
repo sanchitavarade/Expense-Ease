@@ -31,6 +31,37 @@ public class scene_controller implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
+
+    @FXML
+    private Label passLabel1;
+
+    @FXML
+    private Label passLabel2;
+
+    //inputs of login page
+    @FXML
+    private TextField tfEmail;
+
+    @FXML
+    private PasswordField tfPass;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Welcome.setText("Welcome, "+ AlertConnector.username+" !");
+        quotesList.addAll(Arrays.asList("Savings, remember, is the prerequisite of investment.",
+                "Money is a terrible master but an excellent servant.",
+                "It's not your salary that makes you rich; it's your spending habits.",
+                "Money, like emotions, is something you must control to keep your life on the right track.",
+                "Do not save what is left after spending, but spend what is left after saving.",
+                "The art is not in making money, but in keeping it.",
+                "A budget is telling your money where to go instead of wondering where it went."));
+
+
+        Random random = new Random();
+        String finalQuote = quotesList.get(random.nextInt(quotesList.size()));
+        Quotes.setText(finalQuote);
+    }
+
     public void switchToLoginPage(ActionEvent event) throws IOException{         // to switch the scene to dashboard
         root = FXMLLoader.load(getClass().getResource("finalLoginPage.fxml"));
         scene = new Scene(root);
@@ -38,13 +69,6 @@ public class scene_controller implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
-
-    @FXML
-    private Label passLabel1;
-
-    @FXML
-    private Label passLabel2;
 
     public void switchToSign(ActionEvent event) throws IOException{         // to switch the scene to dashboard
         root = FXMLLoader.load(getClass().getResource("finalsignup.fxml"));
@@ -170,13 +194,6 @@ public class scene_controller implements Initializable {
         }
     }
 
-    //inputs of login page
-    @FXML
-    private TextField tfEmail;
-
-    @FXML
-    private PasswordField tfPass;
-
     @FXML
     void btnClicked(ActionEvent event) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException {
         // checks the login is valid or not
@@ -189,20 +206,4 @@ public class scene_controller implements Initializable {
         }
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        Welcome.setText("Welcome, "+ AlertConnector.username+" !");
-        quotesList.addAll(Arrays.asList("Savings, remember, is the prerequisite of investment.",
-        "Money is a terrible master but an excellent servant.",
-        "It's not your salary that makes you rich; it's your spending habits.",
-        "Money, like emotions, is something you must control to keep your life on the right track.",
-        "Do not save what is left after spending, but spend what is left after saving.",
-        "The art is not in making money, but in keeping it.",
-        "A budget is telling your money where to go instead of wondering where it went."));
-
-
-        Random random = new Random();
-        String finalQuote = quotesList.get(random.nextInt(quotesList.size()));
-        Quotes.setText(finalQuote);
-    }
 }

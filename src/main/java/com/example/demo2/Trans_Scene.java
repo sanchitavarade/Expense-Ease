@@ -225,12 +225,12 @@ public class Trans_Scene implements Initializable{
         try{
             if(Integer.parseInt(search_amt.getText())<0){
                 searchLabel.setText("Invalid Amount");
+                System.out.println(search_amt.getText());
                 return;
             }
         }
         catch(Exception e){
             searchLabel.setText("Invalid Entry");
-            return;
         }
         AlertConnector.tfTransamt=AlertConnector.tfTransamt.concat(search_amt.getText());
         if(Combo_Searchcateg.getValue()!=null) {
@@ -247,6 +247,90 @@ public class Trans_Scene implements Initializable{
             System.out.println("No date entered"+ e);
         }
         switchToTransaction(event);
+    }
+
+    private static void giveTrans() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
+        // connecting database
+        values.clear();
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
+
+        PreparedStatement p = con.prepareStatement("select * from transactions where user_id="+AlertConnector.user+";");
+        ResultSet rs = p.executeQuery();
+        System.out.println("printing now");
+        while(rs.next()){
+            int id = rs.getInt("transaction_id");
+            String type = rs.getString("transactiontype");
+            String date = rs.getString("transactiondate");
+            int amt = rs.getInt("amount");
+            String categ = rs.getString("category_name");
+            System.out.println(id+"\t\t"+type+"\t\t"+date+"\t\t"+amt+"\t\t"+categ);
+            values.add(new Transactions(id, type, amt, categ, date));
+        }
+        con.close();
+    }
+
+    @FXML
+    void ApplyTransChanges(ActionEvent event) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException {
+        // checks the login is valid or not
+        String tfid = newTransId.getText();
+        String tftype =Combo_type.getValue();
+        String tfamt = newTransAmt.getText();
+        String tfcateg = Combo_categ.getValue();
+        LocalDate tfdate = newTransDate.getValue();
+        try{
+            if(Integer.parseInt(tfamt)<0){
+                amtLabel.setText("Invalid Amount");
+                return;
+            }
+        }
+        catch(Exception e){
+            amtLabel.setText("Invalid Amount");
+        }
+        if(tftype.compareTo("Expense")==0)
+            AddTrans_scene.check_limit(tfcateg, Integer.parseInt(tfamt));
+        try {
+            changeTransData(tfid, tftype, tfamt, tfcateg, tfdate);
+        }
+        catch(Exception e)
+        {
+            amtLabel.setText("Invalid Entry");
+            return;
+        }
+        switchToTransaction(event);
+    }
+
+    public void changeTransData(String id, String type, String amt, String categ, LocalDate date) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
+
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
+        Statement stmt = con.createStatement();
+
+        // Updating database
+        String q2 = "UPDATE transactions set transactiontype = '" +type+ "', amount = "+ amt +", category_name = '" +categ+ "', transactiondate = '" +date+ "',Budget_id= '"+categ.concat(Integer.toString(AlertConnector.user))+"' WHERE transaction_id = " +id+ " and user_id ="+AlertConnector.user+";"  ;
+        int z = stmt.executeUpdate(q2);
+
+        if (z > 0)
+            System.out.println("Expenses Updated");
+        else
+            System.out.println("ERROR OCCURRED :(");
+
+        con.close();
+    }
+
+    public void deleteTrans(ActionEvent event) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
+        Statement stmt = con.createStatement();
+        String q4 = "delete from transactions where transaction_id = ? ;" ;
+        try{
+            PreparedStatement pst = con.prepareStatement(q4);
+            pst.setString(1, newTransId.getText());
+            pst.execute();
+            switchToTransaction(event);
+
+        }catch(Exception e){}
+
     }
     public void switchToDashBoard(ActionEvent event) throws IOException{         // to switch the scene to dashboard
         root = FXMLLoader.load(getClass().getResource("finalDashboard.fxml"));
@@ -305,88 +389,19 @@ public class Trans_Scene implements Initializable{
         stage.setScene(scene);
         stage.show();
     }
-
-
-    private static void giveTrans() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
-        // connecting database
-        values.clear();
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
-
-        PreparedStatement p = con.prepareStatement("select * from transactions where user_id="+AlertConnector.user+";");
-        ResultSet rs = p.executeQuery();
-        System.out.println("printing now");
-        while(rs.next()){
-            int id = rs.getInt("transaction_id");
-            String type = rs.getString("transactiontype");
-            String date = rs.getString("transactiondate");
-            int amt = rs.getInt("amount");
-            String categ = rs.getString("category_name");
-            System.out.println(id+"\t\t"+type+"\t\t"+date+"\t\t"+amt+"\t\t"+categ);
-            values.add(new Transactions(id, type, amt, categ, date));
-        }
-        con.close();
+    public void switchToPie(ActionEvent event) throws Exception {
+        root = FXMLLoader.load(getClass().getResource("finalPieChart.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
-
-    @FXML
-    void ApplyTransChanges(ActionEvent event) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException {
-        // checks the login is valid or not
-        String tfid = newTransId.getText();
-        String tftype =Combo_type.getValue();
-        String tfamt = newTransAmt.getText();
-        String tfcateg = Combo_categ.getValue();
-        LocalDate tfdate = newTransDate.getValue();
-        try{
-            if(Integer.parseInt(tfamt)<0){
-                amtLabel.setText("Invalid Amount");
-                return;
-            }
-        }
-        catch(Exception e){
-            amtLabel.setText("Invalid Amount");
-        }
-        try {
-            changeTransData(tfid, tftype, tfamt, tfcateg, tfdate);
-        }
-        catch(Exception e)
-        {
-            amtLabel.setText("Invalid Entry");
-            return;
-        }
-        switchToTransaction(event);
-    }
-
-    public void changeTransData(String id, String type, String amt, String categ, LocalDate date) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
-
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
-            Statement stmt = con.createStatement();
-
-            // Updating database
-            String q2 = "UPDATE transactions set transactiontype = '" +type+ "', amount = "+ amt +", category_name = '" +categ+ "', transactiondate = '" +date+ "' WHERE transaction_id = " +id+ " and user_id ="+AlertConnector.user+";"  ;
-            int z = stmt.executeUpdate(q2);
-
-            if (z > 0)
-                System.out.println("Expenses Updated");
-            else
-                System.out.println("ERROR OCCURRED :(");
-
-            con.close();
-    }
-
-    public void deleteTrans(ActionEvent event) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
-        Statement stmt = con.createStatement();
-        String q4 = "delete from transactions where transaction_id = ? ;" ;
-        try{
-            PreparedStatement pst = con.prepareStatement(q4);
-            pst.setString(1, newTransId.getText());
-            pst.execute();
-            switchToTransaction(event);
-
-        }catch(Exception e){}
-
+    public void switchToBar(ActionEvent event) throws Exception {
+        root = FXMLLoader.load(getClass().getResource("finalBarChart.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 
 }

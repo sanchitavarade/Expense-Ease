@@ -231,7 +231,26 @@ public class BL_scene implements Initializable {
         BLdueDate.setValue(LocalDate.parse(bl_ddate.getCellData(index), DateTimeFormatter.ISO_LOCAL_DATE));
         BLdate.setValue(LocalDate.now());
     }
+    private static void giveBl() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {//to throw basic exceptions
+        // connecting database
+        values.clear();
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
 
+        PreparedStatement p1 = con.prepareStatement("select * from borrow_lend where user_id=" + AlertConnector.user + ";");
+        ResultSet rs1 = p1.executeQuery();
+        System.out.println("printing now");
+        while (rs1.next()) {
+            int id = rs1.getInt("bor_len_id");
+            String ddate = rs1.getString("bor_len_due_date");
+            String type = rs1.getString("bor_len_type");
+            String desc = rs1.getString("bor_len_description");
+            int amt = rs1.getInt("bor_len_amount");
+            //System.out.println(type+"\t\t"+date+"\t\t"+amt+"\t\t"+categ);
+            values.add(new BorrowLend(id, ddate, type, desc, amt));
+        }
+        con.close();
+    }
     public void switchToDashBoard(ActionEvent event) throws IOException{         // to switch the scene to dashboard
         root = FXMLLoader.load(getClass().getResource("finalDashboard.fxml"));
         scene = new Scene(root);
@@ -280,27 +299,18 @@ public class BL_scene implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
-    private static void giveBl() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {//to throw basic exceptions
-        // connecting database
-        values.clear();
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
-
-        PreparedStatement p1 = con.prepareStatement("select * from borrow_lend where user_id=" + AlertConnector.user + ";");
-        ResultSet rs1 = p1.executeQuery();
-        System.out.println("printing now");
-        while (rs1.next()) {
-            int id = rs1.getInt("bor_len_id");
-            String ddate = rs1.getString("bor_len_due_date");
-            String type = rs1.getString("bor_len_type");
-            String desc = rs1.getString("bor_len_description");
-            int amt = rs1.getInt("bor_len_amount");
-            //System.out.println(type+"\t\t"+date+"\t\t"+amt+"\t\t"+categ);
-            values.add(new BorrowLend(id, ddate, type, desc, amt));
-        }
-        con.close();
+    public void switchToPie(ActionEvent event) throws Exception {
+        root = FXMLLoader.load(getClass().getResource("finalPieChart.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToBar(ActionEvent event) throws Exception {
+        root = FXMLLoader.load(getClass().getResource("finalBarChart.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 }
-
-
