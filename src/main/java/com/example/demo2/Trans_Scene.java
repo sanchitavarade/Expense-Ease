@@ -72,13 +72,16 @@ public class Trans_Scene implements Initializable{
     private DatePicker newTransDate;
 
     @FXML
-    private TextField search_id;
+    private TextField search_amt;
 
     @FXML
     private DatePicker search_date;
 
     @FXML
     private Label amtLabel;
+
+    @FXML
+    private Label searchLabel;
 
     int index = -1;
 
@@ -117,15 +120,16 @@ public class Trans_Scene implements Initializable{
         try {
             giveTrans();
             getCateg();
-            if(AlertConnector.tfTransid.compareTo("")!=0){
+            if(AlertConnector.tfTransamt.compareTo("")!=0){
                 Iterator itr = values.iterator();
+                int compare = Integer.parseInt(AlertConnector.tfTransamt);
                 while(itr.hasNext()){
                     Transactions value = (Transactions)itr.next();
-                    if(Integer.toString(value.getId()).compareTo(AlertConnector.tfTransid)!=0){
+                    if((value.getAmt()<compare*0.9)||(value.getAmt()>compare*1.1)){
                         itr.remove();
                     }
                 }
-                AlertConnector.tfTransid="";
+                AlertConnector.tfTransamt="";
             }
             else {
                 if (AlertConnector.tfTranscateg.compareTo("") != 0) {
@@ -218,7 +222,17 @@ public class Trans_Scene implements Initializable{
 
     @FXML
     public void searchTrans(ActionEvent event) throws IOException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
-        AlertConnector.tfTransid=AlertConnector.tfTransid.concat(search_id.getText());
+        try{
+            if(Integer.parseInt(search_amt.getText())<0){
+                searchLabel.setText("Invalid Amount");
+                return;
+            }
+        }
+        catch(Exception e){
+            searchLabel.setText("Invalid Entry");
+            return;
+        }
+        AlertConnector.tfTransamt=AlertConnector.tfTransamt.concat(search_amt.getText());
         if(Combo_Searchcateg.getValue()!=null) {
             AlertConnector.tfTranscateg = AlertConnector.tfTranscateg.concat(Combo_Searchcateg.getValue());
         }

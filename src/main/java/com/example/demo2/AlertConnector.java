@@ -7,7 +7,7 @@ import javafx.scene.control.ButtonType;
 
 public class  AlertConnector {
 
-	public static String tfTransid="";
+	public static String tfTransamt="";
 	public static String tfTranscateg="";
 	public static String tfTranstype="";
 	public static String tfTransdate="";
