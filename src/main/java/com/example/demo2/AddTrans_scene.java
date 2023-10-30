@@ -106,6 +106,8 @@ public class AddTrans_scene implements Initializable {
         catch(Exception e){
             amtLabel.setText("Invalid Amount");
         }
+        if(type.compareTo("Expense")==0)
+            check_limit(categ, Integer.parseInt(amt));
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
@@ -122,6 +124,27 @@ public class AddTrans_scene implements Initializable {
             return;
         }
         switchToTransaction(event);
+    }
+    public static boolean check_limit(String categ, int amt) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException {
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
+
+        PreparedStatement p1 = con.prepareStatement("select elimit from budget where Budget_id ='"+categ.concat(Integer.toString(AlertConnector.user))+"';");
+        ResultSet rs1 = p1.executeQuery();
+        int limit = 7500;
+        if(rs1.next())
+            limit = rs1.getInt("elimit");
+        PreparedStatement p2 = con.prepareStatement("select sum(amount) as Total from transactions group by Budget_id, transactiontype having transactiontype='Expense' and Budget_id ='"+categ.concat(Integer.toString(AlertConnector.user))+"';");
+        ResultSet rs2 = p2.executeQuery();
+        int total=0;
+        if(rs2.next())
+            total = rs2.getInt("Total");
+        total +=amt;
+        if(total>limit) {
+            AlertConnector.BudgetBeyond();
+            return false;
+        }
+        return true;
     }
     public void switchToDashBoard(ActionEvent event) throws IOException{         // to switch the scene to dashboard
         root = FXMLLoader.load(getClass().getResource("finalDashboard.fxml"));

@@ -125,3 +125,15 @@ INSERT INTO Savings (savingsdate, amount, User_id) VALUES
     ('2023-09-29', 2200, 101),
     ('2023-09-28', 2800, 102),
     ('2023-09-29', 1900, 102);
+
+delimiter //
+create procedure giveTotal(IN categoryName varchar(25), out Total int)
+begin
+	select b.category_name, sum(t.amount) as Total
+	from budget b, transactions t group by category_name; 
+end//
+delimiter ;
+
+call giveTotal("Groceries", @total);
+-- select b.category_name, sum(t.amount)
+-- from budget b, transactions t group by category_name; 

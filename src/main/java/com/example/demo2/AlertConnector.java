@@ -34,6 +34,15 @@ public class  AlertConnector {
 		// show the dialog
 		a.show();
 	}
+	public static void BudgetBeyond()
+	{
+		// set alert type
+		a.setAlertType(AlertType.WARNING);
+		// content to show
+		a.setContentText("You have Exceeded the Budget");
+		// show the dialog
+		a.show();
+	}
 	public static void Handle2()
 	{
 		// set alert type

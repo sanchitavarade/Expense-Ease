@@ -345,6 +345,8 @@ public class Trans_Scene implements Initializable{
         catch(Exception e){
             amtLabel.setText("Invalid Amount");
         }
+        if(tftype.compareTo("Expense")==0)
+            AddTrans_scene.check_limit(tfcateg, Integer.parseInt(tfamt));
         try {
             changeTransData(tfid, tftype, tfamt, tfcateg, tfdate);
         }
