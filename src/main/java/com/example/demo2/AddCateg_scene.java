@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -25,18 +26,38 @@ public class AddCateg_scene {
     private TextField add_categ_name;
 
     @FXML
+    private Label AlertLabel;
+
+    @FXML
     void addCateg(ActionEvent event)throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException{
         String categ = add_categ_name.getText();
         String limit = add_categ_limit.getText();
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
-        PreparedStatement ps = con.prepareStatement("INSERT INTO budget (elimit, category_name, user_id) VALUES ("+limit+", '"+categ+"',"+AlertConnector.user+");");
-        int status = ps.executeUpdate();//to execute that statement
-        if (status==0){
-            System.out.println("wrong");
+        try{
+            if(Integer.parseInt(limit)<0){
+                AlertLabel.setText("Invalid Amount");
+                return;
+            }
         }
-        switchToBudget(event);
-        con.close();
+        catch(Exception e){
+            AlertLabel.setText("Invalid Amount");
+            return;
+        }
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
+            PreparedStatement ps = con.prepareStatement("INSERT INTO budget (elimit, category_name, user_id) VALUES ("+limit+", '"+categ+"',"+AlertConnector.user+");");
+            int status = ps.executeUpdate();//to execute that statement
+            if (status==0){
+                System.out.println("wrong");
+            }
+            con.close();
+        }
+        catch(Exception e)
+        {
+            AlertLabel.setText("Invalid Entry");
+            return;
+        }
+        switchToTransaction(event);
     }
     public void switchToDashBoard(ActionEvent event) throws IOException{         // to switch the scene to dashboard
         root = FXMLLoader.load(getClass().getResource("finalDashboard.fxml"));

@@ -102,6 +102,7 @@
                                           <Font name="Dubai Regular" size="19.0" />
                                        </font>
                                     </Button>
+                                    <Label fx:id="AlertLabel" layoutX="126.0" layoutY="243.0" textFill="RED" />
                                  </children>
                               </AnchorPane>
                           </items>

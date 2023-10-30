@@ -18,6 +18,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.DateCell;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -31,6 +32,9 @@ public class AddSave_scene implements Initializable {
 
     @FXML
     private TextField addSaveAmt;
+
+    @FXML
+    private Label AlertLabel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -53,15 +57,33 @@ public class AddSave_scene implements Initializable {
     void addSave(ActionEvent event) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException{
         LocalDate date = addSaveDate.getValue();
         String amt = addSaveAmt.getText();
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
-        PreparedStatement ps = con.prepareStatement("INSERT INTO Savings (savingsdate, amount, User_id) VALUES ('"+date+"', "+amt+","+AlertConnector.user+");");
-        int status = ps.executeUpdate();//to execute that statement
-        if (status==0){
-            System.out.println("wrong");
+        try{
+            if(Integer.parseInt(amt)<0){
+                AlertLabel.setText("Invalid Amount");
+                return;
+            }
+        }
+        catch(Exception e){
+            AlertLabel.setText("Invalid Amount");
+            return;
+        }
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
+            PreparedStatement ps = con.prepareStatement("INSERT INTO Savings (savingsdate, amount, User_id) VALUES ('"+date+"', "+amt+","+AlertConnector.user+");");
+            int status = ps.executeUpdate();//to execute that statement
+            if (status==0){
+                System.out.println("wrong");
+            }
+            con.close();
+        }
+        catch(Exception e)
+        {
+            AlertLabel.setText("Invalid Entry");
+            return;
         }
         switchToSave(event);
-        con.close();
+
     }
     public void switchToDashBoard(ActionEvent event) throws IOException{         // to switch the scene to dashboard
         root = FXMLLoader.load(getClass().getResource("finalDashboard.fxml"));

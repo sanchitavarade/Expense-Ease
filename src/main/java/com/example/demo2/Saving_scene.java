@@ -51,6 +51,8 @@ public class Saving_scene implements Initializable{
     @FXML
     private Label TotalSaves;
 
+    @FXML
+    private Label AlertLabel;
 
 
     int index2 = -1;
@@ -110,10 +112,9 @@ public class Saving_scene implements Initializable{
             PreparedStatement pst = con.prepareStatement(q4);
             pst.setString(1, newId.getText());
             pst.execute();
-            switchToTransaction(event);
+            switchToSave(event);
 
         }catch(Exception e){}
-
     }
     private void giveSave() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException{
         save_values.clear();
@@ -141,14 +142,30 @@ public class Saving_scene implements Initializable{
         String tfsaveamount = newSaveAmount.getText();
         LocalDate tfsavedate = newSaveDate.getValue();
         String tfid = newId.getText();
-        changeSaveData(tfsaveamount,tfsavedate,tfid);
+        try{
+            if(Integer.parseInt(tfsaveamount)<0){
+                AlertLabel.setText("Invalid Amount");
+                return;
+            }
+        }
+        catch(Exception e){
+            AlertLabel.setText("Invalid Amount");
+            return;
+        }
+        try {
+            changeSaveData(tfsaveamount,tfsavedate,tfid);
+        }
+        catch(Exception e)
+        {
+            AlertLabel.setText("Invalid Entry");
+            return;
+        }
         switchToSave(event);
     }
 
     public static void changeSaveData(String amt, LocalDate date, String id) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
         try
         {
-
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
             Statement stmt = con.createStatement();
@@ -158,10 +175,8 @@ public class Saving_scene implements Initializable{
 
             if (y > 0)
                 System.out.println("Expenses Updated");
-
             else
                 System.out.println("ERROR OCCURRED :(");
-
             con.close();
         }
         catch(Exception e)
