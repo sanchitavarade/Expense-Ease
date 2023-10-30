@@ -47,6 +47,7 @@ public class budget_scene implements Initializable{
     @FXML
     private TextField newBudLimit;
 
+
     int index = -1;
 
     @FXML
@@ -63,15 +64,14 @@ public class budget_scene implements Initializable{
         Class.forName("com.mysql.jdbc.Driver");
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
         Statement stmt = con.createStatement();
-        String q4 = "delete from budget where category_name = ?" ;
+        String q4 = "delete from budget where Budget_id = ?" ;
         try{
             PreparedStatement pst = con.prepareStatement(q4);
-            pst.setString(1, newBudCateg.getText());
+            pst.setString(1, newBudCateg.getText().concat(Integer.toString(AlertConnector.user)));
             pst.execute();
             switchToBudget(event);
 
         }catch(Exception e){}
-
     }
 
     @Override
@@ -106,7 +106,7 @@ public class budget_scene implements Initializable{
             Statement stmt = con.createStatement();
 
             // Updating database
-            String q1 = "UPDATE budget set category_name = '" +categ+ "', elimit = "+ limit+" WHERE category_name = '" + categ + "' and user_id ="+AlertConnector.user+";"  ;
+            String q1 = "UPDATE budget set category_name = '" +categ+ "', elimit = "+ limit+" WHERE Budget_id = '"+categ.concat(Integer.toString(AlertConnector.user)) +"';"  ;
             int x = stmt.executeUpdate(q1);
 
             if (x > 0)
@@ -135,20 +135,6 @@ public class budget_scene implements Initializable{
             System.out.println(limit+"\t\t"+categ);
             Bud_values.add(new Budget(categ, limit));
         }
-        con.close();
-    }
-    @FXML
-    void addCateg(ActionEvent event)throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException{
-        String categ = newBudCateg.getText();
-        String limit = newBudLimit.getText();
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
-        PreparedStatement ps = con.prepareStatement("INSERT INTO budget (elimit, category_id, category_name, user_id) ( "+limit+", 501, '"+categ+"' ,"+AlertConnector.user+");");
-        int status = ps.executeUpdate();//to execute that statement
-        if (status==0){
-            System.out.println("wrong");
-        }
-        switchToTransaction(event);
         con.close();
     }
     public void switchToDashBoard(ActionEvent event) throws IOException{         // to switch the scene to dashboard

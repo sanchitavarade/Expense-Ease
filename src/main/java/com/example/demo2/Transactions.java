@@ -5,6 +5,7 @@ public class Transactions {
     private int amt;
     private String categ;
     private String date;
+    private String budId;
 
 
     public Transactions(int id,String type,int amt,String categ,String date){
@@ -13,6 +14,7 @@ public class Transactions {
         this.amt=amt;
         this.categ=categ;
         this.date=date;
+        this.budId=AlertConnector.user+categ;
     }
 
 
@@ -29,4 +31,5 @@ public class Transactions {
     public String getDate(){
         return date;
     }
+    public String getBudId(){return budId;}
 }

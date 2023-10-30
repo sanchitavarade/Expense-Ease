@@ -225,12 +225,12 @@ public class Trans_Scene implements Initializable{
         try{
             if(Integer.parseInt(search_amt.getText())<0){
                 searchLabel.setText("Invalid Amount");
+                System.out.println(search_amt.getText());
                 return;
             }
         }
         catch(Exception e){
             searchLabel.setText("Invalid Entry");
-            return;
         }
         AlertConnector.tfTransamt=AlertConnector.tfTransamt.concat(search_amt.getText());
         if(Combo_Searchcateg.getValue()!=null) {
@@ -363,7 +363,7 @@ public class Trans_Scene implements Initializable{
             Statement stmt = con.createStatement();
 
             // Updating database
-            String q2 = "UPDATE transactions set transactiontype = '" +type+ "', amount = "+ amt +", category_name = '" +categ+ "', transactiondate = '" +date+ "' WHERE transaction_id = " +id+ " and user_id ="+AlertConnector.user+";"  ;
+            String q2 = "UPDATE transactions set transactiontype = '" +type+ "', amount = "+ amt +", category_name = '" +categ+ "', transactiondate = '" +date+ "',Budget_id= '"+categ.concat(Integer.toString(AlertConnector.user))+"' WHERE transaction_id = " +id+ " and user_id ="+AlertConnector.user+";"  ;
             int z = stmt.executeUpdate(q2);
 
             if (z > 0)

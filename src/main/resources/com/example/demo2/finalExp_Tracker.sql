@@ -16,12 +16,12 @@ CREATE TABLE User (
 
 -- Create the budget table
 CREATE TABLE budget (
-	Budget_id int(2) primary key auto_increment,
-	elimit INT(4),
+	Budget_id varchar(20) primary key ,
+	elimit INT(7),
     category_name VARCHAR(15),
     user_id INT(2),
     FOREIGN KEY (user_id) REFERENCES User(user_id)
-) AUTO_INCREMENT=701;
+);
 
 delimiter //
 Create trigger t1
@@ -31,18 +31,20 @@ Create trigger t1
     begin
 		declare id int;
 		set id = new.user_id;
-		INSERT INTO budget (elimit, category_name, user_id) VALUES
+		INSERT INTO budget (Budget_id, elimit, category_name, user_id) VALUES
         -- some inbuilt categories
-        (7000, 'Transportation', id),
-        (7500, 'Utilities', id),
-        (7500, 'Shopping', id),
-        (7500, 'Groceries', id),
-        (7500, 'Travel', id),
-        (7500, 'Electronics', id),
-        (7500, 'Dining out', id),
-        (7500, 'Healthcare', id),
-        (7500, 'Education', id),
-		(7500, 'Food', id);
+        (concat("Transportation", id),6000, 'Transportation', id),
+        (concat("Entertainment", id),6000, 'Entertainment', id),
+        (concat('Utilities', id),7500, 'Utilities', id),
+        (concat('Clothing', id),7500, 'Clothing', id),
+        (concat('Shopping', id),7500, 'Shopping', id),
+        (concat('Groceries', id),7500, 'Groceries', id),
+        (concat('Travel', id),7500, 'Travel', id),
+        (concat('Electronics', id),7500, 'Electronics', id),
+        (concat('Dining out', id),7500, 'Dining out', id),
+        (concat('Healthcare', id),7500, 'Healthcare', id),
+        (concat('Education', id),7500, 'Education', id),
+		(concat('Food', id),7500, 'Food', id);
 	end //
 delimiter ;
 
@@ -57,6 +59,8 @@ CREATE TABLE transactions (
     transactiondate DATE,
     amount INT(4),
     transactiontype VARCHAR(10),
+    Budget_id VARCHAR(20),
+    FOREIGN KEY (Budget_id) REFERENCES budget(Budget_id),
     category_name VARCHAR(15),
     user_id INT(2),
     FOREIGN KEY (user_id) REFERENCES User(user_id)
@@ -64,29 +68,25 @@ CREATE TABLE transactions (
 
 -- delimiter //
 --  Create trigger t2
--- 	after insert
+-- 	before insert
 -- 	on transactions
--- 	for each row
+--     for each row
 --     begin
--- 		declare id int;
---  		set id = budget.budget_id;
---  		Update transactions set category_id = (select budget_id from budget where budget.category_name = transactions.category_name);
+--  		set new.Budget_id= concat(new.category_name, new.user_id);
 -- end //
 -- delimiter ;
 
 -- Insert expense transactions
-INSERT INTO transactions ( transactiondate, amount, transactiontype, category_name, user_id) VALUES
-    ('2023-08-17', 40000, 'Expense', 'School',  101),
-    ('2023-08-17', 40000, 'Expense', 'School', 101),
-    ('2023-08-18', 20000, 'Expense', 'Food', 102),
-    ('2023-09-20', 2500, 'Expense', 'Groceries', 102),
-    ('2023-09-22', 1200, 'Expense', 'Entertainment', 101),
-    ('2023-09-25', 1500, 'Expense', 'Dining Out', 101),
-    ('2023-09-26', 3000, 'Expense', 'Electronics',  101),
-    ('2023-09-27', 800, 'Expense', 'Health', 101),
-    ('2023-09-25', 2200, 'Expense', 'Utilities', 102),
-    ('2023-09-26', 1200, 'Expense', 'Groceries', 101),
-    ('2023-09-27', 500, 'Expense', 'Clothing', 102);
+INSERT INTO transactions ( transactiondate, amount, transactiontype, category_name, user_id, Budget_id) VALUES
+    ('2023-08-18', 20000, 'Expense', 'Food', 102, 'Food102'),
+    ('2023-09-20', 2500, 'Expense', 'Groceries', 102, 'Groceries102'),
+    ('2023-09-22', 1200, 'Expense', 'Entertainment', 101, 'Entertainment101'),
+    ('2023-09-26', 3000, 'Expense', 'Electronics',  101, 'Electronics101'),
+    ('2023-09-27', 800, 'Expense', 'Health', 101, 'Healthcare101'),
+    ('2023-09-25', 2200, 'Expense', 'Utilities', 102, 'Utilities102'),
+	('2023-09-26', 1200, 'Expense', 'Groceries', 101,'Groceries101'),
+    ('2023-09-27', 500, 'Expense', 'Clothing', 102, 'Clothing102');
+
 
 -- Create the borrow_lend table
 CREATE TABLE borrow_lend (

@@ -45,7 +45,7 @@ public class AddCateg_scene {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
-            PreparedStatement ps = con.prepareStatement("INSERT INTO budget (elimit, category_name, user_id) VALUES ("+limit+", '"+categ+"',"+AlertConnector.user+");");
+            PreparedStatement ps = con.prepareStatement("INSERT INTO budget (elimit, category_name, user_id, Budget_id) VALUES ("+limit+", '"+categ+"',"+AlertConnector.user+",'"+categ.concat(Integer.toString(AlertConnector.user))+"');");
             int status = ps.executeUpdate();//to execute that statement
             if (status==0){
                 System.out.println("wrong");
@@ -57,7 +57,7 @@ public class AddCateg_scene {
             AlertLabel.setText("Invalid Entry");
             return;
         }
-        switchToTransaction(event);
+        switchToBudget(event);
     }
     public void switchToDashBoard(ActionEvent event) throws IOException{         // to switch the scene to dashboard
         root = FXMLLoader.load(getClass().getResource("finalDashboard.fxml"));
