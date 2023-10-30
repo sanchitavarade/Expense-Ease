@@ -248,64 +248,6 @@ public class Trans_Scene implements Initializable{
         }
         switchToTransaction(event);
     }
-    public void switchToDashBoard(ActionEvent event) throws IOException{         // to switch the scene to dashboard
-        root = FXMLLoader.load(getClass().getResource("finalDashboard.fxml"));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
-    public void switchToAddTrans(ActionEvent event) throws IOException{        // to switch the scene to add transaction
-        root = FXMLLoader.load(getClass().getResource("finalAddTransaction.fxml"));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    public void switchToBL(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("finalBorrow&Lend.fxml"));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
-    @FXML
-    public void switchToBudget(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("finalBudget.fxml"));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
-    @FXML
-    public void switchToSave(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("finalSavings.fxml"));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    public void switchToLoginPage(ActionEvent event) throws IOException{         // to switch the scene to dashboard
-        root = FXMLLoader.load(getClass().getResource("finalLoginPage.fxml"));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    public void switchToTransaction(ActionEvent event) throws IOException{        // to switch the scene to transaction
-        root = FXMLLoader.load(getClass().getResource("finalTransaction.fxml"));
-        scene = new Scene(root);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-    }
-
 
     private static void giveTrans() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
         // connecting database
@@ -389,6 +331,77 @@ public class Trans_Scene implements Initializable{
 
         }catch(Exception e){}
 
+    }
+    public void switchToDashBoard(ActionEvent event) throws IOException{         // to switch the scene to dashboard
+        root = FXMLLoader.load(getClass().getResource("finalDashboard.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToAddTrans(ActionEvent event) throws IOException{        // to switch the scene to add transaction
+        root = FXMLLoader.load(getClass().getResource("finalAddTransaction.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void switchToBL(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("finalBorrow&Lend.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    public void switchToBudget(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("finalBudget.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    public void switchToSave(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("finalSavings.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void switchToLoginPage(ActionEvent event) throws IOException{         // to switch the scene to dashboard
+        root = FXMLLoader.load(getClass().getResource("finalLoginPage.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void switchToTransaction(ActionEvent event) throws IOException{        // to switch the scene to transaction
+        root = FXMLLoader.load(getClass().getResource("finalTransaction.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToPie(ActionEvent event) throws Exception {
+        root = FXMLLoader.load(getClass().getResource("finalPieChart.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToBar(ActionEvent event) throws Exception {
+        root = FXMLLoader.load(getClass().getResource("finalBarChart.fxml"));
+        scene = new Scene(root);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 
 }
