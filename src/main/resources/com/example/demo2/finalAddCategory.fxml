@@ -125,7 +125,7 @@
             <Insets bottom="-10.0" top="-10.0" />
          </padding>
       </Button>
-      <Button layoutX="90.0" layoutY="662.0" mnemonicParsing="false" onAction="#switchToDashBoard" style="-fx-background-color: transparent;" styleClass="mbutton" stylesheets="@style.css" text="Logout" textFill="#b7b6b6">
+      <Button layoutX="90.0" layoutY="662.0" mnemonicParsing="false" onAction="#switchToLoginPage" style="-fx-background-color: transparent;" styleClass="mbutton" stylesheets="@style.css" text="Logout" textFill="#b7b6b6">
          <font>
             <Font name="Dubai Regular" size="28.0" />
          </font>
