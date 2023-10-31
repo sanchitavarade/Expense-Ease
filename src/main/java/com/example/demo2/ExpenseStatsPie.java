@@ -56,7 +56,7 @@ public class ExpenseStatsPie implements Initializable {
         try {
             // Establish a database connection
             Connection connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
-            Statement statement = connection.createStatement();
+            Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
             // Query to retrieve total expenses for the Pie Chart
             String pieChartQuery = "SELECT user_id, category_name, SUM(amount) AS total_amount " +
@@ -74,6 +74,8 @@ public class ExpenseStatsPie implements Initializable {
                 noTrans.setText("No Transaction To show");
                 return;
             }
+            pieChartResult.beforeFirst();
+
             while ((pieChartResult.next())){
                 String transactionType = pieChartResult.getString("category_name");
                 double totalAmount = pieChartResult.getDouble("total_amount");

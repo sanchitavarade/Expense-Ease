@@ -62,7 +62,7 @@ public class ExpenseStatsBar implements Initializable {
         try {
 
             Connection con = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
-            Statement statement = con.createStatement();
+            Statement statement = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
             String barChartQuery = "SELECT user_id,category_name, SUM(amount) AS total_expense " +
                     "FROM Transactions " +
@@ -78,6 +78,7 @@ public class ExpenseStatsBar implements Initializable {
                 noTrans.setText("No Transaction To show");
                 return;
             }
+            barChartResult.beforeFirst();
 
             while (barChartResult.next()) {
                 String category = barChartResult.getString("category_name");
