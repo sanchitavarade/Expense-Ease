@@ -9,6 +9,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -27,6 +28,7 @@
                 </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #6a5acd;">
                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SLATEBLUE" height="503.0" layoutX="242.0" layoutY="114.0" stroke="WHITE" strokeType="INSIDE" style="-fx-stroke-width: 7;" width="526.0" />
                         <Label layoutX="466.0" layoutY="133.0" text="Sign Up" textFill="WHITE" underline="true">
                             <font>
                                 <Font name="Dubai Regular" size="36.0" />
@@ -71,25 +73,25 @@
                             <font>
                                 <Font name="Dubai Bold" size="16.0" />
                             </font>
-                     <padding>
-                        <Insets bottom="-7.0" left="-10.0" right="-10.0" top="-7.0" />
-                     </padding>
+                            <padding>
+                                <Insets bottom="-7.0" left="-10.0" right="-10.0" top="-7.0" />
+                            </padding>
                         </Button>
                         <Text fill="WHITE" layoutX="454.0" layoutY="579.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already A User?" wrappingWidth="115.99999999999977">
                             <font>
                                 <Font name="Dubai Regular" size="16.0" />
                             </font>
                         </Text>
-                  <Label fx:id="passLabel1" layoutX="465.0" layoutY="439.0" prefHeight="35.0" prefWidth="289.0" text="Password must contain at least 8 characters" textFill="WHITE">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="passLabel2" layoutX="465.0" layoutY="461.0" text="and one special character, eg. @, #, $, etc." textFill="WHITE">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
+                        <Label fx:id="passLabel1" layoutX="465.0" layoutY="439.0" prefHeight="35.0" prefWidth="289.0" text="Password must contain at least 8 characters" textFill="WHITE">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="passLabel2" layoutX="465.0" layoutY="461.0" text="and one special character, eg. @, #, $, etc." textFill="WHITE">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
                     </children>
                 </AnchorPane>
             </items>
