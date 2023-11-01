@@ -17,7 +17,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.BL_scene">
    <children>
-      <SplitPane dividerPositions="0.239041311888994" prefHeight="720.0" prefWidth="1270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <SplitPane dividerPositions="0.239041311888994" prefHeight="720.0" prefWidth="1270.0" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane maxWidth="300.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="300.0">
                <children>
