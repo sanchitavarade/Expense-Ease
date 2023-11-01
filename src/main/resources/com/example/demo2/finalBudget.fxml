@@ -16,203 +16,203 @@
 
 <AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.budget_scene">
     <children>
-        <SplitPane dividerPositions="0.5" layoutX="431.0" layoutY="201.0" prefHeight="847.0" prefWidth="641.0" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <items>
-                <AnchorPane maxWidth="300.0" minWidth="0.0" prefHeight="547.0" prefWidth="300.0" style="-fx-background-color: #6a5acd;">
-                    <children>
-                        <Button layoutX="37.0" layoutY="7.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="65.0" style="-fx-background-color: #6a5acd;" textFill="WHITE" underline="true">
-                            <font>
-                                <Font name="Dubai Regular" size="14.0" />
-                            </font>
-                        </Button>
-                    </children>
-                </AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="547.0" prefWidth="76.0">
-                    <children>
-                        <SplitPane dividerPositions="0.16623711340206185" layoutX="196.0" layoutY="105.0" orientation="VERTICAL" prefHeight="547.0" prefWidth="618.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                            <items>
-                                <AnchorPane maxHeight="120.0" minHeight="120.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #6a5acd;">
-                                    <children>
-                                        <Label alignment="CENTER" prefHeight="92.0" prefWidth="508.0" text="Budget" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                            <font>
-                                                <Font name="Dubai Regular" size="42.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </AnchorPane>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="357.0" prefWidth="491.0">
-                                    <children>
-                                        <SplitPane dividerPositions="0.5643564356435643" layoutX="619.0" layoutY="57.0" prefHeight="609.0" prefWidth="1012.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                            <items>
-                                                <AnchorPane maxHeight="720.0" maxWidth="600.0" minHeight="0.0" minWidth="550.0" prefHeight="160.0" prefWidth="550.0" style="-fx-background-color: #ffffff;" stylesheets="@style.css">
-                                                    <children>
-                                                        <TableView fx:id="Bud_table" layoutX="21.0" layoutY="100.0" onMouseClicked="#getSelected" prefHeight="390.0" prefWidth="500.0">
-                                                            <columns>
-                                                                <TableColumn fx:id="Bud_Categ" minWidth="0.0" prefWidth="202.0" style="-fx-alignment: CENTER; -fx-font-family: Dubai; -fx-font-size: 13;" text="Category" />
-                                                                <TableColumn fx:id="Bud_Limit" minWidth="0.0" prefWidth="148.0" style="-fx-alignment: CENTER; -fx-font-family: Dubai; -fx-font-size: 13;" text="Expense limit" />
-                                                                <TableColumn fx:id="TotalBudTrans" minWidth="0.0" prefWidth="149.0" style="-fx-alignment: CENTER; -fx-font-family: Dubai; -fx-font-size: 13;" text="Total Transactions" />
-                                                            </columns>
-                                                        </TableView>
-                                                        <Button alignment="CENTER" layoutX="345.0" layoutY="511.0" mnemonicParsing="false" onAction="#switchToCateg" style="-fx-background-color: #6a5acd #6a5acd;" text="Add Category" textFill="WHITE">
-                                                            <font>
-                                                                <Font name="Dubai Regular" size="24.0" />
-                                                            </font>
-                                                        </Button>
-                                                    </children>
-                                                </AnchorPane>
-                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1270.0">
-                                                    <children>
-                                                        <Button alignment="CENTER" layoutX="142.0" layoutY="492.0" mnemonicParsing="false" onAction="#ApplyChanges" style="-fx-background-color: #6a5acd #6a5acd;" stylesheets="@style.css" text="Apply Changes" textFill="WHITE">
-                                                            <font>
-                                                                <Font name="Dubai Regular" size="24.0" />
-                                                            </font>
-                                                        </Button>
-                                                        <Label layoutX="22.0" layoutY="85.0" text="Enter Category: ">
-                                                            <font>
-                                                                <Font name="Dubai Regular" size="20.0" />
-                                                            </font>
-                                                        </Label>
-                                                        <TextField fx:id="newBudLimit" layoutX="142.0" layoutY="304.0" promptText="Limit for a Month">
-                                                            <font>
-                                                                <Font name="Dubai Regular" size="12.0" />
-                                                            </font></TextField>
-                                                        <Label layoutX="22.0" layoutY="256.0" text="Enter Expense Limit:">
-                                                            <font>
-                                                                <Font name="Dubai Regular" size="20.0" />
-                                                            </font>
-                                                        </Label>
-                                                        <Label alignment="CENTER" prefHeight="44.0" prefWidth="432.0" style="-fx-background-color: #6a5acd;" text="Edit/Delete a Budget :  " textFill="WHITE">
-                                                            <font>
-                                                                <Font name="Dubai Regular" size="24.0" />
-                                                            </font>
-                                                        </Label>
-                                                        <Button alignment="CENTER" layoutX="142.0" layoutY="422.0" mnemonicParsing="false" onAction="#deleteBud" prefHeight="60.0" prefWidth="177.0" style="-fx-background-color: #6a5acd #6a5acd;" stylesheets="@style.css" text="Delete" textFill="WHITE">
-                                                            <font>
-                                                                <Font name="Dubai Regular" size="24.0" />
-                                                            </font>
-                                                        </Button>
-                                                        <ComboBox fx:id="newBudCateg" layoutX="142.0" layoutY="129.0" prefHeight="38.0" prefWidth="147.0" />
-                                                        <Label fx:id="AlertLabel" layoutX="154.0" layoutY="365.0" textFill="RED">
-                                                            <font>
-                                                                <Font size="15.0" />
-                                                            </font>
-                                                        </Label>
-                                                    </children>
-                                                </AnchorPane>
-                                            </items>
-                                        </SplitPane>
-                                    </children>
-                                </AnchorPane>
-                            </items>
-                        </SplitPane>
-                    </children>
-                </AnchorPane>
-            </items>
-        </SplitPane>
-      <Button layoutX="93.0" layoutY="109.0" mnemonicParsing="false" onAction="#switchToDashBoard" style="-fx-background-color: transparent;" styleClass="mbutton" stylesheets="@style.css" text="HOME" textFill="#b7b6b6">
-         <font>
-            <Font name="Dubai Regular" size="28.0" />
-         </font>
-         <padding>
-            <Insets bottom="-10.0" top="-10.0" />
-         </padding>
-      </Button>
-      <Button layoutX="91.0" layoutY="180.0" mnemonicParsing="false" onAction="#switchToTransaction" style="-fx-background-color: transparent;" styleClass="mbutton" stylesheets="@style.css" text="Transactions" textFill="#b7b6b6">
-         <font>
-            <Font name="Dubai Regular" size="28.0" />
-         </font>
-         <padding>
-            <Insets bottom="-10.0" top="-10.0" />
-         </padding>
-      </Button>
-      <Button layoutX="91.0" layoutY="248.0" mnemonicParsing="false" onAction="#switchToBL" style="-fx-background-color: transparent;" styleClass="mbutton" stylesheets="@style.css" text="Borrow/Lend" textFill="#b7b6b6">
-         <font>
-            <Font name="Dubai Regular" size="28.0" />
-         </font>
-         <padding>
-            <Insets bottom="-10.0" top="-10.0" />
-         </padding>
-      </Button>
-      <Button layoutX="91.0" layoutY="386.0" mnemonicParsing="false" onAction="#switchToSave" style="-fx-background-color: transparent;" styleClass="mbutton" stylesheets="@style.css" text="Savings" textFill="#b7b6b6">
-         <font>
-            <Font name="Dubai Regular" size="28.0" />
-         </font>
-         <padding>
-            <Insets bottom="-10.0" top="-10.0" />
-         </padding>
-      </Button>
-      <Button layoutX="90.0" layoutY="317.0" mnemonicParsing="false" onAction="#switchToBudget" style="-fx-background-color: transparent;" styleClass="mbutton" stylesheets="@style.css" text="Budget" textFill="WHITE">
-         <font>
-            <Font name="Dubai Regular" size="28.0" />
-         </font>
-         <padding>
-            <Insets bottom="-10.0" top="-10.0" />
-         </padding>
-      </Button>
-      <Button layoutX="91.0" layoutY="520.0" mnemonicParsing="false" onAction="#switchToBar" style="-fx-background-color: transparent;" styleClass="mbutton" stylesheets="@style.css" text="Bar-Chart" textFill="#b7b6b6">
-         <font>
-            <Font name="Dubai Regular" size="28.0" />
-         </font>
-         <padding>
-            <Insets bottom="-10.0" top="-10.0" />
-         </padding>
-      </Button>
-      <Button layoutX="92.0" layoutY="453.0" mnemonicParsing="false" onAction="#switchToPie" style="-fx-background-color: transparent;" styleClass="mbutton" stylesheets="@style.css" text="Pie-Chart" textFill="#b7b6b6">
-         <font>
-            <Font name="Dubai Regular" size="28.0" />
-         </font>
-         <padding>
-            <Insets bottom="-10.0" top="-10.0" />
-         </padding>
-      </Button>
-      <Button layoutX="90.0" layoutY="662.0" mnemonicParsing="false" onAction="#switchToLoginPage" style="-fx-background-color: transparent;" styleClass="mbutton" stylesheets="@style.css" text="Logout" textFill="#b7b6b6">
-         <font>
-            <Font name="Dubai Regular" size="28.0" />
-         </font>
-         <padding>
-            <Insets bottom="-10.0" top="-10.0" />
-         </padding>
-      </Button>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="37.0" layoutY="314.0" stroke="WHITE" strokeMiterLimit="0.0" strokeWidth="0.0" width="16.0" />
-      <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="39.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@menu%20icons/rupee.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="34.0" fitWidth="39.0" layoutX="43.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@menu%20icons/home%20(1).png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="43.0" fitWidth="50.0" layoutX="35.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@menu%20icons/get-money%20(1).png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="43.0" fitWidth="43.0" layoutX="44.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@menu%20icons/bill.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="37.0" fitWidth="43.0" layoutX="39.0" layoutY="382.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@menu%20icons/piggy-bank%20(1).png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="36.0" layoutY="449.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@menu%20icons/pie-chart%20(1).png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="37.0" fitWidth="42.0" layoutX="35.0" layoutY="517.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@menu%20icons/bar-chart%20(1).png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="41.0" layoutY="660.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@menu%20icons/logout%20(1).png" />
-         </image>
-      </ImageView>
+        <AnchorPane prefHeight="720.0" prefWidth="1270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <SplitPane dividerPositions="0.5" prefHeight="847.0" prefWidth="641.0" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                        <AnchorPane maxWidth="300.0" minWidth="0.0" prefHeight="547.0" prefWidth="300.0" style="-fx-background-color: #6a5acd;">
+                            <children>
+                                <Button layoutX="91.0" layoutY="452.0" mnemonicParsing="false" onAction="#switchToPie" style="-fx-background-color: transparent;" styleClass="mbutton" stylesheets="@style.css" text="Pie-Chart" textFill="#b7b6b6">
+                                    <font>
+                                        <Font name="Dubai Regular" size="28.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="-10.0" top="-10.0" />
+                                    </padding>
+                                </Button>
+                                <Button layoutX="92.0" layoutY="108.0" mnemonicParsing="false" onAction="#switchToDashBoard" style="-fx-background-color: transparent;" styleClass="mbutton" stylesheets="@style.css" text="HOME" textFill="#b7b6b6">
+                                    <font>
+                                        <Font name="Dubai Regular" size="28.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="-10.0" top="-10.0" />
+                                    </padding>
+                                </Button>
+                                <Button layoutX="90.0" layoutY="179.0" mnemonicParsing="false" onAction="#switchToTransaction" style="-fx-background-color: transparent;" styleClass="mbutton" stylesheets="@style.css" text="Transactions" textFill="#b7b6b6">
+                                    <font>
+                                        <Font name="Dubai Regular" size="28.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="-10.0" top="-10.0" />
+                                    </padding>
+                                </Button>
+                                <Button layoutX="90.0" layoutY="247.0" mnemonicParsing="false" onAction="#switchToBL" style="-fx-background-color: transparent;" styleClass="mbutton" stylesheets="@style.css" text="Borrow/Lend" textFill="#b7b6b6">
+                                    <font>
+                                        <Font name="Dubai Regular" size="28.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="-10.0" top="-10.0" />
+                                    </padding>
+                                </Button>
+                                <Button layoutX="90.0" layoutY="385.0" mnemonicParsing="false" onAction="#switchToSave" style="-fx-background-color: transparent;" styleClass="mbutton" stylesheets="@style.css" text="Savings" textFill="#b7b6b6">
+                                    <font>
+                                        <Font name="Dubai Regular" size="28.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="-10.0" top="-10.0" />
+                                    </padding>
+                                </Button>
+                                <Button layoutX="89.0" layoutY="316.0" mnemonicParsing="false" onAction="#switchToBudget" style="-fx-background-color: transparent;" styleClass="mbutton" stylesheets="@style.css" text="Budget" textFill="WHITE">
+                                    <font>
+                                        <Font name="Dubai Regular" size="28.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="-10.0" top="-10.0" />
+                                    </padding>
+                                </Button>
+                                <Button layoutX="90.0" layoutY="519.0" mnemonicParsing="false" onAction="#switchToBar" style="-fx-background-color: transparent;" styleClass="mbutton" stylesheets="@style.css" text="Bar-Chart" textFill="#b7b6b6">
+                                    <font>
+                                        <Font name="Dubai Regular" size="28.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="-10.0" top="-10.0" />
+                                    </padding>
+                                </Button>
+                                <Button layoutX="89.0" layoutY="661.0" mnemonicParsing="false" onAction="#switchToLoginPage" style="-fx-background-color: transparent;" styleClass="mbutton" stylesheets="@style.css" text="Logout" textFill="#b7b6b6">
+                                    <font>
+                                        <Font name="Dubai Regular" size="28.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="-10.0" top="-10.0" />
+                                    </padding>
+                                </Button>
+                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="37.0" layoutX="-1.0" layoutY="314.0" stroke="WHITE" strokeMiterLimit="0.0" strokeWidth="0.0" width="16.0" />
+                                <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="38.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@menu%20icons/rupee.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="34.0" fitWidth="39.0" layoutX="42.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@menu%20icons/home%20(1).png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="43.0" fitWidth="50.0" layoutX="34.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@menu%20icons/get-money%20(1).png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="43.0" fitWidth="43.0" layoutX="43.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@menu%20icons/bill.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="37.0" fitWidth="43.0" layoutX="38.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@menu%20icons/piggy-bank%20(1).png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="37.0" fitWidth="42.0" layoutX="34.0" layoutY="516.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@menu%20icons/bar-chart%20(1).png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="40.0" layoutY="659.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@menu%20icons/logout%20(1).png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="35.0" layoutY="448.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@menu%20icons/pie-chart%20(1).png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="547.0" prefWidth="76.0">
+                            <children>
+                                <SplitPane dividerPositions="0.16623711340206185" layoutX="196.0" layoutY="105.0" orientation="VERTICAL" prefHeight="547.0" prefWidth="618.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <items>
+                                        <AnchorPane maxHeight="120.0" minHeight="120.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #6a5acd;">
+                                            <children>
+                                                <Label alignment="CENTER" prefHeight="92.0" prefWidth="508.0" text="Budget" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <font>
+                                                        <Font name="Dubai Regular" size="42.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="357.0" prefWidth="491.0">
+                                            <children>
+                                                <SplitPane dividerPositions="0.5713101160862354" layoutX="619.0" layoutY="57.0" prefHeight="609.0" prefWidth="1012.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <items>
+                                                        <AnchorPane maxHeight="720.0" maxWidth="600.0" minHeight="0.0" minWidth="550.0" prefHeight="160.0" prefWidth="550.0" style="-fx-background-color: #ffffff;" stylesheets="@style.css">
+                                                            <children>
+                                                                <TableView fx:id="Bud_table" layoutX="21.0" layoutY="100.0" onMouseClicked="#getSelected" prefHeight="390.0" prefWidth="500.0">
+                                                                    <columns>
+                                                                        <TableColumn fx:id="Bud_Categ" minWidth="0.0" prefWidth="202.0" style="-fx-alignment: CENTER; -fx-font-family: Dubai; -fx-font-size: 13;" text="Category" />
+                                                                        <TableColumn fx:id="Bud_Limit" minWidth="0.0" prefWidth="148.0" style="-fx-alignment: CENTER; -fx-font-family: Dubai; -fx-font-size: 13;" text="Expense limit" />
+                                                                        <TableColumn fx:id="TotalBudTrans" minWidth="0.0" prefWidth="149.0" style="-fx-alignment: CENTER; -fx-font-family: Dubai; -fx-font-size: 13;" text="Total Transactions" />
+                                                                    </columns>
+                                                                </TableView>
+                                                                <Button alignment="CENTER" layoutX="345.0" layoutY="511.0" mnemonicParsing="false" onAction="#switchToCateg" style="-fx-background-color: #6a5acd #6a5acd;" text="Add Category" textFill="WHITE">
+                                                                    <font>
+                                                                        <Font name="Dubai Regular" size="24.0" />
+                                                                    </font>
+                                                                </Button>
+                                                            </children>
+                                                        </AnchorPane>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1270.0">
+                                                            <children>
+                                                                <Button alignment="CENTER" layoutX="142.0" layoutY="492.0" mnemonicParsing="false" onAction="#ApplyChanges" style="-fx-background-color: #6a5acd #6a5acd;" stylesheets="@style.css" text="Apply Changes" textFill="WHITE">
+                                                                    <font>
+                                                                        <Font name="Dubai Regular" size="24.0" />
+                                                                    </font>
+                                                                </Button>
+                                                                <Label layoutX="22.0" layoutY="85.0" text="Enter Category: ">
+                                                                    <font>
+                                                                        <Font name="Dubai Regular" size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="newBudLimit" layoutX="142.0" layoutY="304.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="147.0" promptText="Limit for a Month" style="-fx-background-color: #6a5acd; -fx-background-radius: 10; -fx-text-fill: white;" styleClass="text-field1">
+                                                                    <font>
+                                                                        <Font name="Dubai Regular" size="12.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                                <Label layoutX="22.0" layoutY="256.0" text="Enter Expense Limit:">
+                                                                    <font>
+                                                                        <Font name="Dubai Regular" size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <Label alignment="CENTER" prefHeight="44.0" prefWidth="432.0" style="-fx-background-color: #6a5acd;" text="Edit/Delete a Budget :  " textFill="WHITE">
+                                                                    <font>
+                                                                        <Font name="Dubai Regular" size="24.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <Button alignment="CENTER" layoutX="142.0" layoutY="422.0" mnemonicParsing="false" onAction="#deleteBud" prefHeight="60.0" prefWidth="177.0" style="-fx-background-color: #6a5acd #6a5acd;" stylesheets="@style.css" text="Delete" textFill="WHITE">
+                                                                    <font>
+                                                                        <Font name="Dubai Regular" size="24.0" />
+                                                                    </font>
+                                                                </Button>
+                                                                <ComboBox fx:id="newBudCateg" layoutX="142.0" layoutY="129.0" prefHeight="34.0" prefWidth="147.0" />
+                                                                <Label fx:id="AlertLabel" layoutX="154.0" layoutY="365.0" textFill="RED">
+                                                                    <font>
+                                                                        <Font size="15.0" />
+                                                                    </font>
+                                                                </Label>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </items>
+                                                </SplitPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </items>
+                                </SplitPane>
+                            </children>
+                        </AnchorPane>
+                    </items>
+                </SplitPane>
+            </children>
+        </AnchorPane>
     </children>
 </AnchorPane>

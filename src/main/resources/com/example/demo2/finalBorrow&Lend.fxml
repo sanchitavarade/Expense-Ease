@@ -90,13 +90,13 @@
                                                 <Font name="Dubai Regular" size="19.0" />
                                              </font>
                                           </Button>
-                                          <DatePicker fx:id="BLdate" layoutX="110.0" layoutY="96.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="169.0" promptText="DD/MM/YYYY" style="-fx-background-color: #6a5acd;" styleClass="date-picker" stylesheets="@style.css" />
+                                          <DatePicker fx:id="BLdate" layoutX="110.0" layoutY="99.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="169.0" promptText="DD/MM/YYYY" style="-fx-background-color: #6a5acd;" styleClass="date-picker2" stylesheets="@style.css" />
                                           <TextField fx:id="BLdesc" alignment="TOP_LEFT" layoutX="111.0" layoutY="266.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="240.0" style="-fx-background-color: white; -fx-border-color: black; -fx-background-radius: 10;" stylesheets="@style.css">
                                              <font>
                                                 <Font size="20.0" />
                                              </font>
                                           </TextField>
-                                          <TextField fx:id="BLamt" layoutX="110.0" layoutY="365.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="169.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10; -fx-text-fill: #FFFFFF;" stylesheets="@style.css">
+                                          <TextField fx:id="BLamt" layoutX="110.0" layoutY="370.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10; -fx-text-fill: #FFFFFF;" styleClass="text-field1" stylesheets="@style.css">
                                              <font>
                                                 <Font name="Dubai Regular" size="19.0" />
                                              </font></TextField>
@@ -105,13 +105,13 @@
                                                 <Font name="Dubai Regular" size="17.0" />
                                              </font>
                                           </Label>
-                                          <DatePicker fx:id="BLdueDate" layoutX="110.0" layoutY="151.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="169.0" promptText="DD/MM/YYYY" style="-fx-background-color: #6a5acd;" styleClass="date-picker" stylesheets="@style.css" />
+                                          <DatePicker fx:id="BLdueDate" layoutX="110.0" layoutY="154.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="169.0" promptText="DD/MM/YYYY" style="-fx-background-color: #6a5acd;" styleClass="date-picker2" stylesheets="@style.css" />
                                           <Label layoutY="-5.0" minWidth="400.0" prefHeight="73.0" prefWidth="397.0" style="-fx-background-color: #6a5acd #6a5acd;" text="          Edit / Add new record :" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <font>
                                                 <Font name="Dubai Regular" size="30.0" />
                                              </font>
                                           </Label>
-                                          <ComboBox fx:id="Combo_type" layoutX="110.0" layoutY="208.0" prefHeight="41.0" prefWidth="169.0" />
+                                          <ComboBox fx:id="Combo_type" layoutX="110.0" layoutY="213.0" prefHeight="31.0" prefWidth="169.0" />
                                           <Button layoutX="125.0" layoutY="515.0" mnemonicParsing="false" onAction="#addBL" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: #6a5acd #6a5acd; -fx-background-radius: 10;" stylesheets="@style.css" text="Add" textFill="WHITE">
                                              <font>
                                                 <Font name="Dubai Regular" size="19.0" />

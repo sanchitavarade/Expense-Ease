@@ -34,7 +34,7 @@
                               <Font name="Dubai Regular" size="24.0" />
                            </font>
                         </Button>
-                        <TextField fx:id="add_categ_name" layoutX="450.0" layoutY="159.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="203.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10; -fx-text-fill: #FFFFFF;" stylesheets="@style.css">
+                        <TextField fx:id="add_categ_name" layoutX="450.0" layoutY="159.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="203.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10; -fx-text-fill: #FFFFFF;" styleClass="text-field1" stylesheets="@style.css">
                            <font>
                               <Font name="Dubai Regular" size="22.0" />
                            </font>
@@ -57,7 +57,7 @@
                               <Font name="Dubai Regular" size="22.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="add_categ_limit" layoutX="450.0" layoutY="260.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="203.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10; -fx-text-fill: #FFFFFF;" stylesheets="@style.css">
+                        <TextField fx:id="add_categ_limit" layoutX="450.0" layoutY="260.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="203.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10; -fx-text-fill: #FFFFFF;" styleClass="text-field1" stylesheets="@style.css">
                            <font>
                               <Font name="Dubai Regular" size="22.0" />
                            </font>

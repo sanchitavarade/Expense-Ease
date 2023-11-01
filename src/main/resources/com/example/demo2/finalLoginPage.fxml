@@ -42,12 +42,12 @@
                         <Font name="Dubai Regular" size="22.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="tfEmail" layoutX="473.0" layoutY="277.0" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: white; -fx-background-radius: 70;" stylesheets="@style.css">
+                  <TextField fx:id="tfEmail" layoutX="473.0" layoutY="277.0" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: white; -fx-background-radius: 70;" styleClass="text-field2" stylesheets="@style.css">
                      <font>
                         <Font name="Dubai Regular" size="14.0" />
                      </font>
                   </TextField>
-                  <PasswordField fx:id="tfPass" layoutX="475.0" layoutY="365.0" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: white; -fx-background-radius: 70;" stylesheets="@style.css">
+                  <PasswordField fx:id="tfPass" layoutX="475.0" layoutY="365.0" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: white; -fx-background-radius: 70;" styleClass="text-field2" stylesheets="@style.css">
                      <font>
                         <Font name="Dubai Regular" size="14.0" />
                      </font>

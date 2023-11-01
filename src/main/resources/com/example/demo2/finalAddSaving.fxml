@@ -55,8 +55,8 @@
                                     <Font name="Dubai Regular" size="19.0" />
                                  </font>
                               </Button>
-                              <DatePicker fx:id="addSaveDate" layoutX="452.0" layoutY="53.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="29.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" stylesheets="@style.css" />
-                              <TextField fx:id="addSaveAmt" layoutX="452.0" layoutY="127.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="159.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10; -fx-text-fill: #FFFFFF;" stylesheets="@style.css">
+                              <DatePicker fx:id="addSaveDate" layoutX="452.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" styleClass="date-picker2" stylesheets="@style.css" />
+                              <TextField fx:id="addSaveAmt" layoutX="452.0" layoutY="127.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="159.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10; -fx-text-fill: #FFFFFF;" styleClass="text-field1" stylesheets="@style.css">
                                  <font>
                                     <Font size="18.0" />
                                  </font>

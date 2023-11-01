@@ -3,11 +3,15 @@ package com.example.demo2;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.chrono.ChronoLocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
 import java.util.ResourceBundle;
+
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -106,6 +110,9 @@ public class Trans_Scene implements Initializable{
         Trans_amt.setCellValueFactory(new PropertyValueFactory<Transactions, Integer>("amt"));
         Trans_categ.setCellValueFactory(new PropertyValueFactory<Transactions, String>("categ"));
         Trans_date.setCellValueFactory(new PropertyValueFactory<Transactions, String>("date"));
+
+
+
 
         typeValues.clear();
         ObservableList<String> categList;

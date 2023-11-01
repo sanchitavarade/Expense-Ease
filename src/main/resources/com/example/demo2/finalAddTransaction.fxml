@@ -30,22 +30,22 @@
                <children>
                   <AnchorPane prefHeight="560.0" prefWidth="966.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Label layoutX="379.0" layoutY="172.0" prefHeight="41.0" prefWidth="59.0" text="Date :" textFill="SLATEBLUE">
+                        <Label layoutX="378.0" layoutY="176.0" prefHeight="41.0" prefWidth="59.0" text="Date :" textFill="SLATEBLUE">
                            <font>
                               <Font name="Dubai Regular" size="22.0" />
                            </font>
                         </Label>
-                        <Label layoutX="379.0" layoutY="252.0" prefHeight="41.0" prefWidth="59.0" text="Type :" textFill="SLATEBLUE">
+                        <Label layoutX="379.0" layoutY="256.0" prefHeight="41.0" prefWidth="59.0" text="Type :" textFill="SLATEBLUE">
                            <font>
                               <Font name="Dubai Regular" size="22.0" />
                            </font>
                         </Label>
-                        <Label layoutX="363.0" layoutY="349.0" text="Category :" textFill="SLATEBLUE">
+                        <Label layoutX="363.0" layoutY="338.0" text="Category :" textFill="SLATEBLUE">
                            <font>
                               <Font name="Dubai Regular" size="22.0" />
                            </font>
                         </Label>
-                        <Label layoutX="363.0" layoutY="436.0" prefHeight="41.0" prefWidth="91.0" text="Amount :" textFill="SLATEBLUE">
+                        <Label layoutX="363.0" layoutY="419.0" prefHeight="41.0" prefWidth="91.0" text="Amount :" textFill="SLATEBLUE">
                            <font>
                               <Font name="Dubai Regular" size="22.0" />
                            </font>
@@ -55,8 +55,8 @@
                               <Font name="Dubai Regular" size="19.0" />
                            </font>
                         </Button>
-                        <DatePicker fx:id="Trans_addDate" layoutX="466.0" layoutY="172.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="41.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" stylesheets="@style.css" />
-                        <TextField fx:id="Trans_addAmt" layoutX="466.0" layoutY="433.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="159.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10; -fx-text-fill: #FFFFFF;" stylesheets="@style.css">
+                        <DatePicker fx:id="Trans_addDate" layoutX="466.0" layoutY="180.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" styleClass="date-picker2" stylesheets="@style.css" />
+                        <TextField fx:id="Trans_addAmt" layoutX="466.0" layoutY="423.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="159.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10; -fx-text-fill: #FFFFFF;" styleClass="text-field1" stylesheets="@style.css">
                            <font>
                               <Font name="Dubai Regular" size="18.0" />
                            </font>
@@ -74,8 +74,8 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <ComboBox fx:id="Combo_type" layoutX="466.0" layoutY="252.0" prefHeight="41.0" prefWidth="159.0" />
-                        <ComboBox fx:id="Combo_categ" layoutX="466.0" layoutY="349.0" prefHeight="41.0" prefWidth="159.0" />
+                        <ComboBox fx:id="Combo_type" layoutX="466.0" layoutY="260.0" prefHeight="34.0" prefWidth="159.0" />
+                        <ComboBox fx:id="Combo_categ" layoutX="466.0" layoutY="342.0" prefHeight="34.0" prefWidth="159.0" />
                         <Label fx:id="amtLabel" layoutX="466.0" layoutY="489.0" prefHeight="28.0" prefWidth="147.0" textFill="RED">
                            <font>
                               <Font name="Dubai Bold" size="15.0" />

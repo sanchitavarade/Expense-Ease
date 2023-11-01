@@ -78,6 +78,23 @@
     -fx-effect: dropshadow( gaussian , rgba(73, 71, 71, 0.7), 10,0,0,1 );
 }
 
+.text-field1:focused{
+    -fx-border-radius: 10px;
+    -fx-border-color: white;
+    -fx-border-width: 1.5px;
+}
+
+.text-field2:focused{
+    -fx-border-radius: 70px;
+    -fx-border-color: #484091;
+    -fx-border-width: 1.5px;
+}
+
+.date-picker2:focused{
+    -fx-border-color: #a197fa;
+    -fx-border-radius: 2px;
+}
+
 .button:hover{
     -fx-effect: dropshadow( gaussian , rgba(73, 71, 71, 0.7), 10,0,0,1 );
     -fx-cursor: hand;
