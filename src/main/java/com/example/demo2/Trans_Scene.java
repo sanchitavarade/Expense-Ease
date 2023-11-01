@@ -288,7 +288,7 @@ public class Trans_Scene implements Initializable{
             amtLabel.setText("Invalid Amount");
         }
         if(tftype.compareTo("Expense")==0)
-            AddTrans_scene.check_limit(tfcateg, Integer.parseInt(tfamt));
+            check_limit(tfcateg, Integer.parseInt(tfamt));
         try {
             changeTransData(tfid, tftype, tfamt, tfcateg, tfdate);
         }
@@ -298,6 +298,28 @@ public class Trans_Scene implements Initializable{
             return;
         }
         switchToTransaction(event);
+    }
+
+    public boolean check_limit(String categ, int amt) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException {
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Exp_Tracker", "root", "oracle");
+
+        PreparedStatement p1 = con.prepareStatement("select elimit from budget where Budget_id ='"+categ.concat(Integer.toString(AlertConnector.user))+"';");
+        ResultSet rs1 = p1.executeQuery();
+        int limit = 7500;
+        if(rs1.next())
+            limit = rs1.getInt("elimit");
+        PreparedStatement p2 = con.prepareStatement("select sum(amount) as Total from transactions group by Budget_id, transactiontype, transaction_id having transaction_id not in ("+newTransId.getText()+") and transactiontype='Expense' and Budget_id ='"+categ.concat(Integer.toString(AlertConnector.user))+"';");
+        ResultSet rs2 = p2.executeQuery();
+        int total=0;
+        if(rs2.next())
+            total = rs2.getInt("Total");
+        total +=amt;
+        if(total>limit) {
+            AlertConnector.BudgetBeyond();
+            return false;
+        }
+        return true;
     }
 
     public void changeTransData(String id, String type, String amt, String categ, LocalDate date) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions

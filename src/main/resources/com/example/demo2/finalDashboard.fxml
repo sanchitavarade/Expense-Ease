@@ -32,19 +32,6 @@
             <Image url="@rupee.png" />
          </image>
       </ImageView>
-      <Button layoutX="543.0" layoutY="213.0" mnemonicParsing="false" onAction="#switchToBL" prefHeight="160.0" prefWidth="191.0" style="-fx-background-color: white; -fx-border-color: #6a5acd; -fx-border-width: 3;" styleClass="dbutton" stylesheets="@style.css" text="Borrow/Lend" textFill="SLATEBLUE">
-         <padding>
-            <Insets top="120.0" />
-         </padding>
-         <font>
-            <Font name="Dubai Regular" size="18.0" />
-         </font>
-      </Button>
-      <ImageView disable="true" fitHeight="93.0" fitWidth="103.0" layoutX="592.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@BL.jpg" />
-         </image>
-      </ImageView>
       <Button layoutX="919.0" layoutY="213.0" mnemonicParsing="false" onAction="#switchToBudget" prefHeight="160.0" prefWidth="191.0" style="-fx-background-color: white; -fx-border-color: #6a5acd; -fx-border-width: 3;" styleClass="dbutton" stylesheets="@style.css" text="Budget" textFill="SLATEBLUE">
          <padding>
             <Insets top="120.0" />
@@ -108,6 +95,19 @@
       <ImageView disable="true" fitHeight="46.0" fitWidth="53.0" layoutX="1179.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@logout.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="542.0" layoutY="213.0" mnemonicParsing="false" onAction="#switchToBL" prefHeight="160.0" prefWidth="191.0" style="-fx-background-color: white; -fx-border-color: #6a5acd; -fx-border-width: 3;" styleClass="dbutton" stylesheets="@style.css" text="Borrow/Lend" textFill="SLATEBLUE">
+         <padding>
+            <Insets top="120.0" />
+         </padding>
+         <font>
+            <Font name="Dubai Regular" size="18.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="93.0" fitWidth="93.0" layoutX="591.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@BL.jpg" />
          </image>
       </ImageView>
    </children>

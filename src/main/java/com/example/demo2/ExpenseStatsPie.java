@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane; // Import for AnchorPane
 import javafx.stage.Stage;
 
@@ -26,6 +27,9 @@ public class ExpenseStatsPie implements Initializable {
     @FXML
     private PieChart pieChart;
 
+    @FXML
+    private Label noTrans;
+
     private String dbUrl;
     private String dbUser;
     private String dbPassword;
@@ -35,6 +39,7 @@ public class ExpenseStatsPie implements Initializable {
         dbUrl = "jdbc:mysql://localhost:3306/Exp_Tracker"; // Update with your database URL
         dbUser = "root"; // Update with your database username
         dbPassword = "oracle"; // Update with your database password
+        noTrans.setText("");
 
 
         // Establish the initial database connection in the initialize method
@@ -51,28 +56,33 @@ public class ExpenseStatsPie implements Initializable {
         try {
             // Establish a database connection
             Connection connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
-            Statement statement = connection.createStatement();
+            Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
             // Query to retrieve total expenses for the Pie Chart
             String pieChartQuery = "SELECT user_id, category_name, SUM(amount) AS total_amount " +
                     "FROM transactions " +
                     "where transactiontype= 'Expense'"+
-                    "GROUP BY category_name, user_id";
+                    "GROUP BY category_name, user_id having user_id ="+
+                    AlertConnector.user;
 
             ResultSet pieChartResult = statement.executeQuery(pieChartQuery);
 
             // Clear existing data from the Pie Chart
             pieChart.getData().clear();
 
-            while ((pieChartResult.next())){
-                if(pieChartResult.getInt("user_id")==AlertConnector.user) {
-                    String transactionType = pieChartResult.getString("category_name");
-                    double totalAmount = pieChartResult.getDouble("total_amount");
+            if(!pieChartResult.next()){
+                noTrans.setText("No Transaction To show");
+                return;
+            }
+            pieChartResult.beforeFirst();
 
-                    // Add data to the Pie Chart
-                    PieChart.Data pieChartData = new PieChart.Data(transactionType, totalAmount);
-                    pieChart.getData().add(pieChartData);
-                }
+            while ((pieChartResult.next())){
+                String transactionType = pieChartResult.getString("category_name");
+                double totalAmount = pieChartResult.getDouble("total_amount");
+
+                // Add data to the Pie Chart
+                PieChart.Data pieChartData = new PieChart.Data(transactionType, totalAmount);
+                pieChart.getData().add(pieChartData);
             }
 
             connection.close();

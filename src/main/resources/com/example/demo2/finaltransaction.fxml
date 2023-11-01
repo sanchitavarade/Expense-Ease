@@ -209,7 +209,7 @@
                                                    </font>
                                                 </Button>
                                                 <ComboBox fx:id="Combo_Searchtype" layoutX="166.0" layoutY="63.0" prefHeight="30.0" prefWidth="106.0" />
-                                                <ComboBox fx:id="Combo_Searchcateg" layoutX="392.0" layoutY="63.0" prefHeight="30.0" prefWidth="106.0" />
+                                                <ComboBox fx:id="Combo_Searchcateg" layoutX="392.0" layoutY="63.0" prefHeight="30.0" prefWidth="106.0" styleClass="combo-box-popup" stylesheets="@style.css" />
                                                 <Label fx:id="searchLabel" layoutX="511.0" layoutY="85.0" textFill="RED">
                                                    <font>
                                                       <Font size="15.0" />

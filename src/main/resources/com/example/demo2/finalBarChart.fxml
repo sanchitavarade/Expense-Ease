@@ -32,7 +32,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="718.0" prefWidth="900.0">
                <children>
-                  <BarChart fx:id="barChart" layoutX="85.0" layoutY="113.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="449.0" prefWidth="756.0">
+                  <BarChart fx:id="barChart" layoutX="85.0" layoutY="113.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="449.0" prefWidth="756.0" style="-fx-font-family: Dubai;" styleClass="bchart" stylesheets="@style.css">
                      <xAxis>
                         <CategoryAxis side="BOTTOM" />
                      </xAxis>
@@ -44,11 +44,6 @@
                      <font>
                         <Font name="Dubai Regular" size="14.0" />
                      </font></Button>
-                  <Button alignment="CENTER" layoutX="743.0" layoutY="607.0" mnemonicParsing="false" onAction="#switchToPie" prefHeight="65.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" stylesheets="@style.css" text="Pie Chart" textFill="WHITE">
-                     <font>
-                        <Font name="Dubai Regular" size="26.0" />
-                     </font>
-                  </Button>
                   <Label alignment="CENTER" layoutX="374.0" layoutY="31.0" prefHeight="66.0" prefWidth="211.0" text="Bar Chart" textFill="SLATEBLUE">
                      <font>
                         <Font name="Dubai Regular" size="45.0" />

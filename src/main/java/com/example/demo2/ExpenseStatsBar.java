@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -30,6 +31,9 @@ public class ExpenseStatsBar implements Initializable {
     private String dbPassword;
 
     @FXML
+    private Label noTrans;
+
+    @FXML
     private BarChart<String, Number> barChart;
 
     @Override
@@ -37,6 +41,7 @@ public class ExpenseStatsBar implements Initializable {
         dbUrl = "jdbc:mysql://localhost:3306/Exp_Tracker"; // Update with your database URL
         dbUser = "root"; // Update with your database username
         dbPassword = "oracle"; // Update with your database password
+        noTrans.setText("");
 
 
         // Establish the initial database connection in the initialize method
@@ -57,23 +62,28 @@ public class ExpenseStatsBar implements Initializable {
         try {
 
             Connection con = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
-            Statement statement = con.createStatement();
+            Statement statement = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
             String barChartQuery = "SELECT user_id,category_name, SUM(amount) AS total_expense " +
                     "FROM Transactions " +
-                    "GROUP BY category_name, user_id";
+                    "GROUP BY category_name, user_id " +
+                    "having user_id = "+AlertConnector.user;
 
             ResultSet barChartResult = statement.executeQuery(barChartQuery);
 
             XYChart.Series<String, Number> barChartSeries = new XYChart.Series<>();
             barChart.getData().clear();
 
+            if(!barChartResult.next()){
+                noTrans.setText("No Transaction To show");
+                return;
+            }
+            barChartResult.beforeFirst();
+
             while (barChartResult.next()) {
-                if(barChartResult.getInt("user_id")==AlertConnector.user) {
-                    String category = barChartResult.getString("category_name");
-                    int totalExpense = barChartResult.getInt("total_expense");
-                    barChartSeries.getData().add(new XYChart.Data<>(category, totalExpense));
-                }
+                String category = barChartResult.getString("category_name");
+                int totalExpense = barChartResult.getInt("total_expense");
+                barChartSeries.getData().add(new XYChart.Data<>(category, totalExpense));
             }
             barChart.getData().add(barChartSeries);
 
