@@ -105,7 +105,7 @@
             <Font name="Dubai Regular" size="18.0" />
          </font>
       </Button>
-      <ImageView fitHeight="93.0" fitWidth="93.0" layoutX="591.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView disable="true" fitHeight="93.0" fitWidth="93.0" layoutX="591.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@BL.jpg" />
          </image>

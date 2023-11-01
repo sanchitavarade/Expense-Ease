@@ -145,8 +145,8 @@
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="590.0" prefWidth="958.0">
                                  <children>
                                     <SplitPane dividerPositions="0.6775994417306351" layoutX="736.0" layoutY="169.0" prefHeight="588.0" prefWidth="958.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                      <items>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <items>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                              <children>
                                                 <TableView fx:id="Trans_table" layoutX="14.0" layoutY="113.0" onMouseClicked="#getSelected" prefHeight="455.0" prefWidth="517.0">
                                                    <columns>
@@ -162,50 +162,15 @@
                                                       <Font name="Dubai Regular" size="18.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="99.0" layoutY="64.0" prefHeight="32.0" prefWidth="44.0" text="Type :" textFill="SLATEBLUE" AnchorPane.rightAnchor="505.2">
-                                                   <font>
-                                                      <Font name="Dubai Regular" size="18.0" />
-                                                   </font>
-                                                </Label>
                                                 <TextField fx:id="search_amt" layoutX="166.0" layoutY="16.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;-fx-text-fill: #FFFFFF;" styleClass="text-field" stylesheets="@style.css">
                                                    <font>
                                                       <Font name="Dubai Regular" size="12.0" />
                                                    </font>
                                                 </TextField>
-                                                <Label layoutX="326.0" layoutY="15.0" text="Date :" textFill="SLATEBLUE" AnchorPane.rightAnchor="278.8">
-                                                   <font>
-                                                      <Font name="Dubai Regular" size="18.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label layoutX="295.0" layoutY="64.0" prefHeight="32.0" prefWidth="82.0" text="Category :" textFill="SLATEBLUE" AnchorPane.rightAnchor="270.6">
-                                                   <font>
-                                                      <Font name="Dubai Regular" size="18.0" />
-                                                   </font>
-                                                </Label>
-                                                <DatePicker fx:id="search_date" layoutX="392.0" layoutY="16.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #6a5acd;" AnchorPane.leftAnchor="392.0" />
-                                                <ImageView fitHeight="47.0" fitWidth="43.0" layoutX="560.0" layoutY="415.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@Trash_Can-removebg-preview.png" />
-                                                   </image>
-                                                </ImageView>
-                                                <Button alignment="CENTER" layoutX="557.0" layoutY="412.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteTrans" opacity="0.0" prefHeight="47.0" prefWidth="50.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" textFill="WHITE">
-                                                   <font>
-                                                      <Font name="Dubai Regular" size="19.0" />
-                                                   </font>
-                                                </Button>
-                                                <Button layoutX="548.0" layoutY="486.0" mnemonicParsing="false" onAction="#switchToAddTrans" prefHeight="65.0" prefWidth="67.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 50;" stylesheets="@style.css" text="➕" textFill="WHITE">
+                                                <DatePicker fx:id="search_date" layoutX="392.0" layoutY="16.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #6a5acd;" styleClass="date-pickertrans" stylesheets="@style.css" AnchorPane.leftAnchor="392.0" />
+                                                <Button layoutX="556.0" layoutY="484.0" mnemonicParsing="false" onAction="#switchToAddTrans" prefHeight="65.0" prefWidth="65.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 50;" stylesheets="@style.css" text="➕" textFill="WHITE">
                                                    <font>
                                                       <Font size="27.0" />
-                                                   </font>
-                                                </Button>
-                                                <ImageView fitHeight="47.0" fitWidth="44.0" layoutX="529.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@search.png" />
-                                                   </image>
-                                                </ImageView>
-                                                <Button layoutX="529.0" layoutY="10.0" mnemonicParsing="false" onAction="#searchTrans" opacity="0.0" prefHeight="47.0" prefWidth="44.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 20;" textFill="WHITE">
-                                                   <font>
-                                                      <Font size="14.0" />
                                                    </font>
                                                 </Button>
                                                 <ComboBox fx:id="Combo_Searchtype" layoutX="166.0" layoutY="63.0" prefHeight="30.0" prefWidth="106.0" />
@@ -215,9 +180,39 @@
                                                       <Font size="15.0" />
                                                    </font>
                                                 </Label>
+                                                <Label layoutX="98.0" layoutY="62.0" prefHeight="32.0" prefWidth="68.0" text="Type:" textFill="SLATEBLUE">
+                                                   <font>
+                                                      <Font name="Dubai Regular" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="304.0" layoutY="62.0" prefHeight="32.0" prefWidth="88.0" text="Category:" textFill="SLATEBLUE">
+                                                   <font>
+                                                      <Font name="Dubai Regular" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="332.0" layoutY="15.0" prefHeight="32.0" prefWidth="68.0" text="Date:" textFill="SLATEBLUE">
+                                                   <font>
+                                                      <Font name="Dubai Regular" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button layoutX="556.0" layoutY="401.0" mnemonicParsing="false" onAction="#deleteTrans" prefHeight="65.0" prefWidth="65.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 50;" stylesheets="@style.css" />
+                                                <ImageView disable="true" fitHeight="48.0" fitWidth="50.0" layoutX="565.0" layoutY="410.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@delete.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Button layoutX="556.0" layoutY="22.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#searchTrans" prefHeight="65.0" prefWidth="65.0" style="-fx-background-color: #6A5ACD; -fx-background-radius: 50;" stylesheets="@style.css">
+                                                   <graphic>
+                                                      <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@search.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
                                              </children>
                                           </AnchorPane>
-                                        <AnchorPane maxWidth="300.0" minHeight="0.0" minWidth="300.0" prefHeight="160.0" prefWidth="100.0">
+                                          <AnchorPane maxWidth="300.0" minHeight="0.0" minWidth="300.0" prefHeight="160.0" prefWidth="100.0">
                                              <children>
                                                 <Label layoutX="50.0" layoutY="24.0" prefHeight="51.0" prefWidth="203.0" text="Edit Transaction" textFill="SLATEBLUE">
                                                    <font>
@@ -249,7 +244,7 @@
                                                       <Font name="Dubai Regular" size="18.0" />
                                                    </font>
                                                 </Label>
-                                                <DatePicker fx:id="newTransDate" layoutX="145.0" layoutY="303.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #6a5acd;" />
+                                                <DatePicker fx:id="newTransDate" layoutX="145.0" layoutY="303.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #6a5acd;" styleClass="date-pickertrans" stylesheets="@style.css" />
                                                 <Button alignment="CENTER" layoutX="99.0" layoutY="375.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ApplyTransChanges" prefHeight="47.0" prefWidth="106.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10;" text="Edit" textFill="WHITE">
                                                    <font>
                                                       <Font name="Dubai Regular" size="19.0" />
@@ -274,7 +269,7 @@
                                                 </Label>
                                              </children>
                                           </AnchorPane>
-                                      </items>
+                                       </items>
                                     </SplitPane>
                                  </children>
                               </AnchorPane>

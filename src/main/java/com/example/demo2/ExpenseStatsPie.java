@@ -39,7 +39,7 @@ public class ExpenseStatsPie implements Initializable {
         dbUrl = "jdbc:mysql://localhost:3306/Exp_Tracker"; // Update with your database URL
         dbUser = "root"; // Update with your database username
         dbPassword = "oracle"; // Update with your database password
-        noTrans.setText("");
+//        noTrans.setText("");
 
 
         // Establish the initial database connection in the initialize method
