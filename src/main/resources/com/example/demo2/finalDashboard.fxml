@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.scene_controller">
+<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.scene_controller">
    <children>
       <ImageView fitHeight="768.0" fitWidth="1605.0" layoutX="-15.0" layoutY="-26.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@BG.png" />
          </image>
       </ImageView>
-      <Label fx:id="Welcome" layoutX="24.0" layoutY="14.0" prefHeight="75.0" prefWidth="528.0" text="Welcome, User !" textFill="SLATEBLUE">
+      <Label fx:id="Welcome" layoutX="24.0" layoutY="14.0" prefHeight="75.0" prefWidth="528.0" text="Welcome, User !" textFill="WHITE">
          <font>
             <Font name="Dubai Bold" size="36.0" />
          </font>
       </Label>
-      <Label fx:id="Quotes" alignment="CENTER" layoutX="165.0" layoutY="100.0" prefHeight="61.0" prefWidth="947.0" text="Quote" textFill="SLATEBLUE">
+      <Label fx:id="Quotes" alignment="CENTER" layoutX="165.0" layoutY="100.0" prefHeight="61.0" prefWidth="947.0" text="Quote" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="21.0" />
+            <Font name="Serif Bold Italic" size="23.0" />
          </font></Label>
       <Button layoutX="167.0" layoutY="213.0" mnemonicParsing="false" onAction="#switchToTransaction" prefHeight="160.0" prefWidth="191.0" style="-fx-background-color: white; -fx-border-color: #6a5acd; -fx-border-width: 3;" styleClass="dbutton" stylesheets="@style.css" text="Transactions" textFill="SLATEBLUE">
          <padding>
