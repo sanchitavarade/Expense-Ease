@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.AddTrans_scene">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.AddTrans_scene">
    <children>
       <AnchorPane prefHeight="720.0" prefWidth="1270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -132,9 +132,9 @@
                      <children>
                         <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="719.2" prefWidth="974.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <items>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="163.0" prefWidth="973.0" style="-fx-background-color: #6a5acd;">
+                            <AnchorPane maxHeight="120.0" minHeight="0.0" minWidth="0.0" prefHeight="120.0" prefWidth="971.0" style="-fx-background-color: #6a5acd;">
                                  <children>
-                                    <Label alignment="CENTER" prefHeight="145.0" prefWidth="973.0" text="Add Transaction" textFill="WHITE">
+                                    <Label alignment="CENTER" prefHeight="120.0" prefWidth="971.0" text="Add Transaction" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <font>
                                           <Font name="Dubai Regular" size="40.0" />
                                        </font>

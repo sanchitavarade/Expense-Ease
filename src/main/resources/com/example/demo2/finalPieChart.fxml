@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.ExpenseStatsPie">
+<AnchorPane maxHeight="720.0" maxWidth="1270.0" minHeight="720.0" minWidth="1270.0" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.ExpenseStatsPie">
    <children>
       <AnchorPane prefHeight="720.0" prefWidth="1270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -139,6 +139,11 @@
                               <Font name="Dubai Regular" size="14.0" />
                            </font>
                         </Button>
+                        <Label fx:id="noTrans" alignment="CENTER" layoutX="362.0" layoutY="311.0" prefHeight="66.0" prefWidth="211.0" textFill="RED">
+                           <font>
+                              <Font name="Dubai Regular" size="20.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
               </items>

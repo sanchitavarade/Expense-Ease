@@ -82,9 +82,17 @@ INSERT INTO transactions ( transactiondate, amount, transactiontype, category_na
                                                                                                             ('2023-09-20', 2500, 'Expense', 'Groceries', 102, 'Groceries102'),
                                                                                                             ('2023-09-22', 1200, 'Expense', 'Entertainment', 101, 'Entertainment101'),
                                                                                                             ('2023-09-26', 3000, 'Expense', 'Electronics',  101, 'Electronics101'),
-                                                                                                            ('2023-09-27', 800, 'Expense', 'Health', 101, 'Healthcare101'),
+                                                                                                            ('2023-09-27', 800, 'Expense', 'Healthcare', 101, 'Healthcare101'),
                                                                                                             ('2023-09-25', 2200, 'Expense', 'Utilities', 102, 'Utilities102'),
                                                                                                             ('2023-09-26', 1200, 'Expense', 'Groceries', 101,'Groceries101'),
+                                                                                                            ('2023-09-27', 500, 'Expense', 'Clothing', 102, 'Clothing102'),
+                                                                                                            ('2023-08-18', 2000, 'Expense', 'Food', 101, 'Food101'),
+                                                                                                            ('2023-09-20', 200, 'Income', 'Groceries', 101, 'Groceries101'),
+                                                                                                            ('2023-09-22', 1200, 'Expense', 'Entertainment', 101, 'Entertainment101'),
+                                                                                                            ('2023-09-26', 300, 'Income', 'Electronics',  101, 'Electronics101'),
+                                                                                                            ('2023-09-27', 800, 'Expense', 'Healthcare', 101, 'Healthcare101'),
+                                                                                                            ('2023-09-25', 25, 'Expense', 'Utilities', 101, 'Utilities101'),
+                                                                                                            ('2023-09-26', 120, 'Expense', 'Groceries', 101,'Groceries101'),
                                                                                                             ('2023-09-27', 500, 'Expense', 'Clothing', 102, 'Clothing102');
 
 
@@ -127,13 +135,3 @@ INSERT INTO Savings (savingsdate, amount, User_id) VALUES
                                                        ('2023-09-29', 1900, 102);
 
 delimiter //
-create procedure giveTotal(IN categoryName varchar(25), out Total int)
-begin
-select b.category_name, sum(t.amount) as Total
-from budget b, transactions t group by category_name;
-end//
-delimiter ;
-
-call giveTotal("Groceries", @total);
--- select b.category_name, sum(t.amount)
--- from budget b, transactions t group by category_name;

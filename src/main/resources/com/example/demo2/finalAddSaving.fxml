@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
@@ -13,7 +12,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.AddTrans_scene">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo2.AddSave_scene">
    <children>
       <AnchorPane prefHeight="720.0" prefWidth="1270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -29,7 +28,7 @@
                               <Insets bottom="-10.0" top="-10.0" />
                            </padding>
                         </Button>
-                        <Button layoutX="91.0" layoutY="180.0" mnemonicParsing="false" onAction="#switchToTransaction" style="-fx-background-color: transparent;" styleClass="mbutton" stylesheets="@style.css" text="Transactions" textFill="WHITE">
+                        <Button layoutX="91.0" layoutY="180.0" mnemonicParsing="false" onAction="#switchToTransaction" style="-fx-background-color: transparent;" styleClass="mbutton" stylesheets="@style.css" text="Transactions" textFill="#b7b6b6">
                            <font>
                               <Font name="Dubai Regular" size="28.0" />
                            </font>
@@ -45,7 +44,7 @@
                               <Insets bottom="-10.0" top="-10.0" />
                            </padding>
                         </Button>
-                        <Button layoutX="91.0" layoutY="386.0" mnemonicParsing="false" onAction="#switchToSave" style="-fx-background-color: transparent;" styleClass="mbutton" stylesheets="@style.css" text="Savings" textFill="#b7b6b6">
+                        <Button layoutX="91.0" layoutY="386.0" mnemonicParsing="false" onAction="#switchToSave" style="-fx-background-color: transparent;" styleClass="mbutton" stylesheets="@style.css" text="Savings" textFill="WHITE">
                            <font>
                               <Font name="Dubai Regular" size="28.0" />
                            </font>
@@ -85,10 +84,10 @@
                               <Insets bottom="-10.0" top="-10.0" />
                            </padding>
                         </Button>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="37.0" layoutY="176.0" stroke="WHITE" strokeMiterLimit="0.0" strokeWidth="0.0" width="16.0" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="37.0" layoutY="386.0" stroke="WHITE" strokeMiterLimit="0.0" strokeWidth="0.0" width="16.0" />
                         <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="39.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@menu%20icons/rupee%20white.png" />
+                              <Image url="@menu%20icons/rupee.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="34.0" fitWidth="39.0" layoutX="43.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
@@ -108,7 +107,7 @@
                         </ImageView>
                         <ImageView fitHeight="37.0" fitWidth="43.0" layoutX="39.0" layoutY="382.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@menu%20icons/piggy-bank%20(1).png" />
+                              <Image url="@menu%20icons/piggy-bank.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="36.0" layoutY="449.0" pickOnBounds="true" preserveRatio="true">
@@ -130,60 +129,48 @@
                   </AnchorPane>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="718.0" prefWidth="960.0">
                      <children>
-                        <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="719.2" prefWidth="974.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <items>
-                              <AnchorPane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="135.0" prefWidth="973.0" style="-fx-background-color: #6a5acd;">
+                        <SplitPane dividerPositions="0.18994413407821228" layoutX="94.0" layoutY="68.0" orientation="VERTICAL" prefHeight="718.0" prefWidth="973.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                  <children>
-                                    <Label alignment="CENTER" layoutX="359.0" layoutY="30.0" prefHeight="75.0" prefWidth="300.0" text="Add Transaction" textFill="WHITE">
+                                    <Label alignment="CENTER" prefHeight="135.0" prefWidth="971.0" style="-fx-background-color: #6a5acd;" text="Add Savings" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <font>
                                           <Font name="Dubai Regular" size="40.0" />
                                        </font>
                                     </Label>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane minWidth="0.0" prefHeight="588.0" prefWidth="973.0">
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                  <children>
-                                    <Label layoutX="378.0" layoutY="105.0" prefHeight="41.0" prefWidth="59.0" text="Date :" textFill="SLATEBLUE">
-                                       <font>
-                                          <Font name="Dubai Regular" size="22.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="379.0" layoutY="177.0" prefHeight="41.0" prefWidth="59.0" text="Type :" textFill="SLATEBLUE">
-                                       <font>
-                                          <Font name="Dubai Regular" size="22.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="346.0" layoutY="262.0" text="Category :" textFill="SLATEBLUE">
-                                       <font>
-                                          <Font name="Dubai Regular" size="22.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="345.0" layoutY="343.0" prefHeight="41.0" prefWidth="91.0" text="Amount :" textFill="SLATEBLUE">
-                                       <font>
-                                          <Font name="Dubai Regular" size="22.0" />
-                                       </font>
-                                    </Label>
-                                    <Button layoutX="391.0" layoutY="441.0" mnemonicParsing="false" onAction="#Add_Trans" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: #6a5acd #6a5acd; -fx-background-radius: 10;" stylesheets="@style.css" text="Add" textFill="WHITE">
-                                       <font>
-                                          <Font name="Dubai Regular" size="19.0" />
-                                       </font>
-                                    </Button>
-                                    <DatePicker fx:id="Trans_addDate" layoutX="460.0" layoutY="108.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" styleClass="date-picker2" stylesheets="@style.css" />
-                                    <TextField fx:id="Trans_addAmt" layoutX="466.0" layoutY="347.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="159.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10; -fx-text-fill: #FFFFFF;" styleClass="text-field1" stylesheets="@style.css">
-                                       <font>
-                                          <Font name="Dubai Regular" size="18.0" />
-                                       </font>
-                                    </TextField>
-                                    <ComboBox fx:id="Combo_type" layoutX="466.0" layoutY="181.0" prefHeight="34.0" prefWidth="159.0" />
-                                    <ComboBox fx:id="Combo_categ" layoutX="466.0" layoutY="265.0" prefHeight="34.0" prefWidth="159.0" />
-                                    <Label fx:id="amtLabel" layoutX="466.0" layoutY="489.0" prefHeight="28.0" prefWidth="147.0" textFill="RED">
-                                       <font>
-                                          <Font name="Dubai Bold" size="15.0" />
-                                       </font>
-                                    </Label>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="579.0" prefWidth="971.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Label layoutX="344.0" layoutY="47.0" prefHeight="41.0" prefWidth="91.0" text="Date :" textFill="SLATEBLUE">
+                                             <font>
+                                                <Font name="Dubai Regular" size="22.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="329.0" layoutY="124.0" prefHeight="41.0" prefWidth="91.0" text="Amount :" textFill="SLATEBLUE">
+                                             <font>
+                                                <Font name="Dubai Regular" size="22.0" />
+                                             </font>
+                                          </Label>
+                                          <Button layoutX="350.0" layoutY="246.0" mnemonicParsing="false" onAction="#addSave" prefHeight="40.0" prefWidth="240.0" style="-fx-background-color: #6a5acd #6a5acd; -fx-background-radius: 10;" stylesheets="@../../../../../../../java_project-1/src/main/resources/com/example/demo2/style.css" text="Add Saving" textFill="WHITE">
+                                             <font>
+                                                <Font name="Dubai Regular" size="19.0" />
+                                             </font>
+                                          </Button>
+                                          <DatePicker fx:id="addSaveDate" layoutX="452.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="159.0" style="-fx-background-color: #6a5acd;" styleClass="date-picker2" stylesheets="@../../../../../../../java_project-1/src/main/resources/com/example/demo2/style.css" />
+                                          <TextField fx:id="addSaveAmt" layoutX="452.0" layoutY="127.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="159.0" style="-fx-background-color: #6a5acd; -fx-background-radius: 10; -fx-text-fill: #FFFFFF;" styleClass="text-field1" stylesheets="@../../../../../../../java_project-1/src/main/resources/com/example/demo2/style.css">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label fx:id="AlertLabel" layoutX="432.0" layoutY="179.0" textFill="RED" />
+                                       </children>
+                                    </AnchorPane>
                                  </children>
                               </AnchorPane>
-                           </items>
+                          </items>
                         </SplitPane>
                      </children>
                   </AnchorPane>

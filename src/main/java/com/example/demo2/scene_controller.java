@@ -20,6 +20,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class scene_controller implements Initializable {
@@ -48,13 +49,13 @@ public class scene_controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Welcome.setText("Welcome, "+ AlertConnector.username+" !");
-        quotesList.addAll(Arrays.asList("Savings, remember, is the prerequisite of investment.",
-                "Money is a terrible master but an excellent servant.",
-                "It's not your salary that makes you rich; it's your spending habits.",
-                "Money, like emotions, is something you must control to keep your life on the right track.",
-                "Do not save what is left after spending, but spend what is left after saving.",
-                "The art is not in making money, but in keeping it.",
-                "A budget is telling your money where to go instead of wondering where it went."));
+        quotesList.addAll(Arrays.asList("\"Savings, remember, is the prerequisite of investment.\"",
+                "\"Money is a terrible master but an excellent servant.\"",
+                "\"It's not your salary that makes you rich; it's your spending habits.\"",
+                "\"Money, like emotions, is something you must control to keep your life on the right track.\"",
+                "\"Do not save what is left after spending, but spend what is left after saving.\"",
+                "\"The art is not in making money, but in keeping it.\"",
+                "\"A budget is telling your money where to go instead of wondering where it went.\""));
 
 
         Random random = new Random();
@@ -161,6 +162,8 @@ public class scene_controller implements Initializable {
             }
             if (signpass.length() < 8){
                 AlertConnector.Handle4();
+                passLabel1.setTextFill(Color.RED);
+                passLabel2.setTextFill(Color.RED);
                 return;
             }
             int flag =0;
@@ -172,6 +175,8 @@ public class scene_controller implements Initializable {
             }
             if (flag==0){
                 AlertConnector.Handle4();
+                passLabel1.setTextFill(Color.RED);
+                passLabel2.setTextFill(Color.RED);
                 return;
             }
             Class.forName("com.mysql.jdbc.Driver");

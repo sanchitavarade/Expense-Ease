@@ -112,10 +112,6 @@ public class Trans_Scene implements Initializable{
         Trans_categ.setCellValueFactory(new PropertyValueFactory<Transactions, String>("categ"));
         Trans_date.setCellValueFactory(new PropertyValueFactory<Transactions, String>("date"));
 
-
-
-
-
         typeValues.clear();
         ObservableList<String> categList;
         ObservableList<String> TypeList;
@@ -231,17 +227,19 @@ public class Trans_Scene implements Initializable{
 
     @FXML
     public void searchTrans(ActionEvent event) throws IOException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
-        try{
-            if(Integer.parseInt(search_amt.getText())<0){
-                searchLabel.setText("Invalid Amount");
-                System.out.println(search_amt.getText());
+        if(search_amt.getText().compareTo("")!=0) {
+            try {
+                if (Integer.parseInt(search_amt.getText()) < 0) {
+                    searchLabel.setText("Invalid Amount");
+                    System.out.println(search_amt.getText());
+                    return;
+                }
+            } catch (Exception e) {
+                searchLabel.setText("Invalid Entry");
                 return;
             }
+            AlertConnector.tfTransamt=AlertConnector.tfTransamt.concat(search_amt.getText());
         }
-        catch(Exception e){
-            searchLabel.setText("Invalid Entry");
-        }
-        AlertConnector.tfTransamt=AlertConnector.tfTransamt.concat(search_amt.getText());
         if(Combo_Searchcateg.getValue()!=null) {
             AlertConnector.tfTranscateg = AlertConnector.tfTranscateg.concat(Combo_Searchcateg.getValue());
         }
