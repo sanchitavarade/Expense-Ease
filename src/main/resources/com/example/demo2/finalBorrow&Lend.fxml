@@ -165,7 +165,7 @@
                                                 </Label>
                                              </children>
                                           </AnchorPane>
-                                          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="595.0" prefWidth="390.0">
+                                          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="390.0">
                                              <children>
                                                 <Label layoutX="55.0" layoutY="99.0" text="Date :" textFill="SLATEBLUE">
                                                    <font>

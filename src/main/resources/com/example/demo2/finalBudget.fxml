@@ -162,8 +162,13 @@
                                                                 </Button>
                                                             </children>
                                                         </AnchorPane>
-                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1270.0">
+                                                        <AnchorPane minWidth="-Infinity" prefHeight="595.0" prefWidth="419.0">
                                                             <children>
+                                                <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="900.0" style="-fx-background-color: #6a5acd;" text="                    Edit/Delete a Budget :  " textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Dubai Regular" size="24.0" />
+                                                   </font>
+                                                </Label>
                                                                 <Button alignment="CENTER" layoutX="142.0" layoutY="492.0" mnemonicParsing="false" onAction="#ApplyChanges" style="-fx-background-color: #6a5acd #6a5acd;" stylesheets="@style.css" text="Apply Changes" textFill="WHITE">
                                                                     <font>
                                                                         <Font name="Dubai Regular" size="24.0" />
@@ -182,11 +187,6 @@
                                                                 <Label layoutX="22.0" layoutY="256.0" text="Enter Expense Limit:">
                                                                     <font>
                                                                         <Font name="Dubai Regular" size="20.0" />
-                                                                    </font>
-                                                                </Label>
-                                                                <Label alignment="CENTER" prefHeight="44.0" prefWidth="432.0" style="-fx-background-color: #6a5acd;" text="Edit/Delete a Budget :  " textFill="WHITE">
-                                                                    <font>
-                                                                        <Font name="Dubai Regular" size="24.0" />
                                                                     </font>
                                                                 </Label>
                                                                 <Button alignment="CENTER" layoutX="142.0" layoutY="422.0" mnemonicParsing="false" onAction="#deleteBud" prefHeight="60.0" prefWidth="177.0" style="-fx-background-color: #6a5acd #6a5acd;" stylesheets="@style.css" text="Delete" textFill="WHITE">
