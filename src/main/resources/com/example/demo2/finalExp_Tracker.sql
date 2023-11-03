@@ -80,18 +80,21 @@ CREATE TABLE transactions (
 INSERT INTO transactions ( transactiondate, amount, transactiontype, category_name, user_id, Budget_id) VALUES
                                                                                                             ('2023-08-18', 20000, 'Expense', 'Food', 102, 'Food102'),
                                                                                                             ('2023-09-20', 2500, 'Expense', 'Groceries', 102, 'Groceries102'),
-                                                                                                            ('2023-09-22', 1200, 'Expense', 'Entertainment', 101, 'Entertainment101'),
+                                                                                                            ('2023-09-22', 1400, 'Expense', 'Entertainment', 101, 'Entertainment101'),
+                                                                                                            ('2023-09-22', 1200, 'Expense', 'Travel', 101, 'Travel101'),
                                                                                                             ('2023-09-26', 3000, 'Expense', 'Electronics',  101, 'Electronics101'),
+                                                                                                            ('2023-09-26', 3200, 'Expense', 'Electronics',  101, 'Electronics101'),
                                                                                                             ('2023-09-27', 800, 'Expense', 'Healthcare', 101, 'Healthcare101'),
                                                                                                             ('2023-09-25', 2200, 'Expense', 'Utilities', 102, 'Utilities102'),
                                                                                                             ('2023-09-26', 1200, 'Expense', 'Groceries', 101,'Groceries101'),
+                                                                                                            ('2023-09-26', 1100, 'Expense', 'Groceries', 101,'Groceries101'),
                                                                                                             ('2023-09-27', 500, 'Expense', 'Clothing', 102, 'Clothing102'),
                                                                                                             ('2023-08-18', 2000, 'Expense', 'Food', 101, 'Food101'),
                                                                                                             ('2023-09-20', 200, 'Income', 'Groceries', 101, 'Groceries101'),
                                                                                                             ('2023-09-22', 1200, 'Expense', 'Entertainment', 101, 'Entertainment101'),
                                                                                                             ('2023-09-26', 300, 'Income', 'Electronics',  101, 'Electronics101'),
                                                                                                             ('2023-09-27', 800, 'Expense', 'Healthcare', 101, 'Healthcare101'),
-                                                                                                            ('2023-09-25', 25, 'Expense', 'Utilities', 101, 'Utilities101'),
+                                                                                                            ('2023-09-25', 1125, 'Expense', 'Utilities', 101, 'Utilities101'),
                                                                                                             ('2023-09-26', 120, 'Expense', 'Groceries', 101,'Groceries101'),
                                                                                                             ('2023-09-27', 500, 'Expense', 'Clothing', 102, 'Clothing102');
 

@@ -130,7 +130,7 @@
                   </AnchorPane>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="718.0" prefWidth="900.0">
                      <children>
-                        <BarChart fx:id="barChart" layoutX="85.0" layoutY="113.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="449.0" prefWidth="756.0" style="-fx-font-family: Dubai;" styleClass="bchart" stylesheets="@style.css">
+                        <BarChart fx:id="barChart" layoutX="140.0" layoutY="148.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="449.0" prefWidth="756.0" style="-fx-font-family: Dubai;" styleClass="bchart" stylesheets="@style.css">
                            <xAxis>
                               <CategoryAxis side="BOTTOM" />
                            </xAxis>
@@ -138,12 +138,12 @@
                               <NumberAxis side="LEFT" />
                            </yAxis>
                         </BarChart>
-                        <Button layoutX="134.0" layoutY="579.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addDataToChart" prefHeight="43.0" prefWidth="110.0" style="-fx-background-color: #6a5acd;" stylesheets="@style.css" text="Reload Data" textFill="WHITE">
+                        <Button layoutX="133.0" layoutY="639.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addDataToChart" prefHeight="43.0" prefWidth="110.0" style="-fx-background-color: #6a5acd;" stylesheets="@style.css" text="Reload Data" textFill="WHITE">
                            <font>
                               <Font name="Dubai Regular" size="16.0" />
                            </font>
                         </Button>
-                        <Label alignment="CENTER" layoutX="374.0" layoutY="31.0" prefHeight="66.0" prefWidth="211.0" text="Bar Chart" textFill="SLATEBLUE">
+                        <Label alignment="CENTER" layoutX="362.0" layoutY="46.0" prefHeight="66.0" prefWidth="211.0" text="Bar Chart" textFill="SLATEBLUE">
                            <font>
                               <Font name="Dubai Regular" size="45.0" />
                            </font>

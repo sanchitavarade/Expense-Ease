@@ -128,13 +128,13 @@
                   </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="718.0" prefWidth="900.0">
                      <children>
-                        <PieChart fx:id="pieChart" layoutX="140.0" layoutY="148.0" prefHeight="404.0" prefWidth="655.0" style="-fx-font-family: Dubai;" styleClass="chart-pie-data" stylesheets="@style.css" />
+                        <PieChart fx:id="pieChart" layoutX="140.0" layoutY="148.0" prefHeight="462.0" prefWidth="720.0" style="-fx-font-family: Dubai;" styleClass="chart-pie-data" stylesheets="@style.css" />
                         <Label alignment="CENTER" layoutX="362.0" layoutY="46.0" prefHeight="66.0" prefWidth="211.0" text="Pie Chart" textFill="SLATEBLUE">
                            <font>
                               <Font name="Dubai Regular" size="45.0" />
                            </font>
                         </Label>
-                        <Button layoutX="134.0" layoutY="579.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#loadData" prefHeight="43.0" prefWidth="110.0" style="-fx-background-color: #6a5acd;" stylesheets="@style.css" text="Reload Data" textFill="WHITE">
+                        <Button layoutX="133.0" layoutY="639.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#loadData" prefHeight="43.0" prefWidth="110.0" style="-fx-background-color: #6a5acd;" stylesheets="@style.css" text="Reload Data" textFill="WHITE">
                            <font>
                               <Font name="Dubai Regular" size="16.0" />
                            </font>
