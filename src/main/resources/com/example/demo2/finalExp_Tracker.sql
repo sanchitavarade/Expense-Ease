@@ -113,11 +113,11 @@ CREATE TABLE borrow_lend (
 
 -- Insert borrowed/lent transactions
 INSERT INTO borrow_lend (bor_len_date, bor_len_due_date, bor_len_type, bor_len_description, bor_len_amount, user_id) VALUES
-                                                                                                                         ('2023-08-30', '2023-09-07', 'Borrowed', 'Borrowed from John', 5000, 101),
-                                                                                                                         ('2023-09-28', '2023-10-05', 'Lent', 'Lent to Mark', 2000, 101),
-                                                                                                                         ('2023-09-29', '2023-10-06', 'Borrowed', 'Borrowed from Emily', 2500, 101),
-                                                                                                                         ('2023-09-28', '2023-10-05', 'Borrowed', 'Borrowed from Lucas', 1800, 102),
-                                                                                                                         ('2023-09-29', '2023-10-06', 'Lent', 'Lent to Rachel', 2100, 102);
+                                                                                                                         ('2023-08-30', '2023-12-07', 'Borrowed', 'Borrowed from John', 5000, 101),
+                                                                                                                         ('2023-09-28', '2023-11-02', 'Lent', 'Lent to Mark', 2000, 101),
+                                                                                                                         ('2023-09-29', '2023-12-06', 'Borrowed', 'Borrowed from Emily', 2500, 101),
+                                                                                                                         ('2023-09-28', '2023-12-05', 'Borrowed', 'Borrowed from Lucas', 1800, 102),
+                                                                                                                         ('2023-09-29', '2023-12-06', 'Lent', 'Lent to Rachel', 2100, 102);
 
 -- Create the Savings table
 CREATE TABLE Savings (

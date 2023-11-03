@@ -67,6 +67,9 @@ public class BL_scene implements Initializable {
     private Label AlertLabel;
 
     @FXML
+    private Label BLlabel;
+
+    @FXML
     void addBL(ActionEvent event) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException, IOException{
         LocalDate date = BLdate.getValue();
         LocalDate duedate = BLdueDate.getValue();
@@ -152,6 +155,29 @@ public class BL_scene implements Initializable {
             );
         }
         bl_Table.setItems(list);
+        String label ="";
+        int flag=0;
+        for (BorrowLend element:
+             list) {
+            int var = LocalDate.parse(element.getDdate()).compareTo(LocalDate.now());
+            System.out.println(element.getDdate()+" "+LocalDate.parse(element.getDdate())+"\n"+var);
+            if (var<0){
+                if(flag==0){
+                    label = label.concat("Exceeded Duedates for:\n");
+                    flag=1;
+                }
+                label = label.concat((element.getDesc()).concat("\n"));
+            }
+        }
+        if(flag==1) {
+            BLlabel.setText(label);
+            System.out.println(label);
+        }
+        else{
+            BLlabel.setText("No Due Dates Exceeded");
+        }
+        System.out.println(label);
+        System.out.println("now : "+LocalDate.now());
 
         BLdate.setDayCellFactory(picker -> new DateCell() {
             @Override
