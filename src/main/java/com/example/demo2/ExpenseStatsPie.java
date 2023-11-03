@@ -10,12 +10,14 @@ import javafx.scene.Scene;
 import javafx.scene.chart.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane; // Import for AnchorPane
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ExpenseStatsPie implements Initializable {
@@ -76,20 +78,39 @@ public class ExpenseStatsPie implements Initializable {
             }
             pieChartResult.beforeFirst();
 
+            ArrayList<PieChart.Data> pieChartDataA = new ArrayList<>();
+
             while ((pieChartResult.next())){
                 String transactionType = pieChartResult.getString("category_name");
                 double totalAmount = pieChartResult.getDouble("total_amount");
 
                 // Add data to the Pie Chart
-                PieChart.Data pieChartData = new PieChart.Data(transactionType, totalAmount);
-                pieChart.getData().add(pieChartData);
+//                PieChart.Data pieChartData = new PieChart.Data(transactionType, totalAmount);
+                PieChart.Data slice = new PieChart.Data(transactionType, totalAmount);
+                pieChartDataA.add(slice);
+//                pieChart.getData().add(pieChartData);
             }
 
+            double total = pieChartDataA.stream().mapToDouble(data -> data.getPieValue()).sum();
+
+            // Update PieChart with percentages
+
+            for (PieChart.Data data : pieChartDataA) {
+                double percentage = (data.getPieValue() / total) * 100;
+                data.setName(data.getName() + " (" + String.format("%.2f", percentage) + "%)");
+
+                // Set a tooltip for each PieChart.Data element
+                Tooltip tooltip = new Tooltip(String.format("%.2f", percentage) + "%");
+                Tooltip.install(data.getNode(), tooltip);
+
+                pieChart.getData().add(data);
+            }
             connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
     public void switchToDashBoard(ActionEvent event) throws IOException{         // to switch the scene to dashboard
         root = FXMLLoader.load(getClass().getResource("finalDashboard.fxml"));
         scene = new Scene(root);
@@ -156,7 +177,5 @@ public class ExpenseStatsPie implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
-
 
 }

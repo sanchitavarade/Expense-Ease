@@ -209,7 +209,7 @@
                                                    </font>
                                                 </Label>
                                                 <DatePicker fx:id="BLdueDate" layoutX="110.0" layoutY="154.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="169.0" promptText="DD/MM/YYYY" style="-fx-background-color: #6a5acd;" styleClass="date-picker2" stylesheets="@style.css" />
-                                                <Label minWidth="400.0" prefHeight="73.0" prefWidth="397.0" style="-fx-background-color: #6a5acd #6a5acd;" text="          Edit / Add new record :" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <Label minWidth="400.0" prefHeight="74.0" prefWidth="397.0" style="-fx-background-color: #6a5acd #6a5acd;" text="          Edit / Add new record :" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <font>
                                                       <Font name="Dubai Regular" size="30.0" />
                                                    </font>
@@ -245,5 +245,16 @@
             </SplitPane>
          </children>
       </AnchorPane>
+      <Label layoutX="1.0" layoutY="28.0" prefHeight="51.0" prefWidth="285.0" style="-fx-background-color: white;" styleClass="label1" stylesheets="@style.css" />
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="41.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@menulogow.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="37.0" fitWidth="179.0" layoutX="90.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@menulogo2w.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
