@@ -67,7 +67,7 @@ public class  AlertConnector {
 		a = new Alert(AlertType.ERROR,
 				"Set stronger password", ButtonType.CANCEL);
 
-		// show the dialog
+		// show the dialogue
 		a.show();
 	}
 	public static boolean checkLogin(String name, String pass) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{//to throw basic exceptions
@@ -99,6 +99,7 @@ public class  AlertConnector {
 			Handle3();
 			con.close();
 			return false;
+
 		}
 	}
 }
