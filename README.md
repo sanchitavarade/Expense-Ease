@@ -1,6 +1,6 @@
-# Sem-3 Java Mini Project
+<h5 align = "center"></h5># Sem-3 Java Mini Project  </h5><br>
 
- <h3> Expense Ease:  An Expense Tracking Application for users to manage their personal expenses and income.</h3>
+ <h3 align = "center"> Expense Ease:  An Expense Tracking Application for users to manage their personal expenses and income.</h3>
 
   ![projectLogo-removebg-preview (1)](https://github.com/saifuddin-syed/java_project/assets/140707345/cbdf310b-001c-4bce-ab0f-db7fb29a00c1)
   
